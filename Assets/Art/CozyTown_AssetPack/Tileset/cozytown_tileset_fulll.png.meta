@@ -1,0 +1,3094 @@
+fileFormatVersion: 2
+guid: ce3b6ad7d48c15047b62513f00860291
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2690235593019240165
+    second: cozytown_tileset_fulll_0
+  - first:
+      213: 4608347147889491971
+    second: cozytown_tileset_fulll_1
+  - first:
+      213: -3347000432271088914
+    second: cozytown_tileset_fulll_2
+  - first:
+      213: 3854202006767707854
+    second: cozytown_tileset_fulll_3
+  - first:
+      213: 2033733743705633027
+    second: cozytown_tileset_fulll_4
+  - first:
+      213: 8509053317158110917
+    second: cozytown_tileset_fulll_5
+  - first:
+      213: -46128893005960824
+    second: cozytown_tileset_fulll_6
+  - first:
+      213: 5162649914232751661
+    second: cozytown_tileset_fulll_7
+  - first:
+      213: -6076058413439323421
+    second: cozytown_tileset_fulll_8
+  - first:
+      213: 5742568396220735631
+    second: cozytown_tileset_fulll_9
+  - first:
+      213: 7238464565192778533
+    second: cozytown_tileset_fulll_10
+  - first:
+      213: -6604623265988616639
+    second: cozytown_tileset_fulll_11
+  - first:
+      213: 7477186049688714026
+    second: cozytown_tileset_fulll_12
+  - first:
+      213: 6204741407983039225
+    second: cozytown_tileset_fulll_13
+  - first:
+      213: 1954855373440795244
+    second: cozytown_tileset_fulll_14
+  - first:
+      213: -1793410301681283987
+    second: cozytown_tileset_fulll_15
+  - first:
+      213: -8218442672935171028
+    second: cozytown_tileset_fulll_16
+  - first:
+      213: 1828126657269464445
+    second: cozytown_tileset_fulll_17
+  - first:
+      213: 835327518318174253
+    second: cozytown_tileset_fulll_18
+  - first:
+      213: -272063602078061180
+    second: cozytown_tileset_fulll_19
+  - first:
+      213: 1387617349136803979
+    second: cozytown_tileset_fulll_20
+  - first:
+      213: -6008391412316884011
+    second: cozytown_tileset_fulll_21
+  - first:
+      213: -9073997141973961356
+    second: cozytown_tileset_fulll_22
+  - first:
+      213: -3218473208478122989
+    second: cozytown_tileset_fulll_23
+  - first:
+      213: -4574675075611109002
+    second: cozytown_tileset_fulll_24
+  - first:
+      213: 210303521856572318
+    second: cozytown_tileset_fulll_25
+  - first:
+      213: 3490030150327123669
+    second: cozytown_tileset_fulll_26
+  - first:
+      213: 7316149005283632794
+    second: cozytown_tileset_fulll_27
+  - first:
+      213: -8688810654556246830
+    second: cozytown_tileset_fulll_28
+  - first:
+      213: 1914989230048894429
+    second: cozytown_tileset_fulll_29
+  - first:
+      213: -6282422534949062513
+    second: cozytown_tileset_fulll_30
+  - first:
+      213: -5393859840766950207
+    second: cozytown_tileset_fulll_31
+  - first:
+      213: -4642365692689482106
+    second: cozytown_tileset_fulll_32
+  - first:
+      213: -4177780908610474787
+    second: cozytown_tileset_fulll_33
+  - first:
+      213: -582567079038730882
+    second: cozytown_tileset_fulll_34
+  - first:
+      213: 340974884299086649
+    second: cozytown_tileset_fulll_35
+  - first:
+      213: 7165041802065712924
+    second: cozytown_tileset_fulll_36
+  - first:
+      213: -2580861311002890365
+    second: cozytown_tileset_fulll_37
+  - first:
+      213: -2310465424690360849
+    second: cozytown_tileset_fulll_38
+  - first:
+      213: 3013193963560145395
+    second: cozytown_tileset_fulll_39
+  - first:
+      213: -1986263942280977412
+    second: cozytown_tileset_fulll_40
+  - first:
+      213: -4809964508520891701
+    second: cozytown_tileset_fulll_41
+  - first:
+      213: 5467341416480150032
+    second: cozytown_tileset_fulll_42
+  - first:
+      213: 5121297268657645930
+    second: cozytown_tileset_fulll_43
+  - first:
+      213: -2516721018812890076
+    second: cozytown_tileset_fulll_44
+  - first:
+      213: -4846923006214550907
+    second: cozytown_tileset_fulll_45
+  - first:
+      213: -5882195221979018436
+    second: cozytown_tileset_fulll_46
+  - first:
+      213: -7455803606531330130
+    second: cozytown_tileset_fulll_47
+  - first:
+      213: -2679307935733211086
+    second: cozytown_tileset_fulll_48
+  - first:
+      213: 593267059757887689
+    second: cozytown_tileset_fulll_49
+  - first:
+      213: 7336857080110905008
+    second: cozytown_tileset_fulll_50
+  - first:
+      213: -5363779161229028064
+    second: cozytown_tileset_fulll_51
+  - first:
+      213: -7145720515269799384
+    second: cozytown_tileset_fulll_52
+  - first:
+      213: -4368482409679642621
+    second: cozytown_tileset_fulll_53
+  - first:
+      213: 6454857224436694096
+    second: cozytown_tileset_fulll_54
+  - first:
+      213: 3635409675364208708
+    second: cozytown_tileset_fulll_55
+  - first:
+      213: -8544433777884009697
+    second: cozytown_tileset_fulll_56
+  - first:
+      213: -2507387155187053436
+    second: cozytown_tileset_fulll_57
+  - first:
+      213: 377277493499317598
+    second: cozytown_tileset_fulll_58
+  - first:
+      213: -5090989207974890810
+    second: cozytown_tileset_fulll_59
+  - first:
+      213: -409652511868700155
+    second: cozytown_tileset_fulll_60
+  - first:
+      213: 7149587685679560998
+    second: cozytown_tileset_fulll_61
+  - first:
+      213: 5375555891491233132
+    second: cozytown_tileset_fulll_62
+  - first:
+      213: 134378773049122186
+    second: cozytown_tileset_fulll_63
+  - first:
+      213: -8116528185860656020
+    second: cozytown_tileset_fulll_64
+  - first:
+      213: -7091690130493857338
+    second: cozytown_tileset_fulll_65
+  - first:
+      213: 1559291771128458725
+    second: cozytown_tileset_fulll_66
+  - first:
+      213: 1383798303723872209
+    second: cozytown_tileset_fulll_67
+  - first:
+      213: -245374813561645530
+    second: cozytown_tileset_fulll_68
+  - first:
+      213: 7314702039251125196
+    second: cozytown_tileset_fulll_69
+  - first:
+      213: 8448616896964015277
+    second: cozytown_tileset_fulll_70
+  - first:
+      213: -3624648438691334992
+    second: cozytown_tileset_fulll_71
+  - first:
+      213: -577293846873830888
+    second: cozytown_tileset_fulll_72
+  - first:
+      213: 6166443944354180776
+    second: cozytown_tileset_fulll_73
+  - first:
+      213: -2683260947387379594
+    second: cozytown_tileset_fulll_74
+  - first:
+      213: -282800027597922219
+    second: cozytown_tileset_fulll_75
+  - first:
+      213: -991516450952568456
+    second: cozytown_tileset_fulll_76
+  - first:
+      213: 3679509114422486911
+    second: cozytown_tileset_fulll_77
+  - first:
+      213: -7336391859762654340
+    second: cozytown_tileset_fulll_78
+  - first:
+      213: 8218538420749715096
+    second: cozytown_tileset_fulll_79
+  - first:
+      213: 1689879278966362564
+    second: cozytown_tileset_fulll_80
+  - first:
+      213: -6448100138655414234
+    second: cozytown_tileset_fulll_81
+  - first:
+      213: -3683509591691444511
+    second: cozytown_tileset_fulll_82
+  - first:
+      213: -3588234831154193477
+    second: cozytown_tileset_fulll_83
+  - first:
+      213: 1482886409160157693
+    second: cozytown_tileset_fulll_84
+  - first:
+      213: -4633041760872184820
+    second: cozytown_tileset_fulll_85
+  - first:
+      213: 914156587383684082
+    second: cozytown_tileset_fulll_86
+  - first:
+      213: -8939087883593470582
+    second: cozytown_tileset_fulll_87
+  - first:
+      213: -9062064982249583724
+    second: cozytown_tileset_fulll_88
+  - first:
+      213: 354830098030353109
+    second: cozytown_tileset_fulll_89
+  - first:
+      213: -728823950190930763
+    second: cozytown_tileset_fulll_90
+  - first:
+      213: -8324550624105940133
+    second: cozytown_tileset_fulll_91
+  - first:
+      213: -9209544024770328313
+    second: cozytown_tileset_fulll_92
+  - first:
+      213: 1345261944759188934
+    second: cozytown_tileset_fulll_93
+  - first:
+      213: -7007267721458392303
+    second: cozytown_tileset_fulll_94
+  - first:
+      213: -6086684954494426207
+    second: cozytown_tileset_fulll_95
+  - first:
+      213: -7321864076973031017
+    second: cozytown_tileset_fulll_96
+  - first:
+      213: 1988854794112976576
+    second: cozytown_tileset_fulll_97
+  - first:
+      213: -282218133552186107
+    second: cozytown_tileset_fulll_98
+  - first:
+      213: 6241694232948546786
+    second: cozytown_tileset_fulll_99
+  - first:
+      213: 8141644895861474536
+    second: cozytown_tileset_fulll_100
+  - first:
+      213: -5131075611965339816
+    second: cozytown_tileset_fulll_101
+  - first:
+      213: 4730743545341530845
+    second: cozytown_tileset_fulll_102
+  - first:
+      213: -7038126787594162473
+    second: cozytown_tileset_fulll_103
+  - first:
+      213: 732276310577832601
+    second: cozytown_tileset_fulll_104
+  - first:
+      213: 7428430528695099598
+    second: cozytown_tileset_fulll_105
+  - first:
+      213: -5431141789153664738
+    second: cozytown_tileset_fulll_106
+  - first:
+      213: 1560440255239156509
+    second: cozytown_tileset_fulll_107
+  - first:
+      213: -5783226858682402582
+    second: cozytown_tileset_fulll_108
+  - first:
+      213: -7579093334429908589
+    second: cozytown_tileset_fulll_109
+  - first:
+      213: 7149290830281219231
+    second: cozytown_tileset_fulll_110
+  - first:
+      213: -5581141333492048666
+    second: cozytown_tileset_fulll_111
+  - first:
+      213: 6963515689965413524
+    second: cozytown_tileset_fulll_112
+  - first:
+      213: -7026659174521283973
+    second: cozytown_tileset_fulll_113
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1679
+        width: 98
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ee2604b403a55520800000000000000
+      internalID: 2690235593019240165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_1
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 1679
+        width: 50
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30043af905324ff30800000000000000
+      internalID: 4608347147889491971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_2
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1551
+        width: 161
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee2276b07d01d81d0800000000000000
+      internalID: -3347000432271088914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_3
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1423
+        width: 49
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec6acf10e40ec7530800000000000000
+      internalID: 3854202006767707854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_4
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 1461
+        width: 98
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 301bc419016493c10800000000000000
+      internalID: 2033733743705633027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_5
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1391
+        width: 50
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c68118b8ea361670800000000000000
+      internalID: 8509053317158110917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_6
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 1393
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8896f76240e1c5ff0800000000000000
+      internalID: -46128893005960824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_7
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 1407
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d264b8d7eba65a740800000000000000
+      internalID: 5162649914232751661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1231
+        width: 49
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e2fc68b0118daba0800000000000000
+      internalID: -6076058413439323421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1263
+        width: 49
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f802f1be783b1bf40800000000000000
+      internalID: 5742568396220735631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_10
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 1263
+        width: 66
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5236197cb21347460800000000000000
+      internalID: 7238464565192778533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_11
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 1215
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14ed773e12aa754a0800000000000000
+      internalID: -6604623265988616639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_12
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 1245
+        width: 47
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2bb33ba81d44c760800000000000000
+      internalID: 7477186049688714026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_13
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1167
+        width: 146
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f27cf9bf6bab1650800000000000000
+      internalID: 6204741407983039225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_14
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1119
+        width: 113
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c62c339da9a012b10800000000000000
+      internalID: 1954855373440795244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_15
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 1120
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6cc2cf15d68c17e0800000000000000
+      internalID: -1793410301681283987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_16
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 1135
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2c89c0aee932fd80800000000000000
+      internalID: -8218442672935171028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_17
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7df7fa428fce5910800000000000000
+      internalID: 1828126657269464445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_18
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1120
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d20a670c3fda79b00800000000000000
+      internalID: 835327518318174253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_19
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 1135
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48de2d9689f693cf0800000000000000
+      internalID: -272063602078061180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_20
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1026
+        width: 162
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b88e77b80aec14310800000000000000
+      internalID: 1387617349136803979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_21
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 946
+        width: 82
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d3385528d7ed9ca0800000000000000
+      internalID: -6008391412316884011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_22
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 815
+        width: 146
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4757bbbecafa21280800000000000000
+      internalID: -9073997141973961356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_23
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 719
+        width: 98
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31cbc894bafa553d0800000000000000
+      internalID: -3218473208478122989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_24
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 762
+        width: 66
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 679dd53a14d7380c0800000000000000
+      internalID: -4574675075611109002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_25
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 714
+        width: 66
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9b464b50f52be200800000000000000
+      internalID: 210303521856572318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_26
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 639
+        width: 64
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5deb6a54ee31f6030800000000000000
+      internalID: 3490030150327123669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_27
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 639
+        width: 33
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9622c7f1ce288560800000000000000
+      internalID: 7316149005283632794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_28
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 644
+        width: 22
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dcab86beb42b6780800000000000000
+      internalID: -8688810654556246830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_29
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 650
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddd53c50f88639a10800000000000000
+      internalID: 1914989230048894429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_30
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 559
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f88b37b7df950d8a0800000000000000
+      internalID: -6282422534949062513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_31
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 531
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c447de7d092525b0800000000000000
+      internalID: -5393859840766950207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_32
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 463
+        width: 50
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68e78c1bff0039fb0800000000000000
+      internalID: -4642365692689482106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_33
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 559
+        width: 60
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddc2dd0066a8506c0800000000000000
+      internalID: -4177780908610474787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_34
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 527
+        width: 27
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7d3f04045e4ae7f0800000000000000
+      internalID: -582567079038730882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_35
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 463
+        width: 33
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93b1af7c9d26bb400800000000000000
+      internalID: 340974884299086649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_36
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 559
+        width: 46
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1793f49e875f6360800000000000000
+      internalID: 7165041802065712924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_37
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 527
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38faf17cf40fe2cd0800000000000000
+      internalID: -2580861311002890365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_38
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 501
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fed428700f39fefd0800000000000000
+      internalID: -2310465424690360849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_39
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 501
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f19a5df1f301d920800000000000000
+      internalID: 3013193963560145395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_40
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 463
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf3ec2ad77f5f64e0800000000000000
+      internalID: -1986263942280977412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_41
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 463
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bca306783c29f3db0800000000000000
+      internalID: -4809964508520891701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_42
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 408
+        width: 56
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01294131d06efdb40800000000000000
+      internalID: 5467341416480150032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_43
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 408
+        width: 56
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6964876bb0821740800000000000000
+      internalID: 5121297268657645930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_44
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 386
+        width: 42
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42406ea419fc21dd0800000000000000
+      internalID: -2516721018812890076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_45
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 383
+        width: 50
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58ac9e8b4354cbcb0800000000000000
+      internalID: -4846923006214550907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_46
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 383
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3bc07e5c9e3e5ea0800000000000000
+      internalID: -5882195221979018436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_47
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 360
+        width: 18
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eafaf955f1aa78890800000000000000
+      internalID: -7455803606531330130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_48
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 370
+        width: 42
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 230acb6c0af21dad0800000000000000
+      internalID: -2679307935733211086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_49
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 353
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c03fc16f35bb3800800000000000000
+      internalID: 593267059757887689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_50
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 360
+        width: 37
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b6f1db54a0c1d560800000000000000
+      internalID: 7336857080110905008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_51
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 354
+        width: 42
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0251d4975470095b0800000000000000
+      internalID: -5363779161229028064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_52
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 351
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8225f1f0d0d45dc90800000000000000
+      internalID: -7145720515269799384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_53
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 351
+        width: 8
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 300a083c4680063c0800000000000000
+      internalID: -4368482409679642621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_54
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 287
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05cb9624272449950800000000000000
+      internalID: 6454857224436694096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_55
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 287
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4401a19a6d1937230800000000000000
+      internalID: 3635409675364208708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_56
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 287
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1bef56dfb21c6980800000000000000
+      internalID: -8544433777884009697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_57
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 287
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48cc2b4caa8f33dd0800000000000000
+      internalID: -2507387155187053436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_58
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 287
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5dc6c5a1eb5c3500800000000000000
+      internalID: 377277493499317598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_59
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 287
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c23f4fd94c2959b0800000000000000
+      internalID: -5090989207974890810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_60
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 287
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50a38bcf53f905af0800000000000000
+      internalID: -409652511868700155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_61
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 287
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 629ff67be10783360800000000000000
+      internalID: 7149587685679560998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_62
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 255
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6dd7963a9fc99a40800000000000000
+      internalID: 5375555891491233132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_63
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 255
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8d12f838c86dd100800000000000000
+      internalID: 134378773049122186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_64
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 255
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6474504e9c4c5f80800000000000000
+      internalID: -8116528185860656020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_65
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 255
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c125c25661459d90800000000000000
+      internalID: -7091690130493857338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_66
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 255
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ed2d47ba97b3a510800000000000000
+      internalID: 1559291771128458725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_67
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 255
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dfdf3eb93d343310800000000000000
+      internalID: 1383798303723872209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_68
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 255
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62694d838e0489cf0800000000000000
+      internalID: -245374813561645530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_69
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 255
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc3836fefba038560800000000000000
+      internalID: 7314702039251125196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_70
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 223
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da437ea1e448f3570800000000000000
+      internalID: 8448616896964015277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_71
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 223
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b4f0200379a2bdc0800000000000000
+      internalID: -3624648438691334992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_72
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 223
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81a011e0e4a0df7f0800000000000000
+      internalID: -577293846873830888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_73
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 223
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aee69e981c939550800000000000000
+      internalID: 6166443944354180776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_74
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 223
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6701c47826423cad0800000000000000
+      internalID: -2683260947387379594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_75
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 223
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5502e8c8fda431cf0800000000000000
+      internalID: -282800027597922219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_76
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 223
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87124088a0d6d32f0800000000000000
+      internalID: -991516450952568456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_77
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 223
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f77e6f07b0e301330800000000000000
+      internalID: 3679509114422486911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_78
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 191
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7397c13976ef2a90800000000000000
+      internalID: -7336391859762654340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_79
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 191
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 896cfa5662d1e0270800000000000000
+      internalID: 8218538420749715096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_80
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 191
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c155183048a37710800000000000000
+      internalID: 1689879278966362564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_81
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 191
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6280c4f561fb386a0800000000000000
+      internalID: -6448100138655414234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_82
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 191
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1eebc7cda8b81ecc0800000000000000
+      internalID: -3683509591691444511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_83
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 191
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbbde5eae67043ec0800000000000000
+      internalID: -3588234831154193477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_84
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 191
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df9ee3c1555449410800000000000000
+      internalID: 1482886409160157693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_85
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 191
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c04c9adb01124bfb0800000000000000
+      internalID: -4633041760872184820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_86
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 159
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fb7614a29cbfac00800000000000000
+      internalID: 914156587383684082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_87
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 143
+        width: 114
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8da9626eeaf1f380800000000000000
+      internalID: -8939087883593470582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_88
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 159
+        width: 98
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49bc18959e31d3280800000000000000
+      internalID: -9062064982249583724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_89
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 159
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5da57bc181c9ce400800000000000000
+      internalID: 354830098030353109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_90
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 127
+        width: 97
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b492119a72b2e5f0800000000000000
+      internalID: -728823950190930763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_91
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 127
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5bb86f0051497c80800000000000000
+      internalID: -8324550624105940133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_92
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 95
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7094e34f080213080800000000000000
+      internalID: -9209544024770328313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_93
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 95
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cdf83b7c945ba210800000000000000
+      internalID: 1345261944759188934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_94
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 95
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1136968222f21ce90800000000000000
+      internalID: -7007267721458392303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_95
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 95
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a325a35840c78ba0800000000000000
+      internalID: -6086684954494426207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_96
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 95
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79144563a63836a90800000000000000
+      internalID: -7321864076973031017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_97
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 63
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c6cfe8d5e4d99b10800000000000000
+      internalID: 1988854794112976576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_98
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 63
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50db2705a1c551cf0800000000000000
+      internalID: -282218133552186107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_99
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 63
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ec908fb5d3fe9650800000000000000
+      internalID: 6241694232948546786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_100
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 63
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e4023185eeecf070800000000000000
+      internalID: 8141644895861474536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_101
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 63
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 857c221aae1cac8b0800000000000000
+      internalID: -5131075611965339816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_102
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 31
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd2dd8f903af6a140800000000000000
+      internalID: 4730743545341530845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_103
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 31
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dee94de9fc835e90800000000000000
+      internalID: -7038126787594162473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_104
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 31
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 992ec69bc61992a00800000000000000
+      internalID: 732276310577832601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_105
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 34
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec0e9855536171760800000000000000
+      internalID: 7428430528695099598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_106
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 42
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1167b47155b0a4b0800000000000000
+      internalID: -5431141789153664738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_107
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 31
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d13ffb2052cc7a510800000000000000
+      internalID: 1560440255239156509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_108
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 15
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae8bcb810d9ddbfa0800000000000000
+      internalID: -5783226858682402582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_109
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 26
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39146c1a4c6a1d690800000000000000
+      internalID: -7579093334429908589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_110
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 15
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9c9edea122673360800000000000000
+      internalID: 7149290830281219231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_111
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 15
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ecd4fff68dcb82b0800000000000000
+      internalID: -5581141333492048666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_112
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 15
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4946f3030a063a060800000000000000
+      internalID: 6963515689965413524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_tileset_fulll_113
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 18
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7a5be8a5ba4c7e90800000000000000
+      internalID: -7026659174521283973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      cozytown_tileset_fulll_0: 2690235593019240165
+      cozytown_tileset_fulll_1: 4608347147889491971
+      cozytown_tileset_fulll_10: 7238464565192778533
+      cozytown_tileset_fulll_100: 8141644895861474536
+      cozytown_tileset_fulll_101: -5131075611965339816
+      cozytown_tileset_fulll_102: 4730743545341530845
+      cozytown_tileset_fulll_103: -7038126787594162473
+      cozytown_tileset_fulll_104: 732276310577832601
+      cozytown_tileset_fulll_105: 7428430528695099598
+      cozytown_tileset_fulll_106: -5431141789153664738
+      cozytown_tileset_fulll_107: 1560440255239156509
+      cozytown_tileset_fulll_108: -5783226858682402582
+      cozytown_tileset_fulll_109: -7579093334429908589
+      cozytown_tileset_fulll_11: -6604623265988616639
+      cozytown_tileset_fulll_110: 7149290830281219231
+      cozytown_tileset_fulll_111: -5581141333492048666
+      cozytown_tileset_fulll_112: 6963515689965413524
+      cozytown_tileset_fulll_113: -7026659174521283973
+      cozytown_tileset_fulll_12: 7477186049688714026
+      cozytown_tileset_fulll_13: 6204741407983039225
+      cozytown_tileset_fulll_14: 1954855373440795244
+      cozytown_tileset_fulll_15: -1793410301681283987
+      cozytown_tileset_fulll_16: -8218442672935171028
+      cozytown_tileset_fulll_17: 1828126657269464445
+      cozytown_tileset_fulll_18: 835327518318174253
+      cozytown_tileset_fulll_19: -272063602078061180
+      cozytown_tileset_fulll_2: -3347000432271088914
+      cozytown_tileset_fulll_20: 1387617349136803979
+      cozytown_tileset_fulll_21: -6008391412316884011
+      cozytown_tileset_fulll_22: -9073997141973961356
+      cozytown_tileset_fulll_23: -3218473208478122989
+      cozytown_tileset_fulll_24: -4574675075611109002
+      cozytown_tileset_fulll_25: 210303521856572318
+      cozytown_tileset_fulll_26: 3490030150327123669
+      cozytown_tileset_fulll_27: 7316149005283632794
+      cozytown_tileset_fulll_28: -8688810654556246830
+      cozytown_tileset_fulll_29: 1914989230048894429
+      cozytown_tileset_fulll_3: 3854202006767707854
+      cozytown_tileset_fulll_30: -6282422534949062513
+      cozytown_tileset_fulll_31: -5393859840766950207
+      cozytown_tileset_fulll_32: -4642365692689482106
+      cozytown_tileset_fulll_33: -4177780908610474787
+      cozytown_tileset_fulll_34: -582567079038730882
+      cozytown_tileset_fulll_35: 340974884299086649
+      cozytown_tileset_fulll_36: 7165041802065712924
+      cozytown_tileset_fulll_37: -2580861311002890365
+      cozytown_tileset_fulll_38: -2310465424690360849
+      cozytown_tileset_fulll_39: 3013193963560145395
+      cozytown_tileset_fulll_4: 2033733743705633027
+      cozytown_tileset_fulll_40: -1986263942280977412
+      cozytown_tileset_fulll_41: -4809964508520891701
+      cozytown_tileset_fulll_42: 5467341416480150032
+      cozytown_tileset_fulll_43: 5121297268657645930
+      cozytown_tileset_fulll_44: -2516721018812890076
+      cozytown_tileset_fulll_45: -4846923006214550907
+      cozytown_tileset_fulll_46: -5882195221979018436
+      cozytown_tileset_fulll_47: -7455803606531330130
+      cozytown_tileset_fulll_48: -2679307935733211086
+      cozytown_tileset_fulll_49: 593267059757887689
+      cozytown_tileset_fulll_5: 8509053317158110917
+      cozytown_tileset_fulll_50: 7336857080110905008
+      cozytown_tileset_fulll_51: -5363779161229028064
+      cozytown_tileset_fulll_52: -7145720515269799384
+      cozytown_tileset_fulll_53: -4368482409679642621
+      cozytown_tileset_fulll_54: 6454857224436694096
+      cozytown_tileset_fulll_55: 3635409675364208708
+      cozytown_tileset_fulll_56: -8544433777884009697
+      cozytown_tileset_fulll_57: -2507387155187053436
+      cozytown_tileset_fulll_58: 377277493499317598
+      cozytown_tileset_fulll_59: -5090989207974890810
+      cozytown_tileset_fulll_6: -46128893005960824
+      cozytown_tileset_fulll_60: -409652511868700155
+      cozytown_tileset_fulll_61: 7149587685679560998
+      cozytown_tileset_fulll_62: 5375555891491233132
+      cozytown_tileset_fulll_63: 134378773049122186
+      cozytown_tileset_fulll_64: -8116528185860656020
+      cozytown_tileset_fulll_65: -7091690130493857338
+      cozytown_tileset_fulll_66: 1559291771128458725
+      cozytown_tileset_fulll_67: 1383798303723872209
+      cozytown_tileset_fulll_68: -245374813561645530
+      cozytown_tileset_fulll_69: 7314702039251125196
+      cozytown_tileset_fulll_7: 5162649914232751661
+      cozytown_tileset_fulll_70: 8448616896964015277
+      cozytown_tileset_fulll_71: -3624648438691334992
+      cozytown_tileset_fulll_72: -577293846873830888
+      cozytown_tileset_fulll_73: 6166443944354180776
+      cozytown_tileset_fulll_74: -2683260947387379594
+      cozytown_tileset_fulll_75: -282800027597922219
+      cozytown_tileset_fulll_76: -991516450952568456
+      cozytown_tileset_fulll_77: 3679509114422486911
+      cozytown_tileset_fulll_78: -7336391859762654340
+      cozytown_tileset_fulll_79: 8218538420749715096
+      cozytown_tileset_fulll_8: -6076058413439323421
+      cozytown_tileset_fulll_80: 1689879278966362564
+      cozytown_tileset_fulll_81: -6448100138655414234
+      cozytown_tileset_fulll_82: -3683509591691444511
+      cozytown_tileset_fulll_83: -3588234831154193477
+      cozytown_tileset_fulll_84: 1482886409160157693
+      cozytown_tileset_fulll_85: -4633041760872184820
+      cozytown_tileset_fulll_86: 914156587383684082
+      cozytown_tileset_fulll_87: -8939087883593470582
+      cozytown_tileset_fulll_88: -9062064982249583724
+      cozytown_tileset_fulll_89: 354830098030353109
+      cozytown_tileset_fulll_9: 5742568396220735631
+      cozytown_tileset_fulll_90: -728823950190930763
+      cozytown_tileset_fulll_91: -8324550624105940133
+      cozytown_tileset_fulll_92: -9209544024770328313
+      cozytown_tileset_fulll_93: 1345261944759188934
+      cozytown_tileset_fulll_94: -7007267721458392303
+      cozytown_tileset_fulll_95: -6086684954494426207
+      cozytown_tileset_fulll_96: -7321864076973031017
+      cozytown_tileset_fulll_97: 1988854794112976576
+      cozytown_tileset_fulll_98: -282218133552186107
+      cozytown_tileset_fulll_99: 6241694232948546786
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
