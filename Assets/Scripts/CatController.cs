@@ -17,25 +17,25 @@ namespace player
             // Move Up - W
             if (Keyboard.current.wKey.isPressed)
             {
-                transform.position += new Vector3(0, 0.01f, 0);
+                transform.position += new Vector3(0, 0.003f, 0);
             }
 
             // Move Down - S
             if (Keyboard.current.sKey.isPressed)
             {
-                transform.position += new Vector3(0, -0.01f, 0);
+                transform.position += new Vector3(0, -0.003f, 0);
             }
 
             // Move Left - A
             if (Keyboard.current.aKey.isPressed)
             {
-                transform.position += new Vector3(-0.01f, 0, 0);
+                transform.position += new Vector3(-0.003f, 0, 0);
             }
 
             // Move Right - D
             if (Keyboard.current.dKey.isPressed)
             {
-                transform.position += new Vector3(0.01f, 0, 0);
+                transform.position += new Vector3(0.003f, 0, 0);
             }
         }
     }
