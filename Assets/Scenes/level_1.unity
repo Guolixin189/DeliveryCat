@@ -515,6 +515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   remainingTime: 60
   score: 0
+  gameOverPanel: {fileID: 2025229130}
 --- !u!4 &554065274
 Transform:
   m_ObjectHideFlags: 0
