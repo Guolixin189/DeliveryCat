@@ -3,40 +3,52 @@ using UnityEngine.InputSystem;
 
 namespace player
 {
-    public class UFOController : MonoBehaviour
+    public class CatController : MonoBehaviour
     {
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        public float moveSpeed = 3f; 
+        private Rigidbody2D rb;
+        private Animator animator;
+        private Vector2 movement;
+
+        public bool hasPackage = false;
+
         void Start()
         {
-
+            rb = GetComponent<Rigidbody2D>();
+            animator = GetComponent<Animator>();
         }
 
-        // Update is called once per frame
         void Update()
         {
-            // Move Up - W
-            if (Keyboard.current.wKey.isPressed)
+            movement = Vector2.zero;
+
+            // 1. 保留你的新输入系统逻辑，提取为方向向量
+            if (Keyboard.current.wKey.isPressed) movement.y += 1;
+            if (Keyboard.current.sKey.isPressed) movement.y -= 1;
+            if (Keyboard.current.aKey.isPressed) movement.x -= 1;
+            if (Keyboard.current.dKey.isPressed) movement.x += 1;
+
+            // 2. 将速度传递给 Animator
+            animator.SetFloat("Speed", movement.sqrMagnitude);
+
+            // 3. 只有在移动时才更新 Animator 的方向，这样松开按键时会保持最后的朝向
+            if (movement.sqrMagnitude > 0.01f)
             {
-                transform.position += new Vector3(0, 0.003f, 0);
+                animator.SetFloat("MoveX", movement.x);
+                animator.SetFloat("MoveY", movement.y);
             }
 
-            // Move Down - S
-            if (Keyboard.current.sKey.isPressed)
+            // 4. 按下空格键测试切换包裹动画 (wasPressedThisFrame 确保按一下只触发一次)
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
-                transform.position += new Vector3(0, -0.003f, 0);
+                hasPackage = !hasPackage;
+                animator.SetBool("HasPackage", hasPackage);
             }
+        }
 
-            // Move Left - A
-            if (Keyboard.current.aKey.isPressed)
-            {
-                transform.position += new Vector3(-0.003f, 0, 0);
-            }
-
-            // Move Right - D
-            if (Keyboard.current.dKey.isPressed)
-            {
-                transform.position += new Vector3(0.003f, 0, 0);
-            }
+        void FixedUpdate()
+        {
+            rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
         }
     }
 }
