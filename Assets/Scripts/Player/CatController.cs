@@ -13,12 +13,14 @@ namespace player
         public bool hasPackage = false;
         private bool canPickUp = false;
         private bool canDropOff = false;
-        
+        private GameManager gameManager;
 
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
+
+            gameManager = FindFirstObjectByType<GameManager>();
         }
 
         void Update()
@@ -55,7 +57,8 @@ namespace player
                 {
                     hasPackage = false;
                     animator.SetBool("hasPackage", false); // 触发Animator切回空手
-                    Debug.Log("Package Delivered");
+                    gameManager.AddScore(100);
+                    Debug.Log("Package Delivered +100");
                 }
             }
         }
