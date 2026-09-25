@@ -11,6 +11,9 @@ namespace player
         private Vector2 movement;
 
         public bool hasPackage = false;
+        private bool canPickUp = false;
+        private bool canDropOff = false;
+        
 
         void Start()
         {
@@ -38,17 +41,57 @@ namespace player
                 animator.SetFloat("MoveY", movement.y);
             }
 
-            // 4. 按下空格键测试切换包裹动画 (wasPressedThisFrame 确保按一下只触发一次)
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
-                hasPackage = !hasPackage;
-                animator.SetBool("HasPackage", hasPackage);
+                // 情况1：在取货区，且手里没有包裹
+                if (canPickUp && !hasPackage)
+                {
+                    hasPackage = true;
+                    animator.SetBool("hasPackage", true); // 触发Animator瞬间切换贴图
+                    Debug.Log("Package Picked Up");
+                }
+                // 情况2：在交货区，且手里有包裹
+                else if (canDropOff && hasPackage)
+                {
+                    hasPackage = false;
+                    animator.SetBool("hasPackage", false); // 触发Animator切回空手
+                    Debug.Log("Package Delivered");
+                }
             }
         }
 
         void FixedUpdate()
         {
             rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("PickUpZone"))
+            {
+                canPickUp = true;
+                Debug.Log("Enter Pick Up Zone");
+            }
+            else if (other.CompareTag("DropOffZone"))
+            {
+                canDropOff = true;
+                Debug.Log("Enter Drop Off Zone");
+            }
+        }
+
+        // 当猫猫离开 Is Trigger 的碰撞体时自动执行
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.CompareTag("PickUpZone"))
+            {
+                canPickUp = false;
+                Debug.Log("Left Pick Up Zone");
+            }
+            else if (other.CompareTag("DropOffZone"))
+            {
+                canDropOff = false;
+                Debug.Log("Left Drop Off Zone");
+            }
         }
     }
 }
