@@ -8,25 +8,32 @@ public class GameManager : MonoBehaviour
     public int score = 0;
     public GameObject gameOverPanel;
 
-    // Update is called once per frame
     void Update()
     {
-        if(remainingTime>0){
+        if (remainingTime > 0)
+        {
             remainingTime -= Time.deltaTime;
         }
-        else{
-            remainingTime=0;
+        else
+        {
+            remainingTime = 0;
             gameOverPanel.SetActive(true);
         }
 
-        
+        // Temporary test for score system
+        if (Keyboard.current.pKey.wasPressedThisFrame)
+        {
+            AddScore(100);
+        }
     }
 
-    public void AddScore(int points){
+    public void AddScore(int points)
+    {
         score += points;
     }
 
-    public void RestartGame(){
+    public void RestartGame()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
