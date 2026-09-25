@@ -165,6 +165,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1640687821165275190, guid: aab29af791ead4a7698f294abb208ed0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7364682651488144517, guid: 6f5331adf4d2c4e69a158016c121d150, type: 3}
+    - target: {fileID: 2660364384542200456, guid: aab29af791ead4a7698f294abb208ed0, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.6002466
+      objectReference: {fileID: 0}
+    - target: {fileID: 2660364384542200456, guid: aab29af791ead4a7698f294abb208ed0, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2660364384542200456, guid: aab29af791ead4a7698f294abb208ed0, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 2660364384542200456, guid: aab29af791ead4a7698f294abb208ed0, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.12
+      objectReference: {fileID: 0}
     - target: {fileID: 8405945918385483315, guid: aab29af791ead4a7698f294abb208ed0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.28032

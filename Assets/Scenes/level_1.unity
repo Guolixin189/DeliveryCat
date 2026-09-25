@@ -357,8 +357,8 @@ Transform:
   m_GameObject: {fileID: 195540839}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.5436, y: -8.3887, z: 0}
-  m_LocalScale: {x: 58.09615, y: 38.23691, z: 1}
+  m_LocalPosition: {x: 21.95, y: -9.01, z: 0}
+  m_LocalScale: {x: 12.233742, y: 9.202095, z: 1.2033}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3671,7 +3671,7 @@ Transform:
   m_GameObject: {fileID: 1440132429}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.52, y: 0.04, z: 0}
+  m_LocalPosition: {x: -4.42, y: 0.5, z: 0}
   m_LocalScale: {x: 8.926873, y: 11.495915, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3703,11 +3703,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2307168074931538658, guid: 494f789b1b9b94ca3907aa1ee5833a86, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.82
+      value: 1.13
       objectReference: {fileID: 0}
     - target: {fileID: 2307168074931538658, guid: 494f789b1b9b94ca3907aa1ee5833a86, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.71
+      value: 0.84
       objectReference: {fileID: 0}
     - target: {fileID: 2307168074931538658, guid: 494f789b1b9b94ca3907aa1ee5833a86, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3744,6 +3744,14 @@ PrefabInstance:
     - target: {fileID: 4674867768767629967, guid: 494f789b1b9b94ca3907aa1ee5833a86, type: 3}
       propertyPath: m_Name
       value: Player_Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 6611047779510823709, guid: 494f789b1b9b94ca3907aa1ee5833a86, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6611047779510823709, guid: 494f789b1b9b94ca3907aa1ee5833a86, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7341069870984485927, guid: 494f789b1b9b94ca3907aa1ee5833a86, type: 3}
       propertyPath: m_SleepingMode
