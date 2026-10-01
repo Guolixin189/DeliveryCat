@@ -34,7 +34,7 @@ public class DeliveryManager : MonoBehaviour
         bool correct = (houseIndex == targetHouseIndex);
         if (gameManager != null)
             gameManager.AddScore(correct ? 100 : -100);
-        Debug.Log(correct ? "Correct house +100" : "Wrong house -100");
+        Debug.Log($"[Delivery] delivered to house {houseIndex}, target was {targetHouseIndex} -> {(correct ? "+100" : "-100")}");
 
         AssignNewTarget();
         if (pickupZone != null)
@@ -51,6 +51,7 @@ public class DeliveryManager : MonoBehaviour
         if (target == null)
             return;
         targetHouseIndex = target.houseIndex;
+        Debug.Log($"[Delivery] new target house: {targetHouseIndex}");
         for (int i = 0; i < dropOffZones.Length; i++)
         {
             if (dropOffZones[i] == null)
