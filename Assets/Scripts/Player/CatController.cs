@@ -14,6 +14,8 @@ namespace player
         private bool canPickUp = false;
         private bool canDropOff = false;
         private GameManager gameManager;
+        private DeliveryManager deliveryManager;
+        private int currentDropOffIndex = -1;
 
         void Start()
         {
@@ -21,6 +23,7 @@ namespace player
             animator = GetComponent<Animator>();
 
             gameManager = FindFirstObjectByType<GameManager>();
+            deliveryManager = FindFirstObjectByType<DeliveryManager>();
         }
 
         void Update()
@@ -61,14 +64,17 @@ namespace player
                     hasPackage = true;
                     animator.SetBool("hasPackage", true); // 触发Animator瞬间切换贴图
                     Debug.Log("Package Picked Up");
+                    if (deliveryManager != null)
+                        deliveryManager.OnPackagePickedUp();
                 }
                 // 情况2：在交货区，且手里有包裹
                 else if (canDropOff && hasPackage)
                 {
                     hasPackage = false;
                     animator.SetBool("hasPackage", false); // 触发Animator切回空手
-                    gameManager.AddScore(100);
-                    Debug.Log("Package Delivered +100");
+                    if (deliveryManager != null)
+                        deliveryManager.OnPackageDelivered(currentDropOffIndex);
+                    Debug.Log("Package Delivered");
                 }
             }
         }
@@ -88,6 +94,9 @@ namespace player
             else if (other.CompareTag("DropOffZone"))
             {
                 canDropOff = true;
+                DropoffZone dz = other.GetComponent<DropoffZone>();
+                if (dz != null)
+                    currentDropOffIndex = dz.houseIndex;
                 Debug.Log("Enter Drop Off Zone");
             }
         }
