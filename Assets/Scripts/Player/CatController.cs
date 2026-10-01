@@ -27,6 +27,16 @@ namespace player
         {
             movement = Vector2.zero;
 
+            
+            if (gameManager != null && gameManager.isGameOver)
+        {
+            movement = Vector2.zero;
+            animator.SetFloat("Speed", 0);
+            return;
+        }
+
+            
+
             // 1. 保留你的新输入系统逻辑，提取为方向向量
             if (Keyboard.current.wKey.isPressed) movement.y += 1;
             if (Keyboard.current.sKey.isPressed) movement.y -= 1;
