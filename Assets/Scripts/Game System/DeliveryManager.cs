@@ -34,7 +34,7 @@ public class DeliveryManager : MonoBehaviour
         bool correct = (houseIndex == targetHouseIndex);
         if (gameManager != null)
             gameManager.AddScore(correct ? 100 : -100);
-        Debug.Log(correct ? "Correct house +100" : "Wrong house -100");
+        Debug.Log($"[Delivery] delivered to house {houseIndex}, target was {targetHouseIndex} -> {(correct ? "+100" : "-100")}");
 
         AssignNewTarget();
         if (pickupZone != null)
@@ -43,6 +43,7 @@ public class DeliveryManager : MonoBehaviour
 
 
     // 随机选一间房子作为目标，只显示它的泡泡
+    // 注意：按 houseIndex 取值，不依赖 Inspector 中 dropOffZones 数组的顺序
     void AssignNewTarget()
     {
         if (dropOffZones == null || dropOffZones.Length == 0)
@@ -51,6 +52,7 @@ public class DeliveryManager : MonoBehaviour
         if (target == null)
             return;
         targetHouseIndex = target.houseIndex;
+        Debug.Log($"[Delivery] new target house: {targetHouseIndex}");
         for (int i = 0; i < dropOffZones.Length; i++)
         {
             if (dropOffZones[i] == null)
