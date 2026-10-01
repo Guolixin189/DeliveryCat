@@ -3270,7 +3270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5fd7b3a0b4e4ee480f565806ec9590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  remainingTime: 5
+  remainingTime: 30
   score: 0
   gameOverPanel: {fileID: 1401886880}
 --- !u!4 &500123034
