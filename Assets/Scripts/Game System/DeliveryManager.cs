@@ -42,12 +42,20 @@ public class DeliveryManager : MonoBehaviour
     }
 
     // 随机选一间房子作为目标，只显示它的泡泡
+    // 注意：按 houseIndex 取值，不依赖 Inspector 中 dropOffZones 数组的顺序
     void AssignNewTarget()
     {
         if (dropOffZones == null || dropOffZones.Length == 0)
             return;
-        targetHouseIndex = Random.Range(0, dropOffZones.Length);
+        DropoffZone target = dropOffZones[Random.Range(0, dropOffZones.Length)];
+        if (target == null)
+            return;
+        targetHouseIndex = target.houseIndex;
         for (int i = 0; i < dropOffZones.Length; i++)
-            dropOffZones[i].SetIndicator(i == targetHouseIndex);
+        {
+            if (dropOffZones[i] == null)
+                continue;
+            dropOffZones[i].SetIndicator(dropOffZones[i].houseIndex == targetHouseIndex);
+        }
     }
 }
