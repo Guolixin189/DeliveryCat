@@ -16,6 +16,7 @@ namespace player
         private GameManager gameManager;
         private DeliveryManager deliveryManager;
         private int currentDropOffIndex = -1;
+        public AudioSource packageSound;
 
         void Start()
         {
@@ -63,6 +64,7 @@ namespace player
                 {
                     hasPackage = true;
                     animator.SetBool("hasPackage", true); // 触发Animator瞬间切换贴图
+                    packageSound.Play();
                     Debug.Log("Package Picked Up");
                     if (deliveryManager != null)
                         deliveryManager.OnPackagePickedUp();
@@ -74,6 +76,7 @@ namespace player
                     animator.SetBool("hasPackage", false); // 触发Animator切回空手
                     if (deliveryManager != null)
                         deliveryManager.OnPackageDelivered(currentDropOffIndex);
+                    packageSound.Play();
                     Debug.Log("Package Delivered");
                 }
             }
