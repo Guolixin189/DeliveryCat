@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public bool isGameOver = false;
     public static GameManager Instance;
     public TMP_Text finalScoreText;
+    public TMP_Text gameOverText;
 
     void Awake()
     {
@@ -28,7 +29,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 remainingTime = 0;
-                GameOver();
+                GameOver("Time's up!", 50, 400);
             }
 
             // Temporary test for score system
@@ -47,12 +48,27 @@ public class GameManager : MonoBehaviour
         score += points;
     }
 
-    public void GameOver()
+    public void GameOver(string gameOverMsg, float fontSize, float panelWidth)
     {
         if (isGameOver)
             return;
 
         isGameOver = true;
+
+        gameOverText.text = gameOverMsg;
+        gameOverText.fontSize = fontSize;
+
+        RectTransform panel = gameOverPanel.GetComponent<RectTransform>();
+        panel.SetSizeWithCurrentAnchors(
+            RectTransform.Axis.Horizontal,
+            panelWidth
+        );
+
+        RectTransform textWidth = gameOverText.GetComponent<RectTransform>();
+        textWidth.SetSizeWithCurrentAnchors(
+            RectTransform.Axis.Horizontal,
+            panelWidth - 30
+        );
 
         finalScoreText.text = "Final Score: " + score;
         gameOverPanel.SetActive(true);
