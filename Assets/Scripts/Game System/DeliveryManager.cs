@@ -21,14 +21,14 @@ public class DeliveryManager : MonoBehaviour
         AssignNewTarget();
     }
 
-    // 猫猫拿起包裹时调用：藏起取货泡泡
+
     public void OnPackagePickedUp()
     {
         if (pickupZone != null)
             pickupZone.SetIndicator(false);
     }
 
-    // 猫猫送达时调用：判断对错、加减分、换下一个目标
+  
     public void OnPackageDelivered(int houseIndex)
     {
         bool correct = (houseIndex == targetHouseIndex);
@@ -42,8 +42,6 @@ public class DeliveryManager : MonoBehaviour
     }
 
 
-    // 随机选一间房子作为目标，只显示它的泡泡
-    // 注意：按 houseIndex 取值，不依赖 Inspector 中 dropOffZones 数组的顺序
     void AssignNewTarget()
     {
         if (dropOffZones == null || dropOffZones.Length == 0)

@@ -41,16 +41,16 @@ namespace player
 
             
 
-            // 1. 保留你的新输入系统逻辑，提取为方向向量
+            // 1. WASD
             if (Keyboard.current.wKey.isPressed) movement.y += 1;
             if (Keyboard.current.sKey.isPressed) movement.y -= 1;
             if (Keyboard.current.aKey.isPressed) movement.x -= 1;
             if (Keyboard.current.dKey.isPressed) movement.x += 1;
 
-            // 2. 将速度传递给 Animator
+            // 2. speed passed onto Animator
             animator.SetFloat("Speed", movement.sqrMagnitude);
 
-            // 3. 只有在移动时才更新 Animator 的方向，这样松开按键时会保持最后的朝向
+            // 3. update Animator only during moving
             if (movement.sqrMagnitude > 0.01f)
             {
                 animator.SetFloat("MoveX", movement.x);
@@ -59,21 +59,21 @@ namespace player
 
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
-                // 情况1：在取货区，且手里没有包裹
+                // state 1
                 if (canPickUp && !hasPackage)
                 {
                     hasPackage = true;
-                    animator.SetBool("hasPackage", true); // 触发Animator瞬间切换贴图
+                    animator.SetBool("hasPackage", true);
                     packageSound.Play();
                     Debug.Log("Package Picked Up");
                     if (deliveryManager != null)
                         deliveryManager.OnPackagePickedUp();
                 }
-                // 情况2：在交货区，且手里有包裹
+                // state 2
                 else if (canDropOff && hasPackage)
                 {
                     hasPackage = false;
-                    animator.SetBool("hasPackage", false); // 触发Animator切回空手
+                    animator.SetBool("hasPackage", false); 
                     if (deliveryManager != null)
                         deliveryManager.OnPackageDelivered(currentDropOffIndex);
                     packageSound.Play();
@@ -104,7 +104,7 @@ namespace player
             }
         }
 
-        // 当猫猫离开 Is Trigger 的碰撞体时自动执行
+        // trigger exit
         private void OnTriggerExit2D(Collider2D other)
         {
             if (other.CompareTag("PickUpZone"))

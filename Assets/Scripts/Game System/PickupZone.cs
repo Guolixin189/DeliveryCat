@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class PickupZone : MonoBehaviour
 {
-    public GameObject indicator;   // 取货对话框泡泡
-    public float bobSpeed = 2f;    // 浮动快慢
-    public float bobHeight = 0.15f; // 浮动幅度
+    public GameObject indicator;  
+    public float bobSpeed = 2f;  
+    public float bobHeight = 0.15f;
 
     private Vector3 basePos;
 
@@ -21,7 +21,7 @@ public class PickupZone : MonoBehaviour
     {
         if (indicator == null || !indicator.activeSelf)
             return;
-        // 上下浮动（只改位置，不碰 scale）
+
         indicator.transform.position =
             basePos + Vector3.up * Mathf.Sin(Time.time * bobSpeed) * bobHeight;
     }

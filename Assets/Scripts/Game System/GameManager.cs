@@ -12,40 +12,50 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public TMP_Text finalScoreText;
 
-    void Awake(){
+    void Awake()
+    {
         Instance = this;
     }
 
     void Update()
     {
-        if(!isGameOver)
-    {
-        if (remainingTime > 0)
+        if (!isGameOver)
         {
-            remainingTime -= Time.deltaTime;
-        }
-        else
-        {
-            remainingTime = 0;
-            isGameOver = true;
-            finalScoreText.text = "Final Score: " + score;
-            gameOverPanel.SetActive(true);
-        }
+            if (remainingTime > 0)
+            {
+                remainingTime -= Time.deltaTime;
+            }
+            else
+            {
+                remainingTime = 0;
+                GameOver();
+            }
 
-        // Temporary test for score system
-        if (!isGameOver && Keyboard.current.pKey.wasPressedThisFrame)
-        {
-            AddScore(100);
+            // Temporary test for score system
+            if (Keyboard.current.pKey.wasPressedThisFrame)
+            {
+                AddScore(100);
+            }
         }
     }
- }
 
     public void AddScore(int points)
     {
-        if(isGameOver)
+        if (isGameOver)
             return;
 
         score += points;
+    }
+
+    public void GameOver()
+    {
+        if (isGameOver)
+            return;
+
+        isGameOver = true;
+
+        finalScoreText.text = "Final Score: " + score;
+        gameOverPanel.SetActive(true);
     }
 
     public void RestartGame()
@@ -53,5 +63,3 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
-
-    
