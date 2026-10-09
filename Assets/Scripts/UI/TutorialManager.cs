@@ -2,18 +2,22 @@ using UnityEngine;
 using TMPro;
 using player;
 
-
+// 新手教学：按顺序显示 4 条提示
 public class TutorialManager : MonoBehaviour
 {
     [Header("UI")]
-    public TextMeshProUGUI promptText;   
+    public TextMeshProUGUI promptText;   // 场景里显示提示的 TMP 文本
 
-    [Header("Parameter")]
-    public float moveThreshold = 1.5f;   
-    public float avoidDuration = 5f;     
-    public float deliverDuration = 15f;  
+    [Header("描边（运行时自动应用，不影响其他文本）")]
+    public float outlineWidth = 0.2f;
+    public Color outlineColor = new Color(0.42f, 0.31f, 0.23f, 1f); // 暖棕
 
-    [Header("Prompt")]
+    [Header("流程参数")]
+    public float moveThreshold = 1.5f;   // 第2步：累计移动多少距离算"动过了"
+    public float avoidDuration = 5f;      // 第3步：显示几秒
+    public float deliverDuration = 15f;   // 第4步：最多显示几秒（送达后会提前消失）
+
+    [Header("提示文案（英文，可直接改）")]
     public string stepPickup = "Press SPACE to pick up the package!";
     public string stepMove = "Move with W A S D!";
     public string stepAvoid = "Careful! Hitting obstacles slows you down — avoid pedestrians!";
@@ -38,7 +42,19 @@ public class TutorialManager : MonoBehaviour
     {
         if (cat != null)
             lastPos = cat.transform.position;
+        ApplyOutline();
         Show(stepPickup);
+    }
+
+    // 给提示文本创建一个独立材质并设置描边：只影响自己，不污染其他文本的共享材质
+    void ApplyOutline()
+    {
+        if (promptText == null || promptText.fontMaterial == null)
+            return;
+        Material m = new Material(promptText.fontMaterial);
+        m.SetFloat("_OutlineWidth", outlineWidth);
+        m.SetColor("_OutlineColor", outlineColor);
+        promptText.fontMaterial = m;
     }
 
     void Update()
@@ -57,7 +73,7 @@ public class TutorialManager : MonoBehaviour
                 moved += Vector3.Distance(cat.transform.position, lastPos);
                 if (moved >= moveThreshold)
                     GoTo(Step.Avoid, stepAvoid);
-                else if (!cat.hasPackage)     
+                else if (!cat.hasPackage)      // 没怎么动就直接送达了
                     GoTo(Step.Done, null);
                 break;
 
