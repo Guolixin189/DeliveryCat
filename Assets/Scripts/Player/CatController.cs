@@ -6,6 +6,10 @@ namespace player
     public class CatController : MonoBehaviour
     {
         public float moveSpeed = 3f; 
+        [Header("撞到行人减速")]
+        public float slowFactor = 0.4f;     // 减速后速度倍率
+        public float slowDuration = 2f;     // 减速持续秒数
+        private float slowTimer = 0f;       // 减速剩余时间
         private Rigidbody2D rb;
         private Animator animator;
         private Vector2 movement;
@@ -29,6 +33,9 @@ namespace player
 
         void Update()
         {
+            if (slowTimer > 0f)
+                slowTimer -= Time.deltaTime;
+
             movement = Vector2.zero;
 
             
@@ -84,7 +91,14 @@ namespace player
 
         void FixedUpdate()
         {
-            rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
+            float speed = slowTimer > 0f ? moveSpeed * slowFactor : moveSpeed;
+            rb.MovePosition(rb.position + movement.normalized * speed * Time.fixedDeltaTime);
+        }
+
+        // 撞到行人时由 NPC 调用：减速 slowDuration 秒；减速中再被撞到会刷新时长
+        public void ApplySlow()
+        {
+            slowTimer = slowDuration;
         }
 
         private void OnTriggerEnter2D(Collider2D other)
