@@ -16799,6 +16799,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7341069870984485927, guid: 494f789b1b9b94ca3907aa1ee5833a86, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7341069870984485927, guid: 494f789b1b9b94ca3907aa1ee5833a86, type: 3}
       propertyPath: m_SleepingMode
       value: 0
       objectReference: {fileID: 0}
@@ -20600,21 +20604,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1278272009}
     m_Modifications:
-    - target: {fileID: -176208534509864984, guid: cf61a025642b86d45ae2f84d8999a17f, type: 3}
-      propertyPath: m_Mass
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: -176208534509864984, guid: cf61a025642b86d45ae2f84d8999a17f, type: 3}
-      propertyPath: m_AngularDamping
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 327554593630503682, guid: cf61a025642b86d45ae2f84d8999a17f, type: 3}
       propertyPath: m_Name
       value: Villager_male
-      objectReference: {fileID: 0}
-    - target: {fileID: 7527605445821789219, guid: cf61a025642b86d45ae2f84d8999a17f, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9149964815552939997, guid: cf61a025642b86d45ae2f84d8999a17f, type: 3}
       propertyPath: m_LocalPosition.x
