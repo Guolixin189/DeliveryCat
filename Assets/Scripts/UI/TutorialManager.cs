@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using TMPro;
 using player;
 
@@ -8,6 +9,10 @@ public class TutorialManager : MonoBehaviour
     [Header("UI")]
     public TextMeshProUGUI promptText;   // 场景里显示提示的 TMP 文本
     public GameObject promptBackground;  // 提示的背景气泡（可空），会跟文字一起显示/隐藏
+
+    [Header("背景气泡自适应")]
+    public float bgPadX = 50f;   // 气泡左右留白
+    public float bgPadY = 30f;   // 气泡上下留白
 
     [Header("描边（运行时自动应用，不影响其他文本）")]
     public float outlineWidth = 0.2f;
@@ -108,11 +113,33 @@ public class TutorialManager : MonoBehaviour
             Show(text);
     }
 
+    Coroutine fitRoutine;
+
     void Show(string text)
     {
         if (promptText == null) return;
         SetVisible(true);
         promptText.text = text;
+        if (fitRoutine != null) StopCoroutine(fitRoutine);
+        fitRoutine = StartCoroutine(FitBackgroundNextFrame());
+    }
+
+    // 等一帧让 TMP 完成排版，再按文字实际渲染大小缩放背景气泡
+    IEnumerator FitBackgroundNextFrame()
+    {
+        yield return null;
+        if (promptBackground == null || promptText == null) yield break;
+        promptText.ForceMeshUpdate();
+        Vector2 rendered = promptText.GetRenderedValues(false);
+        if (rendered.x <= 0f || rendered.y <= 0f) yield break;
+        RectTransform bgRt = promptBackground.GetComponent<RectTransform>();
+        RectTransform txtRt = promptText.rectTransform;
+        if (bgRt == null || txtRt == null) yield break;
+        bgRt.anchorMin = txtRt.anchorMin;
+        bgRt.anchorMax = txtRt.anchorMax;
+        bgRt.pivot = txtRt.pivot;
+        bgRt.anchoredPosition = txtRt.anchoredPosition;
+        bgRt.sizeDelta = new Vector2(rendered.x + bgPadX * 2f, rendered.y + bgPadY * 2f);
     }
 
     void SetVisible(bool v)
