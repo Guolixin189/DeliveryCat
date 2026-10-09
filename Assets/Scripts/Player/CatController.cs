@@ -21,14 +21,18 @@ namespace player
         private DeliveryManager deliveryManager;
         private int currentDropOffIndex = -1;
         public AudioSource packageSound;
-
+        public AudioClip collisionSound;
+        private AudioSource collisionAudioSource;
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
+            
 
             gameManager = FindFirstObjectByType<GameManager>();
             deliveryManager = FindFirstObjectByType<DeliveryManager>();
+
+            collisionAudioSource = GetComponent<AudioSource>();
         }
 
         void Update()
@@ -117,6 +121,13 @@ namespace player
                 Debug.Log("Enter Drop Off Zone");
             }
         }
+        private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collisionSound != null && collisionAudioSource != null)
+    {
+        collisionAudioSource.PlayOneShot(collisionSound);
+    }
+    }
 
         // trigger exit
         private void OnTriggerExit2D(Collider2D other)
