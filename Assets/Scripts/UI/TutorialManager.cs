@@ -2,18 +2,18 @@ using UnityEngine;
 using TMPro;
 using player;
 
-// 新手教学：按顺序显示 4 条提示
+
 public class TutorialManager : MonoBehaviour
 {
     [Header("UI")]
-    public TextMeshProUGUI promptText;   // 场景里显示提示的 TMP 文本
+    public TextMeshProUGUI promptText;   
 
-    [Header("流程参数")]
-    public float moveThreshold = 1.5f;   // 第2步：累计移动多少距离算"动过了"
-    public float avoidDuration = 5f;      // 第3步：显示几秒
-    public float deliverDuration = 15f;   // 第4步：最多显示几秒（送达后会提前消失）
+    [Header("Parameter")]
+    public float moveThreshold = 1.5f;   
+    public float avoidDuration = 5f;     
+    public float deliverDuration = 15f;  
 
-    [Header("提示文案（英文，可直接改）")]
+    [Header("Prompt")]
     public string stepPickup = "Press SPACE to pick up the package!";
     public string stepMove = "Move with W A S D!";
     public string stepAvoid = "Careful! Hitting obstacles slows you down — avoid pedestrians!";
@@ -57,7 +57,7 @@ public class TutorialManager : MonoBehaviour
                 moved += Vector3.Distance(cat.transform.position, lastPos);
                 if (moved >= moveThreshold)
                     GoTo(Step.Avoid, stepAvoid);
-                else if (!cat.hasPackage)      // 没怎么动就直接送达了
+                else if (!cat.hasPackage)     
                     GoTo(Step.Done, null);
                 break;
 
