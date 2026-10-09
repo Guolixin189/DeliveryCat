@@ -18,6 +18,6 @@ public class ScoreDisplay : MonoBehaviour
     void Update()
     {
         if (gameManager != null && scoreText != null)
-            scoreText.text = "Score: " + gameManager.score;
+            scoreText.text = gameManager.score.ToString();
     }
 }
