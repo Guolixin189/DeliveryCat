@@ -7,6 +7,7 @@ public class TutorialManager : MonoBehaviour
 {
     [Header("UI")]
     public TextMeshProUGUI promptText;   // 场景里显示提示的 TMP 文本
+    public GameObject promptBackground;  // 提示的背景气泡（可空），会跟文字一起显示/隐藏
 
     [Header("描边（运行时自动应用，不影响其他文本）")]
     public float outlineWidth = 0.2f;
@@ -102,7 +103,7 @@ public class TutorialManager : MonoBehaviour
         moved = 0f;
         timer = 0f;
         if (next == Step.Done)
-            promptText.gameObject.SetActive(false);
+            SetVisible(false);
         else
             Show(text);
     }
@@ -110,7 +111,15 @@ public class TutorialManager : MonoBehaviour
     void Show(string text)
     {
         if (promptText == null) return;
-        promptText.gameObject.SetActive(true);
+        SetVisible(true);
         promptText.text = text;
+    }
+
+    void SetVisible(bool v)
+    {
+        if (promptText != null)
+            promptText.gameObject.SetActive(v);
+        if (promptBackground != null)
+            promptBackground.SetActive(v);
     }
 }
