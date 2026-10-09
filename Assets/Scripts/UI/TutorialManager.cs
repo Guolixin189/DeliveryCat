@@ -55,6 +55,7 @@ public class TutorialManager : MonoBehaviour
         m.SetFloat("_OutlineWidth", outlineWidth);
         m.SetColor("_OutlineColor", outlineColor);
         promptText.fontMaterial = m;
+        Debug.Log($"[Tutorial] outline applied: width={outlineWidth}, color={outlineColor}, mat={m.name}, shader={m.shader.name}");
     }
 
     void Update()
