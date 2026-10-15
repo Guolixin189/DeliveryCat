@@ -23,9 +23,11 @@ public class NPCMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
 {
+    GameManager.Instance.AddScore(-200);
     if (collision.gameObject.CompareTag("Player"))
     {
-        GameManager.Instance.GameOver("Game over! You rushed into people.", 40, 800);
+        
+        // GameManager.Instance.GameOver("Game over! You rushed into people.", 40, 800);
         return;
     }
 
