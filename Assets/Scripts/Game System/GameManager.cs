@@ -48,13 +48,6 @@ public class GameManager : MonoBehaviour
         score += points;
     }
 
-    public void DeductScore(int points){
-        if (isGameOver)
-            return;
-
-        score -= points;
-    }
-
     public void GameOver(string gameOverMsg, float fontSize, float panelWidth)
     {
         if (isGameOver)
