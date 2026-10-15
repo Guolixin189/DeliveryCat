@@ -9,14 +9,11 @@ public class DeliveryManager : MonoBehaviour
 
     private int targetHouseIndex = -1;
     private GameManager gameManager;
-    public AudioClip deliverySuccessSound;
-    private AudioSource audioSource;
 
     void Awake()
     {
         Instance = this;
         gameManager = FindFirstObjectByType<GameManager>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -37,10 +34,6 @@ public class DeliveryManager : MonoBehaviour
         bool correct = (houseIndex == targetHouseIndex);
         if (gameManager != null)
             gameManager.AddScore(correct ? 100 : -100);
-        
-        if (correct && deliverySuccessSound != null && audioSource != null){
-        audioSource.PlayOneShot(deliverySuccessSound);
-         }
         Debug.Log($"[Delivery] delivered to house {houseIndex}, target was {targetHouseIndex} -> {(correct ? "+100" : "-100")}");
 
         AssignNewTarget();

@@ -6,10 +6,6 @@ namespace player
     public class CatController : MonoBehaviour
     {
         public float moveSpeed = 3f;
-        [Header("撞到行人减速")]
-        public float slowFactor = 0.4f;     // 减速后速度倍率
-        public float slowDuration = 2f;     // 减速持续秒数
-        private float slowTimer = 0f;       // 减速剩余时间
         private Rigidbody2D rb;
         private Animator animator;
         private Vector2 movement;
@@ -27,25 +23,17 @@ namespace player
         public float penaltyDuration = 1.5f;
         public bool canMove = true;
 
-        public AudioClip collisionSound;
-        private AudioSource collisionAudioSource;
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
-            
 
             gameManager = FindFirstObjectByType<GameManager>();
             deliveryManager = FindFirstObjectByType<DeliveryManager>();
-
-            collisionAudioSource = GetComponent<AudioSource>();
         }
 
         void Update()
         {
-            if (slowTimer > 0f)
-                slowTimer -= Time.deltaTime;
-
             movement = Vector2.zero;
 
             if (gameManager != null && gameManager.isGameOver)
@@ -105,14 +93,7 @@ namespace player
 
         void FixedUpdate()
         {
-            float speed = slowTimer > 0f ? moveSpeed * slowFactor : moveSpeed;
-            rb.MovePosition(rb.position + movement.normalized * speed * Time.fixedDeltaTime);
-        }
-
-        // 撞到行人时由 NPC 调用：减速 slowDuration 秒；减速中再被撞到会刷新时长
-        public void ApplySlow()
-        {
-            slowTimer = slowDuration;
+            rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -131,13 +112,6 @@ namespace player
                 Debug.Log("Enter Drop Off Zone");
             }
         }
-        private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collisionSound != null && collisionAudioSource != null)
-    {
-        collisionAudioSource.PlayOneShot(collisionSound);
-    }
-    }
 
         // trigger exit
         private void OnTriggerExit2D(Collider2D other)
