@@ -13,7 +13,7 @@ public class NPCMovement : MonoBehaviour
     // Painted static layers: a tile on any of these counts as solid for
     // NPCs, even where no collider was painted (roofs, trees, lamps...).
     private static readonly string[] BlockerNames =
-        { "Building", "Building collider", "Building decor", "roof", "nature", "static obstacles" };
+        { "Building", "Building collider", "Building decor", "roof", "nature", "static obstacles", "Building behind", "static obstacle (behind)" };
 
     void Start(){
          spriteRenderer = GetComponent<SpriteRenderer>();
