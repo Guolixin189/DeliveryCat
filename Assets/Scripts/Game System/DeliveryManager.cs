@@ -18,6 +18,17 @@ public class DeliveryManager : MonoBehaviour
 
     void Start()
     {
+        // DropoffZone.Start() hides its own bubble, and Start order between
+        // objects is not guaranteed. If the target zone's Start ran after
+        // this one, it would switch the freshly lit target bubble back off
+        // (and the direction pointer, which looks for the lit bubble, would
+        // hide itself). Wait one frame so every Start has finished first.
+        StartCoroutine(AssignTargetAfterStarts());
+    }
+
+    System.Collections.IEnumerator AssignTargetAfterStarts()
+    {
+        yield return null;
         AssignNewTarget();
     }
 
