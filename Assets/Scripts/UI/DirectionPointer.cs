@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class DirectionPointer : MonoBehaviour
 {
-    [Header("References")]
+    [Header("References (leave empty to auto-find)")]
     public RectTransform arrow;            // arrow RectTransform
     public Transform player;               // cat
     public DeliveryManager deliveryManager;
