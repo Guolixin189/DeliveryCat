@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 // Wandering cat NPC. Patrols faster than the villagers. When it bumps into
 // a person (a villager, another cat, or the player) it gets startled and
@@ -13,10 +14,31 @@ public class CatNPCMovement : MonoBehaviour
     private int direction = -1;
     private float fleeTimer = 0f;
     private SpriteRenderer spriteRenderer;
+    private Tilemap[] blockers;
+
+    // Painted static layers: a tile on any of these counts as solid for
+    // NPCs, even where no collider was painted (roofs, trees, lamps...).
+    private static readonly string[] BlockerNames =
+        { "Building", "Building collider", "Building decor", "roof", "nature", "static obstacles" };
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        var all = FindObjectsByType<Tilemap>(FindObjectsSortMode.None);
+        var list = new System.Collections.Generic.List<Tilemap>();
+        foreach (var tm in all)
+            if (System.Array.IndexOf(BlockerNames, tm.gameObject.name) >= 0)
+                list.Add(tm);
+        blockers = list.ToArray();
+    }
+
+    bool Blocked(Vector3 pos)
+    {
+        if (blockers == null) return false;
+        foreach (var tm in blockers)
+            if (tm != null && tm.HasTile(tm.WorldToCell(pos)))
+                return true;
+        return false;
     }
 
     void FixedUpdate()
@@ -27,7 +49,17 @@ public class CatNPCMovement : MonoBehaviour
             fleeTimer -= Time.fixedDeltaTime;
             speed = fleeSpeed;
         }
-        transform.position += Vector3.right * direction * speed * Time.fixedDeltaTime;
+        Vector3 step = Vector3.right * direction * speed * Time.fixedDeltaTime;
+        Vector3 next = transform.position + step;
+        Vector3 probe = next + Vector3.right * direction * 0.3f;
+        if (!Blocked(transform.position) && (Blocked(next) || Blocked(probe)))
+        {
+            direction *= -1;
+            if (spriteRenderer != null)
+                spriteRenderer.flipX = direction > 0;
+            return;
+        }
+        transform.position = next;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
