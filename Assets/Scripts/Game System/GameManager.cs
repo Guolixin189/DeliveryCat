@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public TMP_Text finalScoreText;
     public TMP_Text gameOverText;
+    public GameObject completePanel;
 
     void Awake()
     {
@@ -29,7 +30,14 @@ public class GameManager : MonoBehaviour
             else
             {
                 remainingTime = 0;
+                if (SceneManager.GetActiveScene().name == "level_1")
+            {
+                 CompleteTutorial();
+             }
+            else
+            {
                 GameOver("Time's up!", 50, 400);
+            }
             }
 
             // Temporary test for score system
@@ -72,6 +80,15 @@ public class GameManager : MonoBehaviour
 
         finalScoreText.text = "Final Score: " + score;
         gameOverPanel.SetActive(true);
+    }
+
+    public void CompleteTutorial()
+    {
+        if (isGameOver)
+            return;
+
+        isGameOver = true;
+        completePanel.SetActive(true);
     }
 
     public void RestartGame()
