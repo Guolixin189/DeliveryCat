@@ -25,10 +25,8 @@ public class NPCMovement : MonoBehaviour
 {
     if (collision.gameObject.CompareTag("Player"))
     {
-        // 不再直接结束游戏：让玩家减速，行人被弹开
-        player.CatController cat = collision.gameObject.GetComponent<player.CatController>();
-        if (cat != null)
-            cat.ApplySlow();
+        GameManager.Instance.GameOver("Game over! You rushed into people.", 40, 800);
+        return;
     }
 
     direction *= -1;
