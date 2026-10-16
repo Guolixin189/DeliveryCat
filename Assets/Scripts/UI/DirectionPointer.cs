@@ -1,21 +1,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// 左下角方向指针：
-//   没拿包裹 -> 指向取货点（橙色）
-//   拿了包裹   -> 指向当前目标房子（蓝色）
-// 要求：相机不旋转（俯视 2D），此时世界方向 = 屏幕方向。
-// 箭头素材默认朝上；脚本按目标角度旋转箭头。
 public class DirectionPointer : MonoBehaviour
 {
     [Header("引用（留空会自动查找）")]
-    public RectTransform arrow;            // 箭头图片的 RectTransform
-    public Transform player;               // 猫
+    public RectTransform arrow;            // arrow RectTransform
+    public Transform player;               // cat
     public DeliveryManager deliveryManager;
 
-    [Header("颜色")]
-    public Color toPickupColor = new Color(1f, 0.72f, 0.30f, 1f);  // 去取货
-    public Color toDropoffColor = new Color(0.40f, 0.80f, 1f, 1f);   // 去送货
+    [Header("Color")]
+    public Color toPickupColor = new Color(1f, 0.72f, 0.30f, 1f);  // to pick up
+    public Color toDropoffColor = new Color(0.40f, 0.80f, 1f, 1f);   // to drop off
 
     Image arrowImage;
     player.CatController cat;
@@ -78,7 +73,6 @@ public class DirectionPointer : MonoBehaviour
             arrowImage.color = toPickup ? toPickupColor : toDropoffColor;
     }
 
-    // 当前目标房子 = 指示器亮着的那一栋（DeliveryManager 每轮随机指定）
     Transform FindTargetDropoff()
     {
         var zones = deliveryManager.dropOffZones;
