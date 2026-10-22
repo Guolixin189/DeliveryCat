@@ -321,7 +321,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '3. AVOID hitting moving NPCs'
+  m_text: 3. AVOID hitting moving NPCs
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4842,7 +4842,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &3900000013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5057,8 +5057,8 @@ GameObject:
   - component: {fileID: 3900000023}
   - component: {fileID: 3900000022}
   - component: {fileID: 3950000000}
-m_Layer: 5
-  m_Name: Card_UPS
+  m_Layer: 0
+  m_Name: UPS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5161,8 +5161,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -1512018827542672345, guid: 5fb0ef147dd6d418f8362f6cf3207979, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5236,7 +5236,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'UPS'
+  m_text: UPS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
   m_sharedMaterial: {fileID: 5801741190800184150, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
@@ -5329,8 +5329,8 @@ GameObject:
   - component: {fileID: 3900000032}
   - component: {fileID: 3900000031}
   - component: {fileID: 3950000005}
-m_Layer: 5
-  m_Name: Card_USPS
+  m_Layer: 0
+  m_Name: USPS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5433,8 +5433,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -4741249284262752521, guid: 06e2c39a856934da88d6cae047b87d2e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5508,7 +5508,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'USPS'
+  m_text: USPS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
   m_sharedMaterial: {fileID: 5801741190800184150, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
@@ -5601,8 +5601,8 @@ GameObject:
   - component: {fileID: 3900000041}
   - component: {fileID: 3900000040}
   - component: {fileID: 3950000010}
-m_Layer: 5
-  m_Name: Card_FedEx
+  m_Layer: 0
+  m_Name: FedEx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5705,8 +5705,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 6198575628496299044, guid: 5631ce62d52ef4be08f6e50857c2f969, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5780,7 +5780,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'FedEx'
+  m_text: FedEx
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
   m_sharedMaterial: {fileID: 5801741190800184150, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
@@ -5873,8 +5873,8 @@ GameObject:
   - component: {fileID: 3900000050}
   - component: {fileID: 3900000049}
   - component: {fileID: 3950000015}
-m_Layer: 5
-  m_Name: Card_Freelancer
+  m_Layer: 0
+  m_Name: Freelancer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5898,8 +5898,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 420, y: 110}
-  m_SizeDelta: {x: 250, y: 300}
+  m_AnchoredPosition: {x: 421.6278, y: 110}
+  m_SizeDelta: {x: 253.2556, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3900000049
 MonoBehaviour:
@@ -5977,8 +5977,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -1332194044632892674, guid: 13a5bbb1bc9f846969e53345373ceb1d, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6052,7 +6052,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Freelancer'
+  m_text: Freelancer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
   m_sharedMaterial: {fileID: 5801741190800184150, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
@@ -6402,16 +6402,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3900000061}
   m_CullTransparentMesh: 1
---- !u!1660057539 &9223372036854775807
-SceneRoots:
+--- !u!114 &3950000000
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_Roots:
-  - {fileID: 3900000001}
-  - {fileID: 1703410123}
-  - {fileID: 432603597}
-  - {fileID: 757596520}
-  - {fileID: 1919209924}
-  - {fileID: 1393367227}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3900000020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72f83685b9374e98aa3f3ddcb886ecad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CompanyCard
+  companyIndex: 1
+  companySelect: {fileID: 3900000002}
 --- !u!1 &3950000001
 GameObject:
   m_ObjectHideFlags: 0
@@ -6423,13 +6427,13 @@ GameObject:
   - component: {fileID: 3950000002}
   - component: {fileID: 3950000003}
   - component: {fileID: 3950000004}
-m_Layer: 5
-  m_Name: Logo
+  m_Layer: 0
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3950000002
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6487,19 +6491,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3950000000
+--- !u!114 &3950000005
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3900000020}
+  m_GameObject: {fileID: 3900000029}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72f83685b9374e98aa3f3ddcb886ecad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CompanyCard
-  companyIndex: 1
+  companyIndex: 2
   companySelect: {fileID: 3900000002}
 --- !u!1 &3950000006
 GameObject:
@@ -6512,13 +6516,13 @@ GameObject:
   - component: {fileID: 3950000007}
   - component: {fileID: 3950000008}
   - component: {fileID: 3950000009}
-m_Layer: 5
-  m_Name: Logo
+  m_Layer: 0
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3950000007
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6576,19 +6580,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3950000005
+--- !u!114 &3950000010
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3900000029}
+  m_GameObject: {fileID: 3900000038}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72f83685b9374e98aa3f3ddcb886ecad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CompanyCard
-  companyIndex: 2
+  companyIndex: 3
   companySelect: {fileID: 3900000002}
 --- !u!1 &3950000011
 GameObject:
@@ -6601,13 +6605,13 @@ GameObject:
   - component: {fileID: 3950000012}
   - component: {fileID: 3950000013}
   - component: {fileID: 3950000014}
-m_Layer: 5
-  m_Name: Logo
+  m_Layer: 0
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3950000012
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6665,19 +6669,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3950000010
+--- !u!114 &3950000015
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3900000038}
+  m_GameObject: {fileID: 3900000047}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72f83685b9374e98aa3f3ddcb886ecad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CompanyCard
-  companyIndex: 3
+  companyIndex: 0
   companySelect: {fileID: 3900000002}
 --- !u!1 &3950000016
 GameObject:
@@ -6690,13 +6694,13 @@ GameObject:
   - component: {fileID: 3950000017}
   - component: {fileID: 3950000018}
   - component: {fileID: 3950000019}
-m_Layer: 5
-  m_Name: Logo
+  m_Layer: 0
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3950000017
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6754,20 +6758,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3950000015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3900000047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72f83685b9374e98aa3f3ddcb886ecad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CompanyCard
-  companyIndex: 0
-  companySelect: {fileID: 3900000002}
 --- !u!1 &3950000020
 GameObject:
   m_ObjectHideFlags: 0
@@ -6833,7 +6823,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hover a company to preview its rules. Click to deliver for them!'
+  m_text: Hover a company to preview its rules. Click to deliver for them!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6905,3 +6895,13 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 3900000001}
+  - {fileID: 1703410123}
+  - {fileID: 432603597}
+  - {fileID: 757596520}
+  - {fileID: 1919209924}
+  - {fileID: 1393367227}
