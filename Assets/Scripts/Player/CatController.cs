@@ -159,7 +159,8 @@ namespace player
                 if (dz != null)
                     currentDropOffIndex = dz.houseIndex;
                 Debug.Log("Enter Drop Off Zone");
-                if (company == Company.USPS && hasPackage)
+                if (company == Company.USPS && hasPackage && deliveryManager != null
+                    && deliveryManager.IsTargetHouse(currentDropOffIndex))
                     DeliverNow();
             }
         }
