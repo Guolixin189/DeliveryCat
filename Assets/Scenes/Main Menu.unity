@@ -5788,7 +5788,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: |-
     FedEx<size=55%>
-    Beat the 20-second clock on every order for double points.</size>
+    Beat the 15-second clock on every order for double points.</size>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
   m_sharedMaterial: {fileID: 5801741190800184150, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
