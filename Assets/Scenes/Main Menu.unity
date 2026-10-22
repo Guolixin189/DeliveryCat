@@ -595,7 +595,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Tutorial'
+  m_text: Tutorial
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
   m_sharedMaterial: {fileID: 5801741190800184150, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
@@ -1573,7 +1573,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -40}
+  m_AnchoredPosition: {x: 0.00012207, y: -281}
   m_SizeDelta: {x: 400, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &481860197
@@ -1657,7 +1657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9091544, b: 0.8160377, a: 1}
+  m_Color: {r: 0.8156863, g: 0.9529412, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1877,7 +1877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9098039, b: 0.8156863, a: 1}
+  m_Color: {r: 0.8156863, g: 0.9529412, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4509,16 +4509,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085298619}
   m_CullTransparentMesh: 1
---- !u!1660057539 &9223372036854775807
-SceneRoots:
-  m_ObjectHideFlags: 0
-  m_Roots:
-  - {fileID: 3900000001}
-  - {fileID: 1703410123}
-  - {fileID: 432603597}
-  - {fileID: 757596520}
-  - {fileID: 1919209924}
-  - {fileID: 1393367227}
 --- !u!1 &3900000000
 GameObject:
   m_ObjectHideFlags: 0
@@ -4600,7 +4590,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -280}
+  m_AnchoredPosition: {x: 0, y: -45.00003}
   m_SizeDelta: {x: 400, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3900000005
@@ -4754,7 +4744,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Official Levels'
+  m_text: Official Levels
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
   m_sharedMaterial: {fileID: 5801741190800184150, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
@@ -4935,7 +4925,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Choose Your Company'
+  m_text: Choose Your Company
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5242,9 +5232,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: |-
-    UPS<size=55%>
-    Wait 3 seconds at the door for a signature. Patience pays: +200 pts.</size>
+  m_text: '|- UPS<size=55%>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
   m_sharedMaterial: {fileID: 5801741190800184150, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
@@ -5514,9 +5502,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: |-
-    USPS<size=55%>
-    Oversized drop-off zone. Toss the package and keep moving.</size>
+  m_text: '|- USPS<size=55%> Oversized drop-off zone. Toss the package and keep moving.</size>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
   m_sharedMaterial: {fileID: 5801741190800184150, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
@@ -5786,9 +5772,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: |-
-    FedEx<size=55%>
-    Beat the 15-second clock on every order for double points.</size>
+  m_text: '|- FedEx<size=55%> Beat the 15-second clock on every order for double
+    points.</size>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
   m_sharedMaterial: {fileID: 5801741190800184150, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
@@ -6058,9 +6043,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: |-
-    Freelancer<size=55%>
-    No company, no rules. Classic deliveries: +100 right, -100 wrong.</size>
+  m_text: '|- Freelancer<size=55%>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
   m_sharedMaterial: {fileID: 5801741190800184150, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
@@ -6330,7 +6313,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Back'
+  m_text: Back
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
   m_sharedMaterial: {fileID: 5801741190800184150, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
@@ -6410,3 +6393,13 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3900000061}
   m_CullTransparentMesh: 1
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 3900000001}
+  - {fileID: 1703410123}
+  - {fileID: 432603597}
+  - {fileID: 757596520}
+  - {fileID: 1919209924}
+  - {fileID: 1393367227}
