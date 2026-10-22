@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 using TMPro;
 using player;
 
@@ -19,6 +20,9 @@ public class TutorialManager : MonoBehaviour
     public float moveThreshold = 1.5f;   // 第2步：累计移动多少距离算"动过了"
     public float avoidDuration = 5f;      // 第3步：显示几秒
     public float deliverDuration = 15f;   // 第4步：最多显示几秒（送达后会提前消失）
+
+    [Header("完成面板（教学结束后显示，可空）")]
+    public GameObject tutorialCompletePanel;
 
     [Header("提示文案（英文，可直接改）")]
     public string stepPickup = "Press SPACE to pick up the package!";
@@ -92,7 +96,11 @@ public class TutorialManager : MonoBehaviour
         moved = 0f;
         timer = 0f;
         if (next == Step.Done)
+        {
             SetVisible(false);
+            if (tutorialCompletePanel != null)
+                tutorialCompletePanel.SetActive(true);
+        }
         else
             Show(text);
     }
@@ -124,6 +132,17 @@ public class TutorialManager : MonoBehaviour
         bgRt.pivot = txtRt.pivot;
         bgRt.anchoredPosition = txtRt.anchoredPosition;
         bgRt.sizeDelta = new Vector2(rendered.x + bgPadX * 2f, rendered.y + bgPadY * 2f);
+    }
+
+    public void TutorialComplete_BackToMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+
+    public void TutorialComplete_PlayOfficial()
+    {
+        GameSettings.OpenCompanySelectOnMenu = true;
+        SceneManager.LoadScene("Main Menu");
     }
 
     void SetVisible(bool v)

@@ -7,12 +7,16 @@ public class DeliveryManager : MonoBehaviour
     public PickupZone pickupZone;
     public DropoffZone[] dropOffZones;
 
+    public Company company = Company.Freelancer;
+
     private int targetHouseIndex = -1;
     private GameManager gameManager;
+    private float orderStartTime = 0f;
 
     void Awake()
     {
         Instance = this;
+        company = GameSettings.SelectedCompany;
         gameManager = FindFirstObjectByType<GameManager>();
     }
 
@@ -35,17 +39,36 @@ public class DeliveryManager : MonoBehaviour
 
     public void OnPackagePickedUp()
     {
+        orderStartTime = Time.time;
         if (pickupZone != null)
             pickupZone.SetIndicator(false);
+    }
+
+    public bool IsTargetHouse(int houseIndex)
+    {
+        return houseIndex == targetHouseIndex;
     }
 
   
     public void OnPackageDelivered(int houseIndex)
     {
         bool correct = (houseIndex == targetHouseIndex);
+        int points;
+        if (correct)
+        {
+            if (company == Company.FedEx)
+                points = (Time.time - orderStartTime <= CompanyRules.OrderTimeLimit(company))
+                    ? CompanyRules.FedExOnTimePoints : 0;
+            else
+                points = CompanyRules.CorrectPoints(company);
+        }
+        else
+        {
+            points = CompanyRules.WrongPoints(company);
+        }
         if (gameManager != null)
-            gameManager.AddScore(correct ? 100 : -100);
-        Debug.Log($"[Delivery] delivered to house {houseIndex}, target was {targetHouseIndex} -> {(correct ? "+100" : "-100")}");
+            gameManager.AddScore(points);
+        Debug.Log($"[Delivery] delivered to house {houseIndex}, target was {targetHouseIndex} -> {(points >= 0 ? "+" : "")}{points} [{company}]");
 
         AssignNewTarget();
         if (pickupZone != null)

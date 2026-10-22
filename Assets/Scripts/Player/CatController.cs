@@ -20,6 +20,10 @@ namespace player
         private GameManager gameManager;
         private DeliveryManager deliveryManager;
         private int currentDropOffIndex = -1;
+        private Company company = Company.Freelancer;
+        private bool channeling = false;
+        private float channelTimer = 0f;
+        private int channelHouseIndex = -1;
         public AudioSource packageSound;
         public AudioClip collisionSound;
         private AudioSource collisionAudioSource;
@@ -31,6 +35,7 @@ namespace player
 
             gameManager = FindFirstObjectByType<GameManager>();
             deliveryManager = FindFirstObjectByType<DeliveryManager>();
+            company = GameSettings.SelectedCompany;
 
             collisionAudioSource = GetComponent<AudioSource>();
         }
@@ -39,6 +44,22 @@ namespace player
         {
             if (slowTimer > 0f)
                 slowTimer -= Time.deltaTime;
+
+            if (channeling)
+            {
+                if (!canDropOff || !hasPackage || currentDropOffIndex != channelHouseIndex
+                    || (gameManager != null && gameManager.isGameOver))
+                    channeling = false;
+                else
+                {
+                    channelTimer += Time.deltaTime;
+                    if (channelTimer >= CompanyRules.SignatureTime(company))
+                    {
+                        channeling = false;
+                        DeliverNow();
+                    }
+                }
+            }
 
             movement = Vector2.zero;
 
@@ -83,12 +104,16 @@ namespace player
                 // state 2
                 else if (canDropOff && hasPackage)
                 {
-                    hasPackage = false;
-                    animator.SetBool("hasPackage", false); 
-                    if (deliveryManager != null)
-                        deliveryManager.OnPackageDelivered(currentDropOffIndex);
-                    packageSound.Play();
-                    Debug.Log("Package Delivered");
+                    if (company == Company.UPS && deliveryManager != null
+                        && deliveryManager.IsTargetHouse(currentDropOffIndex))
+                    {
+                        channeling = true;
+                        channelTimer = 0f;
+                        channelHouseIndex = currentDropOffIndex;
+                        Debug.Log("Signature channel started");
+                    }
+                    else
+                        DeliverNow();
                 }
             }
         }
@@ -105,6 +130,21 @@ namespace player
             slowTimer = slowDuration;
         }
 
+        // UPS 签收通道状态（给进度 UI 用）
+        public bool IsSignatureChanneling => channeling;
+        public float SignatureProgress => channeling
+            ? Mathf.Clamp01(channelTimer / CompanyRules.SignatureTime(company)) : 0f;
+
+        private void DeliverNow()
+        {
+            hasPackage = false;
+            animator.SetBool("hasPackage", false);
+            if (deliveryManager != null)
+                deliveryManager.OnPackageDelivered(currentDropOffIndex);
+            packageSound.Play();
+            Debug.Log("Package Delivered");
+        }
+
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("PickUpZone"))
@@ -119,6 +159,8 @@ namespace player
                 if (dz != null)
                     currentDropOffIndex = dz.houseIndex;
                 Debug.Log("Enter Drop Off Zone");
+                if (company == Company.USPS && hasPackage)
+                    DeliverNow();
             }
         }
         private void OnCollisionEnter2D(Collision2D collision)

@@ -19,6 +19,13 @@ public class DropoffZone : MonoBehaviour
             basePos = indicator.transform.position;
             indicator.SetActive(false);
         }
+        float mult = CompanyRules.DropoffRadiusMultiplier(GameSettings.SelectedCompany);
+        if (Mathf.Abs(mult - 1f) > 0.001f)
+        {
+            var col = GetComponent<BoxCollider2D>();
+            if (col != null)
+                col.size *= mult;
+        }
     }
 
     void Update()

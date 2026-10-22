@@ -10,16 +10,21 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        StartCoroutine(StartGameWithSound());
+        StartCoroutine(StartGameWithSound("level_1"));
     }
 
-    private IEnumerator StartGameWithSound()
+    public void StartTutorial()
+    {
+        StartCoroutine(StartGameWithSound("level_1"));
+    }
+
+    private IEnumerator StartGameWithSound(string sceneName)
     {
         menuAudio.Play();
 
         yield return new WaitForSeconds(0.3f);
 
-        SceneManager.LoadScene("level_1");
+        SceneManager.LoadScene(sceneName);
     }
 
     public void OpenHowToPlay()
