@@ -5244,7 +5244,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: |-
     UPS<size=55%>
-    Wait 3 seconds at the door for a signature. Patience pays: +500 pts.</size>
+    Wait 3 seconds at the door for a signature. Patience pays: +200 pts.</size>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}
   m_sharedMaterial: {fileID: 5801741190800184150, guid: 54b9cb4e6c6c24bfba9edfaf994470c5, type: 2}

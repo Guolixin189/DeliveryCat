@@ -4,7 +4,7 @@ public static class CompanyRules
 {
     public static int CorrectPoints(Company c)
     {
-        return c == Company.UPS ? 500 : 100;
+        return c == Company.UPS ? 200 : 100;
     }
 
     public static int WrongPoints(Company c)
@@ -38,7 +38,7 @@ public static class CompanyRules
     {
         switch (c)
         {
-            case Company.UPS: return "UPS \u00b7 Signature +500";
+            case Company.UPS: return "UPS \u00b7 Signature +200";
             case Company.USPS: return "USPS \u00b7 Toss & go";
             case Company.FedEx: return "FedEx \u00b7 10s x2";
             default: return "Freelancer";
