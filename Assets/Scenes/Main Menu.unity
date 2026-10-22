@@ -5056,7 +5056,7 @@ GameObject:
   - component: {fileID: 3900000024}
   - component: {fileID: 3900000023}
   - component: {fileID: 3900000022}
-    - component: {fileID: 3950000000}
+  - component: {fileID: 3950000000}
 m_Layer: 5
   m_Name: Card_UPS
   m_TagString: Untagged
@@ -5328,7 +5328,7 @@ GameObject:
   - component: {fileID: 3900000033}
   - component: {fileID: 3900000032}
   - component: {fileID: 3900000031}
-    - component: {fileID: 3950000005}
+  - component: {fileID: 3950000005}
 m_Layer: 5
   m_Name: Card_USPS
   m_TagString: Untagged
@@ -5600,7 +5600,7 @@ GameObject:
   - component: {fileID: 3900000042}
   - component: {fileID: 3900000041}
   - component: {fileID: 3900000040}
-    - component: {fileID: 3950000010}
+  - component: {fileID: 3950000010}
 m_Layer: 5
   m_Name: Card_FedEx
   m_TagString: Untagged
@@ -5872,7 +5872,7 @@ GameObject:
   - component: {fileID: 3900000051}
   - component: {fileID: 3900000050}
   - component: {fileID: 3900000049}
-    - component: {fileID: 3950000015}
+  - component: {fileID: 3950000015}
 m_Layer: 5
   m_Name: Card_Freelancer
   m_TagString: Untagged
@@ -6423,7 +6423,6 @@ GameObject:
   - component: {fileID: 3950000002}
   - component: {fileID: 3950000003}
   - component: {fileID: 3950000004}
-    - component: {fileID: 3950000000}
 m_Layer: 5
   m_Name: Logo
   m_TagString: Untagged
@@ -6442,8 +6441,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3900000026}
+  m_Children: []
   m_Father: {fileID: 3900000021}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -6514,7 +6512,6 @@ GameObject:
   - component: {fileID: 3950000007}
   - component: {fileID: 3950000008}
   - component: {fileID: 3950000009}
-    - component: {fileID: 3950000005}
 m_Layer: 5
   m_Name: Logo
   m_TagString: Untagged
@@ -6533,8 +6530,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3900000035}
+  m_Children: []
   m_Father: {fileID: 3900000030}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -6605,7 +6601,6 @@ GameObject:
   - component: {fileID: 3950000012}
   - component: {fileID: 3950000013}
   - component: {fileID: 3950000014}
-    - component: {fileID: 3950000010}
 m_Layer: 5
   m_Name: Logo
   m_TagString: Untagged
@@ -6624,8 +6619,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3900000044}
+  m_Children: []
   m_Father: {fileID: 3900000039}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -6696,7 +6690,6 @@ GameObject:
   - component: {fileID: 3950000017}
   - component: {fileID: 3950000018}
   - component: {fileID: 3950000019}
-    - component: {fileID: 3950000015}
 m_Layer: 5
   m_Name: Logo
   m_TagString: Untagged
@@ -6715,8 +6708,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3900000053}
+  m_Children: []
   m_Father: {fileID: 3900000048}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
