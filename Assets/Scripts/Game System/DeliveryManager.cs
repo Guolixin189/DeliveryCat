@@ -49,6 +49,8 @@ public class DeliveryManager : MonoBehaviour
         return houseIndex == targetHouseIndex;
     }
 
+    public float OrderStartTime => orderStartTime;
+
   
     public void OnPackageDelivered(int houseIndex)
     {
@@ -56,9 +58,8 @@ public class DeliveryManager : MonoBehaviour
         int points;
         if (correct)
         {
-            if (company == Company.FedEx)
-                points = (Time.time - orderStartTime <= CompanyRules.OrderTimeLimit(company))
-                    ? CompanyRules.FedExOnTimePoints : 0;
+            if (company == Company.FedEx && Time.time - orderStartTime <= CompanyRules.OrderTimeLimit(company))
+                points = CompanyRules.FedExOnTimePoints;
             else
                 points = CompanyRules.CorrectPoints(company);
         }

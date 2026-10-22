@@ -24,7 +24,7 @@ public static class CompanyRules
 
     public static float OrderTimeLimit(Company c)
     {
-        return c == Company.FedEx ? 20f : 0f;
+        return c == Company.FedEx ? 10f : 0f;
     }
 
     public static bool AutoDeliverOnEnter(Company c)
@@ -33,4 +33,15 @@ public static class CompanyRules
     }
 
     public static int FedExOnTimePoints = 200;
+
+    public static string ShortLabel(Company c)
+    {
+        switch (c)
+        {
+            case Company.UPS: return "UPS \u00b7 Signature +500";
+            case Company.USPS: return "USPS \u00b7 Toss & go";
+            case Company.FedEx: return "FedEx \u00b7 10s x2";
+            default: return "Freelancer";
+        }
+    }
 }
