@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-// 把 GameManager.score 实时显示到 UI 上（挂在 ScoreText 对象上即可）
+// Shows GameManager.score on the UI in real time (attach to the ScoreText object)
 public class ScoreDisplay : MonoBehaviour
 {
     public GameManager gameManager;

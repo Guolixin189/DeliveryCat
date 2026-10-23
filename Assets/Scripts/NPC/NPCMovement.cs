@@ -57,7 +57,7 @@ public class NPCMovement : MonoBehaviour
 {
     if (collision.gameObject.CompareTag("Player"))
     {
-        // 不再直接结束游戏：让玩家减速，行人被弹开
+        // No longer ends the game directly: slow the player down and knock the pedestrian back
         player.CatController cat = collision.gameObject.GetComponent<player.CatController>();
         if (cat != null)
             cat.ApplySlow();

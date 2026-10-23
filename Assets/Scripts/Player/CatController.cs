@@ -6,10 +6,10 @@ namespace player
     public class CatController : MonoBehaviour
     {
         public float moveSpeed = 3f; 
-        [Header("撞到行人减速")]
-        public float slowFactor = 0.4f;     // 减速后速度倍率
-        public float slowDuration = 2f;     // 减速持续秒数
-        private float slowTimer = 0f;       // 减速剩余时间
+        [Header("Slow down on pedestrian hit")]
+        public float slowFactor = 0.4f;     // speed multiplier while slowed
+        public float slowDuration = 2f;     // slow duration in seconds
+        private float slowTimer = 0f;       // remaining slow time
         private Rigidbody2D rb;
         private Animator animator;
         private Vector2 movement;
@@ -124,13 +124,13 @@ namespace player
             rb.MovePosition(rb.position + movement.normalized * speed * Time.fixedDeltaTime);
         }
 
-        // 撞到行人时由 NPC 调用：减速 slowDuration 秒；减速中再被撞到会刷新时长
+        // Called by NPCs on pedestrian hit: slow for slowDuration seconds; re-hitting while slowed refreshes the timer
         public void ApplySlow()
         {
             slowTimer = slowDuration;
         }
 
-        // UPS 签收通道状态（给进度 UI 用）
+        // UPS signature channel state (used by the progress UI)
         public bool IsSignatureChanneling => channeling;
         public float SignatureProgress => channeling
             ? Mathf.Clamp01(channelTimer / CompanyRules.SignatureTime(company)) : 0f;

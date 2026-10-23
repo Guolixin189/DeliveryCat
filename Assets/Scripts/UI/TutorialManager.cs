@@ -4,27 +4,27 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using player;
 
-// 新手教学：按顺序显示 4 条提示
+// Tutorial: show the 4 prompts in order
 public class TutorialManager : MonoBehaviour
 {
     [Header("UI")]
-    public TextMeshProUGUI promptText;   // 场景里显示提示的 TMP 文本
-    public GameObject promptBackground;  // 提示的背景气泡（可空），会跟文字一起显示/隐藏
+    public TextMeshProUGUI promptText;   // TMP text that shows the prompts in the scene
+    public GameObject promptBackground;  // Speech-bubble background for the prompts (nullable); shown/hidden together with the text
 
-    [Header("背景气泡自适应")]
-    public float bgPadX = 50f;   // 气泡左右留白
-    public float bgPadY = 30f;   // 气泡上下留白
+    [Header("Bubble auto-fit")]
+    public float bgPadX = 50f;   // horizontal padding inside the bubble
+    public float bgPadY = 30f;   // vertical padding inside the bubble
 
 
-    [Header("流程参数")]
-    public float moveThreshold = 1.5f;   // 第2步：累计移动多少距离算"动过了"
-    public float avoidDuration = 5f;      // 第3步：显示几秒
-    public float deliverDuration = 15f;   // 第4步：最多显示几秒（送达后会提前消失）
+    [Header("Flow parameters")]
+    public float moveThreshold = 1.5f;   // step 2: how much accumulated movement counts as "moved"
+    public float avoidDuration = 5f;      // step 3: how many seconds to show
+    public float deliverDuration = 15f;   // step 4: max seconds to show (disappears early once delivered)
 
-    [Header("完成面板（教学结束后显示，可空）")]
+    [Header("Completion panel (shown after tutorial, nullable)")]
     public GameObject tutorialCompletePanel;
 
-    [Header("提示文案（英文，可直接改）")]
+    [Header("Prompt text (English, editable)")]
     public string stepPickup = "Press SPACE to pick up the package!";
     public string stepMove = "Move with W A S D!";
     public string stepAvoid = "Careful! Hitting obstacles slows you down — avoid pedestrians!";
@@ -68,7 +68,7 @@ public class TutorialManager : MonoBehaviour
                 moved += Vector3.Distance(cat.transform.position, lastPos);
                 if (moved >= moveThreshold)
                     GoTo(Step.Avoid, stepAvoid);
-                else if (!cat.hasPackage)      // 没怎么动就直接送达了
+                else if (!cat.hasPackage)      // delivered without moving much
                     GoTo(Step.Done, null);
                 break;
 
@@ -116,7 +116,7 @@ public class TutorialManager : MonoBehaviour
         fitRoutine = StartCoroutine(FitBackgroundNextFrame());
     }
 
-    // 等一帧让 TMP 完成排版，再按文字实际渲染大小缩放背景气泡
+    // Wait one frame for TMP layout, then size the bubble to the actual rendered text
     IEnumerator FitBackgroundNextFrame()
     {
         yield return null;
