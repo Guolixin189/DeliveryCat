@@ -13,7 +13,10 @@ public class GameManager : MonoBehaviour
     public TMP_Text finalScoreText;
     public TMP_Text gameOverText;
     public GameObject completePanel;
-
+    [Header("Score Sound Effects")]
+    public AudioSource scoreAudioSource;
+    public AudioClip positiveScoreSFX;
+    public AudioClip negativeScoreSFX;
     void Awake()
     {
         Instance = this;
@@ -55,12 +58,24 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void AddScore(int points)
+   public void AddScore(int points)
     {
-        if (isGameOver)
-            return;
+    if (isGameOver)
+        return;
 
-        score += points;
+    score += points;
+
+    if (scoreAudioSource == null)
+        return;
+
+    if (points > 0 && positiveScoreSFX != null)
+    {
+        scoreAudioSource.PlayOneShot(positiveScoreSFX);
+    }
+    else if (points < 0 && negativeScoreSFX != null)
+    {
+        scoreAudioSource.PlayOneShot(negativeScoreSFX);
+    }
     }
 
     public void GameOver(string gameOverMsg, float fontSize, float panelWidth)
