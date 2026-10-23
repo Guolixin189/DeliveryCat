@@ -109,4 +109,13 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("Main Menu");
     }
+    
+    public void PlayGameAfterTutorial()
+    {
+    Time.timeScale = 1f;
+
+    GameSettings.OpenCompanySelectOnMenu = true;
+
+    SceneManager.LoadScene("Main Menu");
+    }
 }
