@@ -19,6 +19,13 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+    void Start()
+    {
+    if (SceneManager.GetActiveScene().name == "level_2")
+    {
+        remainingTime = GameSettings.SelectedDuration;
+    }
+    }
     void Update()
     {
         if (!isGameOver)
