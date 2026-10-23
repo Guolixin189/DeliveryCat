@@ -6607,8 +6607,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 327554593630503682, guid: cf61a025642b86d45ae2f84d8999a17f, type: 3}
       propertyPath: m_Name
-      value: Villager_male (1)
+      value: Villager_female
       objectReference: {fileID: 0}
+    - target: {fileID: 3684170280682906860, guid: cf61a025642b86d45ae2f84d8999a17f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6756458215162714422, guid: 4876820d15c9d3643a6552ed86fc7a38, type: 3}
     - target: {fileID: 9149964815552939997, guid: cf61a025642b86d45ae2f84d8999a17f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

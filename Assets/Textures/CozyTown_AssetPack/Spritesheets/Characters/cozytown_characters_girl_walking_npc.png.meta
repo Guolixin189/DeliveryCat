@@ -70,7 +70,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -146,265 +146,265 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cozytown_characters_girl_walking_0
+      name: cozytown_characters_girl_walking_npc_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 15
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71fbb22c20f181f4f8dd8cafa02a87fb
+      internalID: -1140441384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_characters_girl_walking_npc_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 0
+        width: 13
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7b02b2b9ee2a4029bb24c8bc063b8b68
-      internalID: 9092310657709914486
+      spriteID: 8e7fdc9f47987f0449ba8ae9970fded0
+      internalID: 1894132289
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cozytown_characters_girl_walking_1
+      name: cozytown_characters_girl_walking_npc_2
       rect:
         serializedVersion: 2
-        x: 16
+        x: 33
         y: 0
-        width: 15
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 14d7831af6d84d8ebdbf5e5e5536ad6c
-      internalID: 9067177820205171004
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cozytown_characters_girl_walking_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 565364bb235f411e8f33d06081f26b85
-      internalID: 8289259651558275727
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cozytown_characters_girl_walking_3
-      rect:
-        serializedVersion: 2
-        x: 47
-        y: 0
-        width: 17
+        width: 14
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7295da07186e4da88e469eb91b659440
-      internalID: -6756458215162714422
+      spriteID: 0c7edb01634bd234ea6faee969b04d09
+      internalID: -778728954
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cozytown_characters_girl_walking_4
+      name: cozytown_characters_girl_walking_npc_3
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d545b91c66644c2086e787cc1a3a09fd
-      internalID: -4165528235923098544
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cozytown_characters_girl_walking_5
-      rect:
-        serializedVersion: 2
-        x: 80
+        x: 48
         y: 0
         width: 15
-        height: 25
+        height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e2ea37fffcef40b88c3ad59b750aae14
-      internalID: -904758880849974535
+      spriteID: 052b5031ec90f134fa85867d79440f3b
+      internalID: -43117374
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cozytown_characters_girl_walking_6
+      name: cozytown_characters_girl_walking_npc_4
       rect:
         serializedVersion: 2
-        x: 97
+        x: 65
         y: 0
-        width: 15
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a425a31a7cdd40ae84a6abfdff31e34f
-      internalID: 9138121393369543866
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cozytown_characters_girl_walking_7
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 0
-        width: 16
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d3d86801d7e9435f82344a0f5c11d151
-      internalID: -6329911854606725777
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cozytown_characters_girl_walking_8
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 17
+        width: 14
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d133761342f84edc9413c85a7bad28be
-      internalID: 7988421165945809841
+      spriteID: 9d84ad07afeb9b14682ce3fdf16bae2a
+      internalID: 492876654
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cozytown_characters_girl_walking_9
+      name: cozytown_characters_girl_walking_npc_5
       rect:
         serializedVersion: 2
-        x: 144
+        x: 81
         y: 0
-        width: 16
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bb983cc6faac4eaab59e0fd9f1307354
-      internalID: -6802259024432541928
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cozytown_characters_girl_walking_10
-      rect:
-        serializedVersion: 2
-        x: 161
-        y: 0
-        width: 15
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b5105fc4e9fb4f29881e910b6a04e0de
-      internalID: -4071839448176152524
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cozytown_characters_girl_walking_11
-      rect:
-        serializedVersion: 2
-        x: 177
-        y: 0
-        width: 15
+        width: 13
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 52d574aa19f340afb3ef1d05cd8aac9a
-      internalID: 3280929474062131938
+      spriteID: be81f418bfc996941802190143201754
+      internalID: -2052029707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_characters_girl_walking_npc_6
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 0
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e81d90867da8a34e97ac7879359f62f
+      internalID: -1909811999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_characters_girl_walking_npc_7
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 0
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ab3dc899b482f74dafc6f9f995fb55d
+      internalID: 1916391112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_characters_girl_walking_npc_8
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 0
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2db83ed12ba9f648b8f01c723fb4d5c
+      internalID: 309132581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_characters_girl_walking_npc_9
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 0
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04eb290aa2119d940b47012d0e0555e0
+      internalID: 1357618506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_characters_girl_walking_npc_10
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 0
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2480efb8641bad4da6558777cdecbb2
+      internalID: -702853916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cozytown_characters_girl_walking_npc_11
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 0
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bf4b61d73ab2264980746966f6920f9
+      internalID: -997485274
       vertices: []
       indices: 
       edges: []
@@ -413,7 +413,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 16aa8c2e2baec694e96cd98c057b5483
     internalID: 0
     vertices: []
     indices: 
@@ -421,20 +421,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      cozytown_characters_girl_walking_0: 9092310657709914486
-      cozytown_characters_girl_walking_1: 9067177820205171004
-      cozytown_characters_girl_walking_10: -4071839448176152524
-      cozytown_characters_girl_walking_11: 3280929474062131938
-      cozytown_characters_girl_walking_2: 8289259651558275727
-      cozytown_characters_girl_walking_3: -6756458215162714422
-      cozytown_characters_girl_walking_4: -4165528235923098544
-      cozytown_characters_girl_walking_5: -904758880849974535
-      cozytown_characters_girl_walking_6: 9138121393369543866
-      cozytown_characters_girl_walking_7: -6329911854606725777
-      cozytown_characters_girl_walking_8: 7988421165945809841
-      cozytown_characters_girl_walking_9: -6802259024432541928
+      cozytown_characters_girl_walking_npc_0: -1140441384
+      cozytown_characters_girl_walking_npc_1: 1894132289
+      cozytown_characters_girl_walking_npc_10: -702853916
+      cozytown_characters_girl_walking_npc_11: -997485274
+      cozytown_characters_girl_walking_npc_2: -778728954
+      cozytown_characters_girl_walking_npc_3: -43117374
+      cozytown_characters_girl_walking_npc_4: 492876654
+      cozytown_characters_girl_walking_npc_5: -2052029707
+      cozytown_characters_girl_walking_npc_6: -1909811999
+      cozytown_characters_girl_walking_npc_7: 1916391112
+      cozytown_characters_girl_walking_npc_8: 309132581
+      cozytown_characters_girl_walking_npc_9: 1357618506
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
