@@ -4067,7 +4067,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -60, y: 60}
+  m_AnchoredPosition: {x: -108, y: 98}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &270875232
@@ -53860,6 +53860,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: DirectionPointer
       objectReference: {fileID: 0}
+    - target: {fileID: 4076976279329125582, guid: a0d26426b02904c728ebedb86da49547, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.151768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076976279329125582, guid: a0d26426b02904c728ebedb86da49547, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.11250196
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076976279329125582, guid: a0d26426b02904c728ebedb86da49547, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.151768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076976279329125582, guid: a0d26426b02904c728ebedb86da49547, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.11250196
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076976279329125582, guid: a0d26426b02904c728ebedb86da49547, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076976279329125582, guid: a0d26426b02904c728ebedb86da49547, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7135936341904510271, guid: a0d26426b02904c728ebedb86da49547, type: 3}
       propertyPath: deliveryManager
       value: 
@@ -53905,7 +53929,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6645554880495171913, guid: a0d26426b02904c728ebedb86da49547, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0d26426b02904c728ebedb86da49547, type: 3}
