@@ -4,15 +4,15 @@ using UnityEngine;
 // the current objective: the pickup zone when not carrying, the target dropoff
 // zone when carrying. Same target logic and colors as the corner compass
 // (DirectionPointer). The arrow is created at runtime as a child of the
-// player, so no scene setup is needed. Its base sits exactly on the feet
-// point (feetOffset) and its tip points toward the target. It stays hidden
+// player, so no scene setup is needed. It sits fixed below the feet
+// (feetOffset) and rotates in place to point toward the target. It stays hidden
 // when there is no active target (for example in the tutorial, which has no
 // DeliveryManager).
 public class FootDirectionPointer : MonoBehaviour
 {
     [Header("Arrow")]
     public Vector3 feetOffset = new Vector3(0f, -0.55f, 0f);
-    public int sortingOrder = 5;
+    public int sortingOrder = 7;
     public float arrowScale = 0.45f;
 
     [Header("Colors")]
@@ -89,15 +89,8 @@ public class FootDirectionPointer : MonoBehaviour
         Vector2 dir = (Vector2)(target.position - transform.position);
         if (dir.sqrMagnitude > 0.0001f)
         {
-            dir.Normalize();
             float ang = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             arrow.localRotation = Quaternion.Euler(0f, 0f, ang - 90f);
-            // Base of the arrow sits on the feet point; the arrow grows
-            // outward from there toward the target.
-            float halfHeight = 0f;
-            if (arrowRenderer != null && arrowRenderer.sprite != null)
-                halfHeight = arrowRenderer.sprite.bounds.size.y * arrow.localScale.y * 0.5f;
-            arrow.localPosition = feetOffset + (Vector3)(dir * halfHeight);
         }
 
         if (arrowRenderer != null)
