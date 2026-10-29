@@ -218,8 +218,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d934aec16bbb4256966be4b6283374ab, type: 3}
   m_Name: FootDirectionPointer
   m_EditorClassIdentifier: Assembly-CSharp::FootDirectionPointer
-  feetOffset: {x: 0, y: -0.8, z: 0}
-  sortingOrder: 7
-  arrowScale: 0.5
+  feetOffset: {x: 0, y: -0.55, z: 0}
+  sortingOrder: 5
+  arrowScale: 0.45
   toPickupColor: {r: 1, g: 0.72, b: 0.3, a: 1}
   toDropoffColor: {r: 0.4, g: 0.8, b: 1, a: 1}
