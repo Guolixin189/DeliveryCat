@@ -81,11 +81,27 @@ public class Minimap : MonoBehaviour
         if (deliveryManager.dropOffZones == null || deliveryManager.dropOffZones.Length == 0)
             return;
 
-        whiteSprite = MakeWhiteSprite();
-        ComputeBounds();
-        BuildUI();
-        LayoutDots(smallSize);
-        currentSize = smallSize;
+        try
+        {
+            whiteSprite = MakeWhiteSprite();
+            ComputeBounds();
+            BuildUI();
+            LayoutDots(smallSize);
+            currentSize = smallSize;
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("[Minimap] failed to build: " + e.Message);
+            if (smallPanel != null) Destroy(smallPanel.gameObject);
+            if (largeRoot != null) Destroy(largeRoot.gameObject);
+            smallPanel = null;
+            largeRoot = null;
+            content = null;
+            playerDot = null;
+            pickupDot = null;
+            houses.Clear();
+            houseDots.Clear();
+        }
         uiBuilt = true;
     }
 
@@ -198,20 +214,22 @@ public class Minimap : MonoBehaviour
         close.transition = Selectable.Transition.None;
         close.onClick.AddListener(Shrink);
 
-        GameObject xGo = new GameObject("X");
-        xGo.transform.SetParent(closeBtn, false);
-        RectTransform xRt = xGo.AddComponent<RectTransform>();
-        xRt.anchorMin = Vector2.zero;
-        xRt.anchorMax = Vector2.one;
-        xRt.anchoredPosition = Vector2.zero;
-        xRt.sizeDelta = Vector2.zero;
-        Text xText = xGo.AddComponent<Text>();
-        xText.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
-        xText.text = "X";
-        xText.fontSize = 24;
-        xText.color = Color.white;
-        xText.alignment = TextAnchor.MiddleCenter;
-        xText.raycastTarget = false;
+        // X icon from two rotated bars (no font dependency).
+        for (int i = 0; i < 2; i++)
+        {
+            GameObject barGo = new GameObject("XBar");
+            barGo.transform.SetParent(closeBtn, false);
+            RectTransform barRt = barGo.AddComponent<RectTransform>();
+            barRt.anchorMin = barRt.anchorMax = new Vector2(0.5f, 0.5f);
+            barRt.pivot = new Vector2(0.5f, 0.5f);
+            barRt.anchoredPosition = Vector2.zero;
+            barRt.sizeDelta = new Vector2(24f, 4f);
+            barRt.localRotation = Quaternion.Euler(0f, 0f, i == 0 ? 45f : -45f);
+            Image barImg = barGo.AddComponent<Image>();
+            barImg.sprite = whiteSprite;
+            barImg.color = Color.white;
+            barImg.raycastTarget = false;
+        }
 
         largeRoot.gameObject.SetActive(false);
     }
