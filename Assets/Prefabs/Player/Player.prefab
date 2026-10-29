@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 3526069684450463617}
   - component: {fileID: 5402203594847426825}
   - component: {fileID: 7778440384451020073}
-  - component: {fileID: 9000000001}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -206,20 +205,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &9000000001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 618575330350020273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d934aec16bbb4256966be4b6283374ab, type: 3}
-  m_Name: FootDirectionPointer
-  m_EditorClassIdentifier: Assembly-CSharp::FootDirectionPointer
-  feetOffset: {x: 0, y: -0.55, z: 0}
-  sortingOrder: 7
-  arrowScale: 0.45
-  toPickupColor: {r: 1, g: 0.72, b: 0.3, a: 1}
-  toDropoffColor: {r: 0.4, g: 0.8, b: 1, a: 1}
