@@ -19,7 +19,7 @@ public class Minimap : MonoBehaviour
     public float boundsPadding = 0.15f;
 
     [Header("Colors")]
-    public Color backgroundColor = new Color(0f, 0f, 0f, 0.55f);
+    public Color backgroundColor = new Color(0.35f, 0.35f, 0.35f, 0.6f);
     public Color houseColor = new Color(0.85f, 0.85f, 0.85f, 1f);
     public Color pickupColor = new Color(1f, 0.72f, 0.30f, 1f);
     public Color targetColor = new Color(0.40f, 0.80f, 1f, 1f);
