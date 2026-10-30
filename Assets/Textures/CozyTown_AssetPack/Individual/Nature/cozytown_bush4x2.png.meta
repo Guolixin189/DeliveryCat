@@ -141,10 +141,10 @@ TextureImporter:
       - {x: -32, y: 16}
     customData: 
     physicsShape:
-    - - {x: -29, y: -15}
-      - {x: 28, y: -15}
-      - {x: 28, y: 8}
-      - {x: -29, y: 8}
+    - - {x: -23, y: -7}
+      - {x: 24, y: -7}
+      - {x: 24, y: 13}
+      - {x: -23, y: 13}
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 1537655665

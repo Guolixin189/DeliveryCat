@@ -19,7 +19,7 @@ public class CatNPCMovement : MonoBehaviour
     // Painted static layers: a tile on any of these counts as solid for
     // NPCs, even where no collider was painted (roofs, trees, lamps...).
     private static readonly string[] BlockerNames =
-        { "Building", "Building collider", "Building decor", "roof", "nature", "static obstacles", "Building behind", "static obstacle (behind)" };
+        { "Building", "Building collider", "Building decor", "roof", "nature", "static obstacles", "Building behind", "static obstacle (behind)", "obstacles behind (1)", "obstacles middleground", "obstacle part in front of player" };
 
     void Start()
     {

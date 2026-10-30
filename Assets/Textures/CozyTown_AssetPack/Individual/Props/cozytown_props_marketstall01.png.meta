@@ -137,8 +137,8 @@ TextureImporter:
     outline: []
     customData: 
     physicsShape:
-    - - {x: -23, y: -23}
-      - {x: 23, y: -23}
+    - - {x: -23, y: -22}
+      - {x: 23, y: -22}
       - {x: 23, y: -6}
       - {x: -23, y: -6}
     bones: []

@@ -48,7 +48,7 @@ public class Minimap : MonoBehaviour
 
     void Start()
     {
-        canvas = FindFirstObjectByType<Canvas>();
+        canvas = FindScreenCanvas();
         deliveryManager = DeliveryManager.Instance;
         TryBuild();
     }
@@ -57,6 +57,8 @@ public class Minimap : MonoBehaviour
     {
         if (!uiBuilt)
         {
+            if (canvas == null)
+                canvas = FindScreenCanvas();
             if (deliveryManager == null)
                 deliveryManager = DeliveryManager.Instance;
             TryBuild();
@@ -72,6 +74,17 @@ public class Minimap : MonoBehaviour
             if (img != null)
                 img.color = (houses[i] == target) ? targetColor : houseColor;
         }
+    }
+
+    Canvas FindScreenCanvas()
+    {
+        Canvas[] canvases = FindObjectsByType<Canvas>(FindObjectsSortMode.None);
+        foreach (Canvas c in canvases)
+        {
+            if (c != null && c.isRootCanvas && c.renderMode != RenderMode.WorldSpace)
+                return c;
+        }
+        return null;
     }
 
     void TryBuild()

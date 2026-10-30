@@ -9,6 +9,7 @@ namespace player
         [Header("Slow down on pedestrian hit")]
         public float slowFactor = 0.4f;     // speed multiplier while slowed
         public float slowDuration = 2f;     // slow duration in seconds
+        public SlowPopup slowPopup;
         private float slowTimer = 0f;       // remaining slow time
         [Header("Trap effects")]
         public float mudFactor = 0.5f;          // speed multiplier in mud
@@ -53,6 +54,8 @@ namespace player
             company = GameSettings.SelectedCompany;
 
             collisionAudioSource = GetComponent<AudioSource>();
+            if (slowPopup == null)
+                slowPopup = FindFirstObjectByType<SlowPopup>();
         }
 
         void Update()
@@ -184,6 +187,8 @@ namespace player
         public void ApplySlow()
         {
             slowTimer = slowDuration;
+            if (slowPopup != null)
+                slowPopup.Show(slowDuration);
         }
 
         // Called by mud traps while the player stays inside; re-entering cancels lingering
