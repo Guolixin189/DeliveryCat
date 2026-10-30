@@ -54,7 +54,7 @@ public class BananaPeel : MonoBehaviour
         Collider2D col = GetComponent<Collider2D>();
         if (col != null)
             col.enabled = false;
-        transform.localScale = baseScale * new Vector3(1.2f, 0.6f, 1f);
+        transform.localScale = Vector3.Scale(baseScale, new Vector3(1.2f, 0.6f, 1f));
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         if (sr != null)
             sr.color = new Color(1f, 1f, 1f, 0.5f);
