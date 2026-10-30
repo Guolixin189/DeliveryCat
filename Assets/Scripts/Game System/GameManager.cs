@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,11 @@ public class GameManager : MonoBehaviour
     public AudioSource scoreAudioSource;
     public AudioClip positiveScoreSFX;
     public AudioClip negativeScoreSFX;
+
+    [Header("Star Rating UI")]
+    public Image[] stars;
+    public Sprite filledStarSprite;
+    public Sprite emptyStarSprite;
     void Awake()
     {
         Instance = this;
@@ -107,8 +113,21 @@ public class GameManager : MonoBehaviour
 
         isGameOver = true;
         starsEarned = CalculateStars();
+        
         gameOverText.text = gameOverMsg;
         gameOverText.fontSize = fontSize;
+
+        for (int i = 0; i < stars.Length; i++)
+    {
+        if (i < starsEarned)
+        {
+        stars[i].sprite = filledStarSprite;
+        }
+    else
+        {
+        stars[i].sprite = emptyStarSprite;
+        }
+    }
 
         RectTransform panel = gameOverPanel.GetComponent<RectTransform>();
         panel.SetSizeWithCurrentAnchors(
