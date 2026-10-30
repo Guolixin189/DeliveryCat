@@ -1,20 +1,19 @@
 using UnityEngine;
 
-// Rotating sprinkler: a water jet sweeps back and forth around a center
-// direction. Players caught in the jet are slowed, like a moving,
-// predictable puddle.
+// Rotating sprinkler: the water jet spins a full 360 degrees around the
+// sprinkler head, over and over. Players caught in the jet are slowed,
+// like a moving, predictable puddle.
 public class SprinklerTrap : MonoBehaviour
 {
     public Transform jet;              // jet pivot, rotates around the sprinkler head
     public float jetRange = 2.2f;      // how far the water reaches
     public float jetHalfAngle = 25f;   // half-width of the jet sector in degrees
-    public float sweepAngle = 60f;     // jet swings +/- sweepAngle around the center
-    public float sweepCenterAngle = 0f; // center direction in degrees (0 = east)
-    public float sweepSpeed = 1f;      // sweep oscillation speed
+    public float rotationSpeed = 90f;  // jet spin speed in degrees per second
     public float slowFactor = 0.5f;
 
     private player.CatController cat;
     private float findTimer = 0f;
+    private float angle = 0f;
 
     void Start()
     {
@@ -35,7 +34,10 @@ public class SprinklerTrap : MonoBehaviour
             if (cat == null)
                 return;
         }
-        float angle = sweepCenterAngle + Mathf.Sin(Time.time * sweepSpeed) * sweepAngle;
+        // spin the jet a full circle, continuously
+        angle += rotationSpeed * Time.deltaTime;
+        if (angle >= 360f)
+            angle -= 360f;
         if (jet != null)
             jet.localRotation = Quaternion.Euler(0f, 0f, angle);
         Vector2 toPlayer = (Vector2)cat.transform.position - (Vector2)transform.position;
