@@ -8,6 +8,7 @@ public class NPCMovement : MonoBehaviour
 
     private int direction = -1; 
     private SpriteRenderer spriteRenderer;
+    private Collider2D selfCollider;
     private Tilemap[] blockers;
 
     // Painted static layers: a tile on any of these counts as solid for
@@ -17,6 +18,7 @@ public class NPCMovement : MonoBehaviour
 
     void Start(){
          spriteRenderer = GetComponent<SpriteRenderer>();
+         selfCollider = GetComponent<Collider2D>();
          var all = FindObjectsByType<Tilemap>(FindObjectsSortMode.None);
          var list = new System.Collections.Generic.List<Tilemap>();
          foreach (var tm in all)
@@ -27,10 +29,33 @@ public class NPCMovement : MonoBehaviour
 
     bool Blocked(Vector3 pos)
     {
-        if (blockers == null) return false;
-        foreach (var tm in blockers)
-            if (tm != null && tm.HasTile(tm.WorldToCell(pos)))
-                return true;
+        if (blockers != null)
+        {
+            foreach (var tm in blockers)
+                if (tm != null && tm.HasTile(tm.WorldToCell(pos)))
+                    return true;
+        }
+        // Sprites like the chair are taller than the cell they are painted in.
+        if (HitsSolid(pos) || HitsSolid(pos + Vector3.up * 0.4f))
+            return true;
+        return false;
+    }
+
+    bool HitsSolid(Vector3 pos)
+    {
+        Collider2D[] hits = Physics2D.OverlapPointAll(pos);
+        foreach (var h in hits)
+        {
+            if (h == null || h.isTrigger || h == selfCollider)
+                continue;
+            if (h.GetComponentInParent<NPCMovement>() != null
+                || h.GetComponentInParent<CatNPCMovement>() != null)
+                continue;
+            if (h.CompareTag("Player")
+                || (h.attachedRigidbody != null && h.attachedRigidbody.CompareTag("Player")))
+                continue;
+            return true;
+        }
         return false;
     }
 
