@@ -62,7 +62,10 @@ public class DeliveryManager : MonoBehaviour
                 points = CompanyRules.FedExOnTimePoints;
             else
                 points = CompanyRules.CorrectPoints(company);
+            if (gameManager != null)
+                gameManager.PackageDelivered();
         }
+        
         else
         {
             points = CompanyRules.WrongPoints(company);

@@ -7,11 +7,14 @@ public class GameManager : MonoBehaviour
 {
     public float remainingTime = 60f;
     public int score = 0;
+    public int deliveredPackages = 0;
+    public int starsEarned = 0;
     public GameObject gameOverPanel;
     public bool isGameOver = false;
     public static GameManager Instance;
     public TMP_Text finalScoreText;
     public TMP_Text gameOverText;
+    public TMP_Text deliveredPackagesText;
     public GameObject completePanel;
     [Header("Score Sound Effects")]
     public AudioSource scoreAudioSource;
@@ -46,7 +49,7 @@ public class GameManager : MonoBehaviour
              }
             else
             {
-                GameOver("Time's up!", 50, 400);
+                GameOver("Time's up!", 50, 800);
             }
             }
 
@@ -78,13 +81,32 @@ public class GameManager : MonoBehaviour
     }
     }
 
+    public void PackageDelivered()
+    {
+    if (isGameOver)
+        return;
+
+    deliveredPackages++;
+    }
+
+    public int CalculateStars()
+        {
+    if (deliveredPackages >= 8)
+        return 3;
+    else if (deliveredPackages >= 5)
+        return 2;
+    else if (deliveredPackages >= 1)
+        return 1;
+    else
+        return 0;
+    }
     public void GameOver(string gameOverMsg, float fontSize, float panelWidth)
     {
         if (isGameOver)
             return;
 
         isGameOver = true;
-
+        starsEarned = CalculateStars();
         gameOverText.text = gameOverMsg;
         gameOverText.fontSize = fontSize;
 
@@ -101,6 +123,7 @@ public class GameManager : MonoBehaviour
         );
 
         finalScoreText.text = "Final Score: " + score;
+        deliveredPackagesText.text = "Packages Delivered: " + deliveredPackages;
         gameOverPanel.SetActive(true);
     }
 
