@@ -137,10 +137,10 @@ TextureImporter:
     outline: []
     customData: 
     physicsShape:
-    - - {x: -23, y: -22}
-      - {x: 23, y: -22}
-      - {x: 23, y: -6}
-      - {x: -23, y: -6}
+    - - {x: -24, y: -23}
+      - {x: 24, y: -23}
+      - {x: 24, y: -6}
+      - {x: -24, y: -6}
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 1537655665

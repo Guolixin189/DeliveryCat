@@ -148,7 +148,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2967305758548271525}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.9, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -359,19 +359,19 @@ PrefabInstance:
       objectReference: {fileID: 7364682651488144517, guid: 6f5331adf4d2c4e69a158016c121d150, type: 3}
     - target: {fileID: 2660364384542200456, guid: aab29af791ead4a7698f294abb208ed0, type: 3}
       propertyPath: m_Size.x
-      value: 0.8538885
+      value: 1.0579395
       objectReference: {fileID: 0}
     - target: {fileID: 2660364384542200456, guid: aab29af791ead4a7698f294abb208ed0, type: 3}
       propertyPath: m_Size.y
-      value: 0.9955535
+      value: 1.0942881
       objectReference: {fileID: 0}
     - target: {fileID: 2660364384542200456, guid: aab29af791ead4a7698f294abb208ed0, type: 3}
       propertyPath: m_Offset.x
-      value: 0.048704624
+      value: 0.07174301
       objectReference: {fileID: 0}
     - target: {fileID: 2660364384542200456, guid: aab29af791ead4a7698f294abb208ed0, type: 3}
       propertyPath: m_Offset.y
-      value: -0.062223196
+      value: -0.012855887
       objectReference: {fileID: 0}
     - target: {fileID: 2660364384542200456, guid: aab29af791ead4a7698f294abb208ed0, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
