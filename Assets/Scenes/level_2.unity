@@ -6652,7 +6652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2969544205052628977, guid: 8a7f398444b6d435c9fd6dfe6eb015a7, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3771893757582366746, guid: 8a7f398444b6d435c9fd6dfe6eb015a7, type: 3}
       propertyPath: cozySFX
@@ -61490,7 +61490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2969544205052628977, guid: 8a7f398444b6d435c9fd6dfe6eb015a7, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3771893757582366746, guid: 8a7f398444b6d435c9fd6dfe6eb015a7, type: 3}
       propertyPath: cozySFX
