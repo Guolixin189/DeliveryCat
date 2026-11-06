@@ -12,8 +12,12 @@ public class MudTrap : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        Debug.Log($"Mud exit: {other.name}");
         player.CatController cat = other.GetComponent<player.CatController>();
         if (cat != null)
             cat.ApplyMudLinger();
     }
+
+    private void OnTriggerEnter2D(Collider2D other) => Debug.Log($"Mud enter: {other.name}");
+
 }
