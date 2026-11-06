@@ -47,6 +47,13 @@ public class DeliveryManager : MonoBehaviour
         HasPackage = true;
         if (pickupZone != null)
             pickupZone.SetIndicator(false);
+        // Now that the player has the package, reveal the target house.
+        for (int i = 0; i < dropOffZones.Length; i++)
+        {
+            if (dropOffZones[i] == null)
+                continue;
+            dropOffZones[i].SetIndicator(dropOffZones[i].houseIndex == targetHouseIndex);
+        }
     }
 
     public bool IsTargetHouse(int houseIndex)
@@ -95,11 +102,13 @@ public class DeliveryManager : MonoBehaviour
             return;
         targetHouseIndex = target.houseIndex;
         Debug.Log($"[Delivery] new target house: {targetHouseIndex}");
+        // The target bubble stays hidden until the package is picked up,
+        // so the destination is not given away early.
         for (int i = 0; i < dropOffZones.Length; i++)
         {
             if (dropOffZones[i] == null)
                 continue;
-            dropOffZones[i].SetIndicator(dropOffZones[i].houseIndex == targetHouseIndex);
+            dropOffZones[i].SetIndicator(false);
         }
     }
 
