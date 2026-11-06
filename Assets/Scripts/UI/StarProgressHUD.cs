@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
@@ -22,8 +23,15 @@ public class StarProgressHUD : MonoBehaviour
     public float barWidth = 330f;
     public float barHeight = 14f;
     public float panelWidth = 380f;
-    public float panelHeight = 170f;
-    public float fontSize = 26f;
+    public float panelHeight = 180f;
+    public float fontSize = 34f;
+
+    [Header("Star Thresholds")]
+    // Deliveries needed for each star. Defaults are the official levels
+    // (1, 5, 8); the tutorial overrides them to (1, 2, 3) in Start.
+    public int star1At = 1;
+    public int star2At = 5;
+    public int star3At = 8;
 
     [Header("Colors")]
     public Color panelColor = new Color(0.2f, 0.2f, 0.2f, 0.45f);
@@ -58,9 +66,30 @@ public class StarProgressHUD : MonoBehaviour
 
     void Start()
     {
+        ApplySceneThresholds();
         canvas = FindScreenCanvas();
         gameManager = GameManager.Instance;
         TryBuild();
+    }
+
+    void ApplySceneThresholds()
+    {
+        // The tutorial only has three deliveries: 1 = 1 star, 2 = 2 stars,
+        // 3 = 3 stars. The official levels keep the defaults (1, 5, 8).
+        if (SceneManager.GetActiveScene().name == "level_1")
+        {
+            star1At = 1;
+            star2At = 2;
+            star3At = 3;
+        }
+    }
+
+    int StarsEarned(int delivered)
+    {
+        if (delivered >= star3At) return 3;
+        if (delivered >= star2At) return 2;
+        if (delivered >= star1At) return 1;
+        return 0;
     }
 
     void Update()
@@ -80,7 +109,7 @@ public class StarProgressHUD : MonoBehaviour
         panel.gameObject.SetActive(!gameManager.isGameOver);
 
         int delivered = gameManager.deliveredPackages;
-        int earned = gameManager.CalculateStars();
+        int earned = StarsEarned(delivered);
         for (int i = 0; i < starImages.Length; i++)
         {
             if (starImages[i] == null)
@@ -94,25 +123,25 @@ public class StarProgressHUD : MonoBehaviour
 
         int nextThreshold;
         float targetFill;
-        if (delivered >= 8)
+        if (delivered >= star3At)
         {
-            nextThreshold = 8;
+            nextThreshold = star3At;
             targetFill = 1f;
         }
-        else if (delivered >= 5)
+        else if (delivered >= star2At)
         {
-            nextThreshold = 8;
-            targetFill = (delivered - 5) / 3f;
+            nextThreshold = star3At;
+            targetFill = (delivered - star2At) / (float)(star3At - star2At);
         }
-        else if (delivered >= 1)
+        else if (delivered >= star1At)
         {
-            nextThreshold = 5;
-            targetFill = (delivered - 1) / 4f;
+            nextThreshold = star2At;
+            targetFill = (delivered - star1At) / (float)(star2At - star1At);
         }
         else
         {
-            nextThreshold = 1;
-            targetFill = 0f;
+            nextThreshold = star1At;
+            targetFill = (float)delivered / star1At;
         }
 
         // Smooth bar: glide toward the target instead of jumping.
@@ -204,7 +233,7 @@ public class StarProgressHUD : MonoBehaviour
         {
             whiteSprite = MakeWhiteSprite();
             BuildUI();
-            lastEarned = gameManager.CalculateStars();
+            lastEarned = StarsEarned(gameManager.deliveredPackages);
             lastDelivered = gameManager.deliveredPackages;
             displayedFill = 0f;
         }
@@ -276,11 +305,14 @@ public class StarProgressHUD : MonoBehaviour
         RectTransform textRt = MakeRT("StarProgressText", panel);
         textRt.anchorMin = textRt.anchorMax = new Vector2(0.5f, 1f);
         textRt.pivot = new Vector2(0.5f, 0.5f);
-        textRt.anchoredPosition = new Vector2(0f, -(textTop + 17f));
-        textRt.sizeDelta = new Vector2(barWidth, 34f);
+        textRt.anchoredPosition = new Vector2(0f, -(textTop + 22f));
+        textRt.sizeDelta = new Vector2(barWidth, 44f);
         countText = textRt.gameObject.AddComponent<TextMeshProUGUI>();
         countText.text = "0/1";
         countText.fontSize = fontSize;
+        countText.fontStyle = FontStyles.Bold;
+        countText.outlineWidth = 0.2f;
+        countText.outlineColor = new Color32(0, 0, 0, 255);
         countText.alignment = TextAlignmentOptions.Center;
         countText.color = countColor;
         countText.raycastTarget = false;

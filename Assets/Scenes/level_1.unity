@@ -4651,6 +4651,7 @@ GameObject:
   - component: {fileID: 500123034}
   - component: {fileID: 500123033}
   - component: {fileID: 500123035}
+  - component: {fileID: 3100000011}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -22820,3 +22821,16 @@ SceneRoots:
   - {fileID: 579155980}
   - {fileID: 1517706775}
   - {fileID: 429900845}
+--- !u!114 &3100000011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500123032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 112e1944cc844ca48357b8eafbde98c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: StarProgressHUD
+
