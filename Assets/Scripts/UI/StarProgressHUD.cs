@@ -30,6 +30,9 @@ public class StarProgressHUD : MonoBehaviour
     // between tests. Counter-scale the panel so the HUD always renders
     // at the same pixel size in every level and every window.
     public bool fixedPixelSize = true;
+    // Overall size of the HUD relative to the design size above.
+    // 0.7 matches how big it looked in level_1 (the smaller of the two).
+    public float hudScale = 0.7f;
 
     [Header("Star Thresholds")]
     // Deliveries needed for each star. Defaults are the official levels
@@ -116,7 +119,7 @@ public class StarProgressHUD : MonoBehaviour
         // Keep the HUD the same screen size in every level and window.
         if (fixedPixelSize && canvas != null && canvas.scaleFactor > 0f)
         {
-            float s = 1f / canvas.scaleFactor;
+            float s = hudScale / canvas.scaleFactor;
             panel.localScale = new Vector3(s, s, 1f);
         }
 
