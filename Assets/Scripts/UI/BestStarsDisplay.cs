@@ -28,11 +28,11 @@ public class BestStarsDisplay : MonoBehaviour
             return;
 
         whiteSprite = MakeWhiteSprite();
-        ShowBestStars(canvas.transform, "TutorialButton", "level_1");
-        ShowBestStars(canvas.transform, "OfficialButton", "level_2");
+        ShowBestStars("TutorialButton", "level_1");
+        ShowBestStars("OfficialButton", "level_2");
     }
 
-    void ShowBestStars(Transform parent, string buttonName, string sceneName)
+    void ShowBestStars(string buttonName, string sceneName)
     {
         GameObject buttonObj = GameObject.Find(buttonName);
         if (buttonObj == null)
@@ -41,19 +41,21 @@ public class BestStarsDisplay : MonoBehaviour
         if (buttonRt == null)
             return;
 
+        // Parent the stars to the button itself, so they sit behind any
+        // menu panel (How To Play, Settings, Company) that covers the
+        // buttons, instead of floating on top of it.
         int best = GameManager.GetBestStars(sceneName);
         float rowWidth = 3f * starSize + 2f * starSpacing;
-        float rowCenterX = buttonRt.anchoredPosition.x + buttonRt.sizeDelta.x * 0.5f
+        float rowCenterX = buttonRt.sizeDelta.x * 0.5f
             + gapFromButton + rowWidth * 0.5f;
-        float rowCenterY = buttonRt.anchoredPosition.y;
 
         for (int i = 0; i < 3; i++)
         {
-            RectTransform star = MakeRT("BestStar_" + sceneName + "_" + (i + 1), parent);
+            RectTransform star = MakeRT("BestStar_" + sceneName + "_" + (i + 1), buttonRt);
             star.anchorMin = star.anchorMax = new Vector2(0.5f, 0.5f);
             star.pivot = new Vector2(0.5f, 0.5f);
             float x = rowCenterX + (i - 1) * (starSize + starSpacing);
-            star.anchoredPosition = new Vector2(x, rowCenterY);
+            star.anchoredPosition = new Vector2(x, 0f);
             star.sizeDelta = new Vector2(starSize, starSize);
             Image img = MakeImage(star, Color.white);
             Sprite filled = filledStarSprite;
