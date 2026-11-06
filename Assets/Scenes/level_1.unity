@@ -4685,8 +4685,8 @@ MonoBehaviour:
   positiveScoreSFX: {fileID: 8300000, guid: 016022aeb4d30471282541471ba6a46e, type: 3}
   negativeScoreSFX: {fileID: 8300000, guid: 88cb1e6c3195b4db8aadbb28594c293d, type: 3}
   stars: []
-  filledStarSprite: {fileID: 0}
-  emptyStarSprite: {fileID: 0}
+  filledStarSprite: {fileID: 7809497162449050188, guid: 322b50bcf73c24e9694cae8d7806ed72, type: 3}
+  emptyStarSprite: {fileID: 3109289202915743527, guid: 9c6404db84c764d96b649e7a375abb32, type: 3}
 --- !u!4 &500123034
 Transform:
   m_ObjectHideFlags: 0
