@@ -78,14 +78,46 @@ public class CatNPCMovement : MonoBehaviour
         Vector3 step = Vector3.right * direction * speed * Time.fixedDeltaTime;
         Vector3 next = transform.position + step;
         Vector3 probe = next + Vector3.right * direction * 0.3f;
-        if (!Blocked(transform.position) && (Blocked(next) || Blocked(probe)))
+        Vector3 otherPos;
+        bool npcAhead = OtherNPCAt(probe, out otherPos);
+        if (!Blocked(transform.position) && (Blocked(next) || Blocked(probe) || npcAhead))
         {
-            direction *= -1;
+            if (npcAhead && !Blocked(next) && !Blocked(probe))
+            {
+                // Startled by another NPC: dash away from it.
+                direction = otherPos.x >= transform.position.x ? -1 : 1;
+                fleeTimer = fleeDuration;
+            }
+            else
+            {
+                direction *= -1;
+            }
             if (spriteRenderer != null)
                 spriteRenderer.flipX = direction > 0;
             return;
         }
         transform.position = next;
+    }
+
+    // Another NPC in the way: report it (and where it is) so the cat can
+    // dash away. Physics cannot do this: the scene NPCs are Kinematic,
+    // and two Kinematic bodies never generate collision callbacks.
+    bool OtherNPCAt(Vector3 pos, out Vector3 otherPos)
+    {
+        otherPos = Vector3.zero;
+        Collider2D[] hits = Physics2D.OverlapPointAll(pos);
+        foreach (var h in hits)
+        {
+            if (h == null || h.isTrigger || h == selfCollider)
+                continue;
+            if (h.GetComponentInParent<NPCMovement>() != null
+                || h.GetComponentInParent<CatNPCMovement>() != null)
+            {
+                otherPos = h.transform.position;
+                return true;
+            }
+        }
+        return false;
     }
 
     void OnCollisionEnter2D(Collision2D collision)

@@ -68,7 +68,7 @@ public class NPCMovement : MonoBehaviour
         Vector3 step = Vector3.right * direction * speed * Time.fixedDeltaTime;
         Vector3 next = transform.position + step;
         Vector3 probe = next + Vector3.right * direction * 0.35f;
-        if (!Blocked(transform.position) && (Blocked(next) || Blocked(probe)))
+        if (!Blocked(transform.position) && (Blocked(next) || Blocked(probe) || HitsNPC(probe)))
         {
             direction *= -1;
             if (spriteRenderer != null)
@@ -76,6 +76,23 @@ public class NPCMovement : MonoBehaviour
             return;
         }
         transform.position = next;
+    }
+
+    // Another NPC in the way: turn around instead of walking through them.
+    // Physics cannot do this: the scene NPCs are Kinematic, and two
+    // Kinematic bodies never generate collision callbacks.
+    bool HitsNPC(Vector3 pos)
+    {
+        Collider2D[] hits = Physics2D.OverlapPointAll(pos);
+        foreach (var h in hits)
+        {
+            if (h == null || h.isTrigger || h == selfCollider)
+                continue;
+            if (h.GetComponentInParent<NPCMovement>() != null
+                || h.GetComponentInParent<CatNPCMovement>() != null)
+                return true;
+        }
+        return false;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
