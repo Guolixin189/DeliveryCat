@@ -292,10 +292,10 @@ public class StarProgressHUD : MonoBehaviour
     TMP_FontAsset FindFont()
     {
         if (gameManager != null && gameManager.finalScoreText != null
-            && gameManager.finalScoreText.fontAsset != null)
-            return gameManager.finalScoreText.fontAsset;
+            && gameManager.finalScoreText.font != null)
+            return gameManager.finalScoreText.font;
         TextMeshProUGUI any = FindFirstObjectByType<TextMeshProUGUI>();
-        return any != null ? any.fontAsset : null;
+        return any != null ? any.font : null;
     }
 
     RectTransform MakeRT(string name, Transform parent)
