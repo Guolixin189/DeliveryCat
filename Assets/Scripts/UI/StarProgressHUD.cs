@@ -8,6 +8,11 @@ using TMPro;
 // runtime, so no scene setup is needed. Attach to the GameManager object.
 // The thresholds reuse GameManager.CalculateStars, so the HUD always
 // matches the end-screen star rating. The HUD hides once the game is over.
+//
+// Animation: a newly earned star pops (scales up and settles), the bar
+// fills smoothly toward its target instead of jumping, the count text
+// gives a small punch when it changes, and the next star to earn gently
+// pulses so the player can see what to aim for.
 public class StarProgressHUD : MonoBehaviour
 {
     [Header("Layout")]
@@ -26,6 +31,15 @@ public class StarProgressHUD : MonoBehaviour
     public Color barFillColor = new Color(1f, 0.8f, 0.25f, 1f);
     public Color countColor = new Color(1f, 1f, 1f, 1f);
 
+    [Header("Animation")]
+    public float popDuration = 0.4f;
+    public float popScale = 0.45f;
+    public float barFillSpeed = 1.2f;
+    public float pulseAmplitude = 0.05f;
+    public float pulseSpeed = 3f;
+    public float textPunchDuration = 0.3f;
+    public float textPunchScale = 0.25f;
+
     Sprite whiteSprite;
     Canvas canvas;
     GameManager gameManager;
@@ -35,6 +49,12 @@ public class StarProgressHUD : MonoBehaviour
     Image[] starImages = new Image[3];
     Image barFill;
     TMP_Text countText;
+
+    float displayedFill;
+    int lastEarned;
+    int lastDelivered;
+    float[] popTimers = new float[3];
+    float textPunchTimer;
 
     void Start()
     {
@@ -73,31 +93,95 @@ public class StarProgressHUD : MonoBehaviour
         }
 
         int nextThreshold;
-        float fill;
+        float targetFill;
         if (delivered >= 8)
         {
             nextThreshold = 8;
-            fill = 1f;
+            targetFill = 1f;
         }
         else if (delivered >= 5)
         {
             nextThreshold = 8;
-            fill = (delivered - 5) / 3f;
+            targetFill = (delivered - 5) / 3f;
         }
         else if (delivered >= 1)
         {
             nextThreshold = 5;
-            fill = (delivered - 1) / 4f;
+            targetFill = (delivered - 1) / 4f;
         }
         else
         {
             nextThreshold = 1;
-            fill = 0f;
+            targetFill = 0f;
         }
+
+        // Smooth bar: glide toward the target instead of jumping.
+        displayedFill = Mathf.MoveTowards(displayedFill, targetFill, barFillSpeed * Time.deltaTime);
         if (barFill != null)
-            barFill.fillAmount = Mathf.Clamp01(fill);
+            barFill.fillAmount = Mathf.Clamp01(displayedFill);
+
+        // A newly earned star pops.
+        if (earned > lastEarned)
+        {
+            for (int i = lastEarned; i < earned && i < popTimers.Length; i++)
+                popTimers[i] = popDuration;
+            lastEarned = earned;
+        }
+        if (delivered != lastDelivered)
+        {
+            textPunchTimer = textPunchDuration;
+            lastDelivered = delivered;
+        }
         if (countText != null)
             countText.text = delivered + "/" + nextThreshold;
+
+        AnimateStars(earned);
+        AnimateCountText();
+    }
+
+    void AnimateStars(int earned)
+    {
+        for (int i = 0; i < starImages.Length; i++)
+        {
+            if (starImages[i] == null)
+                continue;
+            RectTransform rt = starImages[i].rectTransform;
+            if (popTimers[i] > 0f)
+            {
+                popTimers[i] -= Time.deltaTime;
+                float t = Mathf.Clamp01(1f - popTimers[i] / popDuration);
+                float s = 1f + popScale * Mathf.Sin(Mathf.PI * t);
+                rt.localScale = new Vector3(s, s, 1f);
+            }
+            else if (i == earned && earned < 3)
+            {
+                // The next star to earn gently pulses.
+                float s = 1f + pulseAmplitude * Mathf.Sin(Time.time * pulseSpeed);
+                rt.localScale = new Vector3(s, s, 1f);
+            }
+            else
+            {
+                rt.localScale = Vector3.one;
+            }
+        }
+    }
+
+    void AnimateCountText()
+    {
+        if (countText == null)
+            return;
+        RectTransform rt = countText.rectTransform;
+        if (textPunchTimer > 0f)
+        {
+            textPunchTimer -= Time.deltaTime;
+            float t = Mathf.Clamp01(1f - textPunchTimer / textPunchDuration);
+            float s = 1f + textPunchScale * Mathf.Sin(Mathf.PI * t);
+            rt.localScale = new Vector3(s, s, 1f);
+        }
+        else
+        {
+            rt.localScale = Vector3.one;
+        }
     }
 
     Canvas FindScreenCanvas()
@@ -120,6 +204,9 @@ public class StarProgressHUD : MonoBehaviour
         {
             whiteSprite = MakeWhiteSprite();
             BuildUI();
+            lastEarned = gameManager.CalculateStars();
+            lastDelivered = gameManager.deliveredPackages;
+            displayedFill = 0f;
         }
         catch (System.Exception e)
         {
