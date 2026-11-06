@@ -67,7 +67,12 @@ public class Minimap : MonoBehaviour
 
         PlaceDot(playerDot, transform.position, playerDotSize * (currentSize / smallSize), currentSize);
 
-        DropoffZone target = FindTargetDropoff();
+        // Only reveal the target house once the player is carrying a package.
+        // Before pickup, every house stays gray and only the pickup station
+        // is marked, so the destination is not given away early.
+        DropoffZone target = (deliveryManager != null && deliveryManager.HasPackage)
+            ? FindTargetDropoff()
+            : null;
         for (int i = 0; i < houses.Count; i++)
         {
             Image img = houseDots[i].GetComponent<Image>();

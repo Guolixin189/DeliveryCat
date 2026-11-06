@@ -9,6 +9,10 @@ public class DeliveryManager : MonoBehaviour
 
     public Company company = Company.Freelancer;
 
+    // True from the moment a package is picked up until it is delivered.
+    // The minimap uses this to hide the target house before pickup.
+    public bool HasPackage { get; private set; }
+
     private int targetHouseIndex = -1;
     private GameManager gameManager;
     private float orderStartTime = 0f;
@@ -40,6 +44,7 @@ public class DeliveryManager : MonoBehaviour
     public void OnPackagePickedUp()
     {
         orderStartTime = Time.time;
+        HasPackage = true;
         if (pickupZone != null)
             pickupZone.SetIndicator(false);
     }
@@ -74,6 +79,7 @@ public class DeliveryManager : MonoBehaviour
             gameManager.AddScore(points);
         Debug.Log($"[Delivery] delivered to house {houseIndex}, target was {targetHouseIndex} -> {(points >= 0 ? "+" : "")}{points} [{company}]");
 
+        HasPackage = false;
         AssignNewTarget();
         if (pickupZone != null)
             pickupZone.SetIndicator(true);
