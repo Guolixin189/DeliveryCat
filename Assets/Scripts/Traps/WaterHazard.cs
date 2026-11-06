@@ -17,7 +17,7 @@ public class WaterHazard : MonoBehaviour
     [Range(0f, 1f)]
     [SerializeField] private float fallEndScale = 0.75f;
 
-    [Tooltip("Seconds the cat stays at the bottom of the fall before reappearing on the bank.")]
+    [Tooltip("Seconds the cat stays hidden under the water before reappearing on the bank.")]
     [SerializeField] private float respawnDelay = 1f;
 
     [SerializeField] private int maxSearchRadius = 40;
@@ -91,7 +91,7 @@ public class WaterHazard : MonoBehaviour
             rb.simulated = false;
         }
 
-        // Fall straight down by one player height, speeding up like gravity,
+        // Fall straight down by one player height,
         // and shrink a little as if moving away from the camera.
         Vector3 start = t.position;
         Vector3 end = start + Vector3.down * height;
@@ -107,7 +107,14 @@ public class WaterHazard : MonoBehaviour
         t.position = end;
         t.localScale = endScale;
 
-        // Stay at the bottom of the fall for a moment before coming back up.
+        // Hide the cat while it's under the water. 
+        bool[] wasEnabled = new bool[renderers.Length];
+        for (int i = 0; i < renderers.Length; i++)
+        {
+            wasEnabled[i] = renderers[i].enabled;
+            renderers[i].enabled = false;
+        }
+
         yield return new WaitForSeconds(respawnDelay);
 
         t.localScale = startScale;
@@ -122,6 +129,10 @@ public class WaterHazard : MonoBehaviour
             Debug.LogWarning("WaterHazard: no dry tile found within search radius.");
             t.position = start;
         }
+
+        // Show the cat again, now that it's back on the bank.
+        for (int i = 0; i < renderers.Length; i++)
+            renderers[i].enabled = wasEnabled[i];
 
         if (rb)
         {
