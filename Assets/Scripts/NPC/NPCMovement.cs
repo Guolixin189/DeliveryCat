@@ -14,8 +14,9 @@ public class NPCMovement : MonoBehaviour
     // Painted static layers: a tile on any of these counts as solid for
     // NPCs, even where no collider was painted (roofs, trees, lamps...).
     private static readonly string[] BlockerNames =
-        { "Building", "Building collider", "Building decor", "roof", "nature", "static obstacles", "Building behind", "static obstacle (behind)", "obstacles behind (1)", "obstacles middleground", "obstacle part in front of player" };
-
+    { "Building", "Building collider", "Building decor", "roof", "nature", "static obstacles",
+      "Building behind", "static obstacle (behind)", "obstacles behind (1)",
+      "obstacles middleground", "obstacle part in front of player", "water (non trigger)", "water (trigger zone)" };
     void Start(){
          spriteRenderer = GetComponent<SpriteRenderer>();
          selfCollider = GetComponent<Collider2D>();
@@ -79,8 +80,6 @@ public class NPCMovement : MonoBehaviour
     }
 
     // Another NPC in the way: turn around instead of walking through them.
-    // Physics cannot do this: the scene NPCs are Kinematic, and two
-    // Kinematic bodies never generate collision callbacks.
     bool HitsNPC(Vector3 pos)
     {
         Collider2D[] hits = Physics2D.OverlapPointAll(pos);
