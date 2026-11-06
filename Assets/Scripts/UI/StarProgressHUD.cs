@@ -4,11 +4,11 @@ using UnityEngine.UI;
 using TMPro;
 
 // Top-center star progress HUD: three stars that fill as packages are
-// delivered (1-4 = 1 star, 5-7 = 2 stars, 8+ = 3 stars), with a progress
-// bar underneath showing progress toward the next star. Builds all UI at
-// runtime, so no scene setup is needed. Attach to the GameManager object.
-// The thresholds reuse GameManager.CalculateStars, so the HUD always
-// matches the end-screen star rating. The HUD hides once the game is over.
+// delivered, with a progress bar underneath showing progress toward the
+// next star. Builds all UI at runtime, so no scene setup is needed.
+// Attach to the GameManager object. The HUD hides once the game is over.
+// The star thresholds match GameManager.CalculateStars, so the HUD always
+// agrees with the end-screen star rating.
 //
 // Animation: a newly earned star pops (scales up and settles), the bar
 // fills smoothly toward its target instead of jumping, the count text
@@ -25,10 +25,15 @@ public class StarProgressHUD : MonoBehaviour
     public float panelWidth = 380f;
     public float panelHeight = 180f;
     public float fontSize = 34f;
+    // The Canvas scales all UI with the game window, so the same HUD can
+    // look bigger in one level than the other if the window was resized
+    // between tests. Counter-scale the panel so the HUD always renders
+    // at the same pixel size in every level and every window.
+    public bool fixedPixelSize = true;
 
     [Header("Star Thresholds")]
     // Deliveries needed for each star. Defaults are the official levels
-    // (1, 5, 8); the tutorial overrides them to (1, 2, 3) in Start.
+    // (1, 3, 5); the tutorial overrides them to (1, 2, 3) in Start.
     public int star1At = 1;
     public int star2At = 3;
     public int star3At = 5;
@@ -75,7 +80,7 @@ public class StarProgressHUD : MonoBehaviour
     void ApplySceneThresholds()
     {
         // The tutorial only has three deliveries: 1 = 1 star, 2 = 2 stars,
-        // 3 = 3 stars. The official levels keep the defaults (1, 5, 8).
+        // 3 = 3 stars. The official levels keep the defaults (1, 3, 5).
         if (SceneManager.GetActiveScene().name == "level_1")
         {
             star1At = 1;
@@ -107,6 +112,13 @@ public class StarProgressHUD : MonoBehaviour
             return;
 
         panel.gameObject.SetActive(!gameManager.isGameOver);
+
+        // Keep the HUD the same screen size in every level and window.
+        if (fixedPixelSize && canvas != null && canvas.scaleFactor > 0f)
+        {
+            float s = 1f / canvas.scaleFactor;
+            panel.localScale = new Vector3(s, s, 1f);
+        }
 
         int delivered = gameManager.deliveredPackages;
         int earned = StarsEarned(delivered);
