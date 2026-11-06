@@ -30,8 +30,8 @@ public class StarProgressHUD : MonoBehaviour
     // Deliveries needed for each star. Defaults are the official levels
     // (1, 5, 8); the tutorial overrides them to (1, 2, 3) in Start.
     public int star1At = 1;
-    public int star2At = 5;
-    public int star3At = 8;
+    public int star2At = 3;
+    public int star3At = 5;
 
     [Header("Colors")]
     public Color panelColor = new Color(0.2f, 0.2f, 0.2f, 0.45f);

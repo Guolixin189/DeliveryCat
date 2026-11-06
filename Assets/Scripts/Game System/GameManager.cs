@@ -97,9 +97,9 @@ public class GameManager : MonoBehaviour
 
     public int CalculateStars()
         {
-    if (deliveredPackages >= 8)
+    if (deliveredPackages >= 5)
         return 3;
-    else if (deliveredPackages >= 5)
+    else if (deliveredPackages >= 3)
         return 2;
     else if (deliveredPackages >= 1)
         return 1;
