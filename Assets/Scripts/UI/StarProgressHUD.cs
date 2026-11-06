@@ -17,13 +17,13 @@ public class StarProgressHUD : MonoBehaviour
 {
     [Header("Layout")]
     public Vector2 anchoredPosition = new Vector2(0f, -10f);
-    public float starSize = 48f;
-    public float starSpacing = 12f;
-    public float barWidth = 220f;
-    public float barHeight = 10f;
-    public float panelWidth = 260f;
-    public float panelHeight = 116f;
-    public float fontSize = 18f;
+    public float starSize = 72f;
+    public float starSpacing = 18f;
+    public float barWidth = 330f;
+    public float barHeight = 14f;
+    public float panelWidth = 380f;
+    public float panelHeight = 170f;
+    public float fontSize = 26f;
 
     [Header("Colors")]
     public Color panelColor = new Color(0.2f, 0.2f, 0.2f, 0.45f);
@@ -232,7 +232,7 @@ public class StarProgressHUD : MonoBehaviour
         MakeImage(panel, panelColor, false);
 
         // Three stars in a row, centered.
-        float starTop = 10f;
+        float starTop = 14f;
         float starCenterY = -(starTop + starSize * 0.5f);
         for (int i = 0; i < 3; i++)
         {
@@ -247,7 +247,7 @@ public class StarProgressHUD : MonoBehaviour
         }
 
         // Progress bar under the stars.
-        float barTop = starTop + starSize + 8f;
+        float barTop = starTop + starSize + 12f;
         float barCenterY = -(barTop + barHeight * 0.5f);
         RectTransform barBg = MakeRT("StarProgressBar", panel);
         barBg.anchorMin = barBg.anchorMax = new Vector2(0.5f, 1f);
@@ -272,12 +272,12 @@ public class StarProgressHUD : MonoBehaviour
         barFill.fillAmount = 0f;
 
         // Delivered count, e.g. 3/5 (toward the next star).
-        float textTop = barTop + barHeight + 6f;
+        float textTop = barTop + barHeight + 8f;
         RectTransform textRt = MakeRT("StarProgressText", panel);
         textRt.anchorMin = textRt.anchorMax = new Vector2(0.5f, 1f);
         textRt.pivot = new Vector2(0.5f, 0.5f);
-        textRt.anchoredPosition = new Vector2(0f, -(textTop + 11f));
-        textRt.sizeDelta = new Vector2(barWidth, 22f);
+        textRt.anchoredPosition = new Vector2(0f, -(textTop + 17f));
+        textRt.sizeDelta = new Vector2(barWidth, 34f);
         countText = textRt.gameObject.AddComponent<TextMeshProUGUI>();
         countText.text = "0/1";
         countText.fontSize = fontSize;
