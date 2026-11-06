@@ -106,6 +106,38 @@ public class GameManager : MonoBehaviour
     else
         return 0;
     }
+
+    // Best stars per level, shown on the level select screen.
+    // Tutorial (level_1) uses 1/2/3; the official level uses 1/3/5.
+    public static string BestStarsKey(string sceneName)
+    {
+        return "BestStars_" + sceneName;
+    }
+
+    public static int GetBestStars(string sceneName)
+    {
+        return PlayerPrefs.GetInt(BestStarsKey(sceneName), 0);
+    }
+
+    public static void SaveBestStars(string sceneName, int stars)
+    {
+        if (stars <= GetBestStars(sceneName))
+            return;
+        PlayerPrefs.SetInt(BestStarsKey(sceneName), stars);
+        PlayerPrefs.Save();
+    }
+
+    public int CalculateTutorialStars()
+    {
+        if (deliveredPackages >= 3)
+            return 3;
+        else if (deliveredPackages >= 2)
+            return 2;
+        else if (deliveredPackages >= 1)
+            return 1;
+        else
+            return 0;
+    }
     public void GameOver(string gameOverMsg, float fontSize, float panelWidth)
     {
         if (isGameOver)
@@ -113,6 +145,7 @@ public class GameManager : MonoBehaviour
 
         isGameOver = true;
         starsEarned = CalculateStars();
+        SaveBestStars(SceneManager.GetActiveScene().name, starsEarned);
         
         gameOverText.text = gameOverMsg;
         gameOverText.fontSize = fontSize;
@@ -152,6 +185,7 @@ public class GameManager : MonoBehaviour
             return;
 
         isGameOver = true;
+        SaveBestStars(SceneManager.GetActiveScene().name, CalculateTutorialStars());
         completePanel.SetActive(true);
     }
 

@@ -56,21 +56,44 @@ public class StarProgressHUD : MonoBehaviour
     public float textPunchDuration = 0.3f;
     public float textPunchScale = 0.25f;
 
+    [Header("Delivery Feedback")]
+    public Color flashColor = new Color(1f, 0.25f, 0.25f, 0.55f);
+    public float flashDuration = 0.5f;
+    public int particleCount = 6;
+    public float particleSize = 28f;
+    public float particleSpeed = 140f;
+    public float particleLife = 0.8f;
+
     Sprite whiteSprite;
     Canvas canvas;
     GameManager gameManager;
     bool uiBuilt;
 
     RectTransform panel;
+    Image panelImage;
     Image[] starImages = new Image[3];
+    Vector2[] starPositions = new Vector2[3];
     Image barFill;
     TMP_Text countText;
 
     float displayedFill;
     int lastEarned;
     int lastDelivered;
+    int lastScore;
     float[] popTimers = new float[3];
     float textPunchTimer;
+    float flashTimer;
+
+    class StarParticle
+    {
+        public RectTransform rt;
+        public Image img;
+        public Vector2 velocity;
+        public float life;
+        public float maxLife;
+    }
+    System.Collections.Generic.List<StarParticle> particles =
+        new System.Collections.Generic.List<StarParticle>();
 
     void Start()
     {
@@ -125,6 +148,7 @@ public class StarProgressHUD : MonoBehaviour
 
         int delivered = gameManager.deliveredPackages;
         int earned = StarsEarned(delivered);
+        bool justEarnedStar = earned > lastEarned;
         for (int i = 0; i < starImages.Length; i++)
         {
             if (starImages[i] == null)
@@ -173,14 +197,96 @@ public class StarProgressHUD : MonoBehaviour
         }
         if (delivered != lastDelivered)
         {
+            if (delivered > lastDelivered)
+            {
+                // Burst from the star that just filled, or from the next
+                // star to earn if this delivery did not fill a new one.
+                int originIndex = justEarnedStar
+                    ? Mathf.Clamp(earned - 1, 0, 2)
+                    : Mathf.Clamp(earned, 0, 2);
+                SpawnStarParticles(originIndex);
+            }
             textPunchTimer = textPunchDuration;
             lastDelivered = delivered;
         }
+        // Score only drops on a wrong delivery, so a drop means the
+        // player delivered to the wrong house: flash the panel red.
+        if (gameManager.score < lastScore)
+            flashTimer = flashDuration;
+        lastScore = gameManager.score;
         if (countText != null)
             countText.text = delivered + "/" + nextThreshold;
 
         AnimateStars(earned);
         AnimateCountText();
+        UpdateFlash();
+        UpdateParticles();
+    }
+
+    void UpdateFlash()
+    {
+        if (panelImage == null)
+            return;
+        if (flashTimer > 0f)
+        {
+            flashTimer -= Time.deltaTime;
+            float t = Mathf.Clamp01(flashTimer / flashDuration);
+            panelImage.color = Color.Lerp(panelColor, flashColor, t);
+            if (flashTimer <= 0f)
+                panelImage.color = panelColor;
+        }
+    }
+
+    void SpawnStarParticles(int originIndex)
+    {
+        if (panel == null)
+            return;
+        Vector2 origin = starPositions[Mathf.Clamp(originIndex, 0, 2)];
+        Sprite sprite = gameManager.filledStarSprite != null
+            ? gameManager.filledStarSprite : whiteSprite;
+        for (int i = 0; i < particleCount; i++)
+        {
+            RectTransform rt = MakeRT("StarParticle", panel);
+            rt.anchorMin = rt.anchorMax = new Vector2(0.5f, 1f);
+            rt.pivot = new Vector2(0.5f, 0.5f);
+            rt.anchoredPosition = origin;
+            rt.sizeDelta = new Vector2(particleSize, particleSize);
+            Image img = MakeImage(rt, Color.white, false);
+            img.sprite = sprite;
+            float angle = (360f / particleCount) * i + Random.Range(-20f, 20f);
+            float rad = angle * Mathf.Deg2Rad;
+            Vector2 dir = new Vector2(Mathf.Cos(rad), Mathf.Sin(rad));
+            particles.Add(new StarParticle
+            {
+                rt = rt,
+                img = img,
+                velocity = dir * particleSpeed * Random.Range(0.7f, 1.3f),
+                life = particleLife,
+                maxLife = particleLife
+            });
+        }
+    }
+
+    void UpdateParticles()
+    {
+        for (int i = particles.Count - 1; i >= 0; i--)
+        {
+            StarParticle p = particles[i];
+            p.life -= Time.deltaTime;
+            if (p.life <= 0f)
+            {
+                if (p.rt != null)
+                    Destroy(p.rt.gameObject);
+                particles.RemoveAt(i);
+                continue;
+            }
+            p.rt.anchoredPosition += p.velocity * Time.deltaTime;
+            float t = p.life / p.maxLife;
+            p.rt.localScale = new Vector3(t, t, 1f);
+            Color c = p.img.color;
+            c.a = t;
+            p.img.color = c;
+        }
     }
 
     void AnimateStars(int earned)
@@ -250,6 +356,7 @@ public class StarProgressHUD : MonoBehaviour
             BuildUI();
             lastEarned = StarsEarned(gameManager.deliveredPackages);
             lastDelivered = gameManager.deliveredPackages;
+            lastScore = gameManager.score;
             displayedFill = 0f;
         }
         catch (System.Exception e)
@@ -273,7 +380,7 @@ public class StarProgressHUD : MonoBehaviour
         panel.pivot = new Vector2(0.5f, 1f);
         panel.anchoredPosition = anchoredPosition;
         panel.sizeDelta = new Vector2(panelWidth, panelHeight);
-        MakeImage(panel, panelColor, false);
+        panelImage = MakeImage(panel, panelColor, false);
 
         // Three stars in a row, centered.
         float starTop = 14f;
@@ -284,6 +391,7 @@ public class StarProgressHUD : MonoBehaviour
             star.anchorMin = star.anchorMax = new Vector2(0.5f, 1f);
             star.pivot = new Vector2(0.5f, 0.5f);
             star.anchoredPosition = new Vector2((i - 1) * (starSize + starSpacing), starCenterY);
+            starPositions[i] = star.anchoredPosition;
             star.sizeDelta = new Vector2(starSize, starSize);
             Image img = MakeImage(star, Color.white, false);
             img.sprite = gameManager.emptyStarSprite != null ? gameManager.emptyStarSprite : whiteSprite;
