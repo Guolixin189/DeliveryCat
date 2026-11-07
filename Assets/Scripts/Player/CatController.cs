@@ -272,13 +272,20 @@ namespace player
                     DeliverNow();
             }
         }
-        private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("NPC"))
+    {
+            Debug.Log("NPC collision detected!");
+
         if (collisionSound != null && collisionAudioSource != null)
-    {
-        collisionAudioSource.PlayOneShot(collisionSound);
+        {
+            collisionAudioSource.PlayOneShot(collisionSound);
+        }
     }
-    }
+}
 
         // trigger exit
         private void OnTriggerExit2D(Collider2D other)

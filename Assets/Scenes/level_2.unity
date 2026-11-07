@@ -48651,6 +48651,10 @@ PrefabInstance:
       propertyPath: packageSound
       value: 
       objectReference: {fileID: 1266090621}
+    - target: {fileID: 2303553934361610927, guid: 494f789b1b9b94ca3907aa1ee5833a86, type: 3}
+      propertyPath: collisionSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8f436a10a06bb4981971e886ab969847, type: 3}
     - target: {fileID: 2307168074931538658, guid: 494f789b1b9b94ca3907aa1ee5833a86, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.13
