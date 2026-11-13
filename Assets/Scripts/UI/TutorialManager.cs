@@ -18,8 +18,9 @@ public class TutorialManager : MonoBehaviour
 
     [Header("Flow parameters")]
     public float moveThreshold = 1.5f;   // step 2: how much accumulated movement counts as "moved"
-    public float avoidDuration = 5f;      // step 3: how many seconds to show
-    public float deliverDuration = 15f;   // step 4: max seconds to show (disappears early once delivered)
+    public float minimapDuration = 5f;    // step 3: how many seconds to show
+    public float avoidDuration = 5f;      // step 4: how many seconds to show
+    public float deliverDuration = 15f;   // step 5: max seconds to show (disappears early once delivered)
 
     [Header("Completion panel (shown after tutorial, nullable)")]
     public GameObject tutorialCompletePanel;
@@ -27,10 +28,11 @@ public class TutorialManager : MonoBehaviour
     [Header("Prompt text (English, editable)")]
     public string stepPickup = "Press SPACE to pick up the package!";
     public string stepMove = "Move with W A S D!";
+    public string stepMinimap = "Check the minimap (bottom-left): orange dot = package to pick up, blue dot = the house to deliver to.";
     public string stepAvoid = "Careful! Hitting obstacles slows you down — avoid pedestrians!";
-    public string stepDeliver = "Deliver to the house with the bubble: +100! Wrong house: -100.";
+    public string stepDeliver = "Deliver to the house with the bubble to earn points. Wrong house loses points.";
 
-    private enum Step { Pickup, Move, Avoid, Deliver, Done }
+    private enum Step { Pickup, Move, Minimap, Avoid, Deliver, Done }
     private Step step = Step.Pickup;
     private CatController cat;
     private Vector3 lastPos;
@@ -67,8 +69,16 @@ public class TutorialManager : MonoBehaviour
             case Step.Move:
                 moved += Vector3.Distance(cat.transform.position, lastPos);
                 if (moved >= moveThreshold)
-                    GoTo(Step.Avoid, stepAvoid);
+                    GoTo(Step.Minimap, stepMinimap);
                 else if (!cat.hasPackage)      // delivered without moving much
+                    GoTo(Step.Done, null);
+                break;
+
+            case Step.Minimap:
+                timer += Time.deltaTime;
+                if (timer >= minimapDuration)
+                    GoTo(Step.Avoid, stepAvoid);
+                else if (!cat.hasPackage)
                     GoTo(Step.Done, null);
                 break;
 

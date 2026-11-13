@@ -3900,7 +3900,7 @@ MonoBehaviour:
   stepPickup: Press SPACE to pick up/drop off the package!
   stepMove: Move with W A S D!
   stepAvoid: Careful! Hitting pedestrians slows you down
-  stepDeliver: 'Deliver to house with bubble: +100! Wrong house: -100.'
+  stepDeliver: 'Deliver to the house with the bubble to earn points. Wrong house loses points.'
 --- !u!4 &429900845
 Transform:
   m_ObjectHideFlags: 0
