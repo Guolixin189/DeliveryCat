@@ -13,6 +13,21 @@ public class DeliveryManager : MonoBehaviour
     // The minimap uses this to hide the target house before pickup.
     public bool HasPackage { get; private set; }
 
+    // Combo: consecutive correct deliveries. A wrong delivery resets it.
+    public int Combo { get; private set; }
+
+    // Score multiplier from the combo: 1x for the first correct
+    // delivery, 1.5x for the second in a row, 2x from the third on.
+    public float ComboMultiplier
+    {
+        get
+        {
+            if (Combo <= 1) return 1f;
+            if (Combo == 2) return 1.5f;
+            return 2f;
+        }
+    }
+
     private int targetHouseIndex = -1;
     private GameManager gameManager;
     private float orderStartTime = 0f;
@@ -74,13 +89,16 @@ public class DeliveryManager : MonoBehaviour
                 points = CompanyRules.FedExOnTimePoints;
             else
                 points = CompanyRules.CorrectPoints(company);
+            Combo++;
+            points = Mathf.RoundToInt(points * ComboMultiplier);
             if (gameManager != null)
                 gameManager.PackageDelivered();
         }
-        
+
         else
         {
             points = CompanyRules.WrongPoints(company);
+            Combo = 0;
         }
         if (gameManager != null)
             gameManager.AddScore(points);
