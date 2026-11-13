@@ -3,11 +3,13 @@ using UnityEngine.UI;
 using TMPro;
 
 // Combo display on the right side of the screen. Always visible so
-// the player can find it: dimmed at x1 when there is no combo, and
-// bright with the streak (COMBO x1.5 / x2) once the player has 2+
-// correct deliveries in a row. Pops (scales up briefly) whenever
-// the combo goes up.
+// the player can find it: x1 with "No combo yet" when there is no
+// streak, and bright with the multiplier (COMBO x1.5 / x2) once the
+// player has 2+ correct deliveries in a row. Pops (scales up briefly)
+// whenever the combo goes up.
 // Builds all UI at runtime. Attach to the GameManager in each level.
+// (Builds in Start with a retry, like StarProgressHUD, so a Canvas
+// that is not ready in Awake does not silently leave it unbuilt.)
 public class ComboDisplay : MonoBehaviour
 {
     [Header("Style")]
@@ -24,27 +26,27 @@ public class ComboDisplay : MonoBehaviour
     TMP_Text multText;
     TMP_Text streakText;
     Sprite whiteSprite;
+    bool uiBuilt;
 
     int shownCombo = -1;
     float popTimer = 0f;
     Vector3 baseScale = Vector3.one;
 
-    void Awake()
+    void Start()
     {
-        canvas = GetComponentInParent<Canvas>();
-        if (canvas == null)
-            canvas = FindFirstObjectByType<Canvas>();
-        if (canvas == null)
-        {
-            Debug.LogWarning("[ComboDisplay] no Canvas found.");
-            return;
-        }
-        whiteSprite = MakeWhiteSprite();
-        BuildUI();
+        canvas = FindScreenCanvas();
+        TryBuild();
     }
 
     void Update()
     {
+        if (!uiBuilt)
+        {
+            if (canvas == null)
+                canvas = FindScreenCanvas();
+            TryBuild();
+            return;
+        }
         if (root == null)
             return;
         int combo = DeliveryManager.Instance != null ? DeliveryManager.Instance.Combo : 0;
@@ -67,6 +69,39 @@ public class ComboDisplay : MonoBehaviour
             if (popTimer <= 0f)
                 panelRt.localScale = baseScale;
         }
+    }
+
+    Canvas FindScreenCanvas()
+    {
+        Canvas[] canvases = FindObjectsByType<Canvas>(FindObjectsSortMode.None);
+        foreach (Canvas c in canvases)
+        {
+            if (c != null && c.isRootCanvas && c.renderMode != RenderMode.WorldSpace)
+                return c;
+        }
+        return null;
+    }
+
+    void TryBuild()
+    {
+        if (uiBuilt || canvas == null)
+            return;
+        try
+        {
+            whiteSprite = MakeWhiteSprite();
+            BuildUI();
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("[ComboDisplay] failed to build: " + e.Message);
+            if (root != null) Destroy(root);
+            root = null;
+            panelRt = null;
+            labelText = null;
+            multText = null;
+            streakText = null;
+        }
+        uiBuilt = true;
     }
 
     void Refresh(int combo)
@@ -92,7 +127,6 @@ public class ComboDisplay : MonoBehaviour
         rootRt.pivot = new Vector2(1f, 0.5f);
         rootRt.anchoredPosition = new Vector2(-24f, 0f);
         rootRt.sizeDelta = new Vector2(190f, 170f);
-        root.SetActive(false);
 
         GameObject panelGo = new GameObject("Panel");
         panelGo.transform.SetParent(root.transform, false);
