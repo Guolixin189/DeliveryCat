@@ -75,12 +75,12 @@ public class ComboDisplay : MonoBehaviour
             ? DeliveryManager.Instance.ComboMultiplier : 1f;
         multText.text = "x" + (mult % 1f == 0f ? ((int)mult).ToString() : mult.ToString("0.0"));
         streakText.text = combo >= 2 ? combo + " in a row" : "No combo yet";
-        // Dim the whole panel when there is no combo yet.
-        float a = combo >= 2 ? 1f : 0.45f;
-        panelRt.GetComponent<Image>().color = new Color(panelColor.r, panelColor.g, panelColor.b, panelColor.a * a);
-        multText.color = new Color(comboColor.r, comboColor.g, comboColor.b, a);
-        labelText.color = new Color(1f, 1f, 1f, a);
-        streakText.color = new Color(1f, 1f, 1f, a);
+        // Always fully visible (no dimming): the dimmed state was too
+        // easy to miss. The multiplier text itself shows x1 vs x2.
+        panelRt.GetComponent<Image>().color = panelColor;
+        multText.color = comboColor;
+        labelText.color = Color.white;
+        streakText.color = Color.white;
     }
 
     void BuildUI()
