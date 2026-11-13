@@ -255,7 +255,9 @@ public class TutorialHighlight : MonoBehaviour
         RectTransform textRt = textGo.AddComponent<RectTransform>();
         textRt.anchorMin = textRt.anchorMax = new Vector2(0.5f, 0.5f);
         textRt.pivot = new Vector2(0.5f, 0.5f);
-        textLabel = textGo.AddComponent<TMP_Text>();
+        // TMP_Text is abstract and cannot be added as a component;
+        // TextMeshProUGUI is the concrete UI text class.
+        textLabel = textGo.AddComponent<TextMeshProUGUI>();
         textLabel.fontSize = textFontSize;
         textLabel.color = Color.white;
         textLabel.alignment = TextAlignmentOptions.Center;
