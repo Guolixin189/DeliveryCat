@@ -154,7 +154,7 @@ public class GameManager : MonoBehaviour
         if (deliveredPackages <= 0)
             return "Keep Trying";
         DeliveryManager dm = DeliveryManager.Instance;
-        if (dm != null && !dm.EverHitObstacle)
+        if (dm != null && !dm.EverHitObstacle && starsEarned >= 3)
             return "Purr-fect Delivery";
         if (starsEarned >= 3)
             return "Ace Courier";
