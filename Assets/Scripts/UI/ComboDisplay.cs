@@ -2,10 +2,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-// Combo display on the right side of the screen. Shows the current
-// delivery streak (COMBO x1.5 / x2) once the player has 2+ correct
-// deliveries in a row, and hides itself when there is no combo.
-// Pops (scales up briefly) whenever the combo goes up.
+// Combo display on the right side of the screen. Always visible so
+// the player can find it: dimmed at x1 when there is no combo, and
+// bright with the streak (COMBO x1.5 / x2) once the player has 2+
+// correct deliveries in a row. Pops (scales up briefly) whenever
+// the combo goes up.
 // Builds all UI at runtime. Attach to the GameManager in each level.
 public class ComboDisplay : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class ComboDisplay : MonoBehaviour
     TMP_Text streakText;
     Sprite whiteSprite;
 
-    int shownCombo = 0;
+    int shownCombo = -1;
     float popTimer = 0f;
     Vector3 baseScale = Vector3.one;
 
@@ -47,22 +48,14 @@ public class ComboDisplay : MonoBehaviour
         if (root == null)
             return;
         int combo = DeliveryManager.Instance != null ? DeliveryManager.Instance.Combo : 0;
-        if (combo >= 2)
+        if (!root.activeSelf)
+            root.SetActive(true);
+        if (combo != shownCombo)
         {
-            if (!root.activeSelf)
-                root.SetActive(true);
-            if (combo != shownCombo)
-            {
-                shownCombo = combo;
-                Refresh(combo);
+            shownCombo = combo;
+            Refresh(combo);
+            if (combo >= 2)
                 popTimer = 0.22f;
-            }
-        }
-        else
-        {
-            shownCombo = 0;
-            if (root.activeSelf)
-                root.SetActive(false);
         }
 
         // Pop animation on combo increase.
@@ -81,7 +74,13 @@ public class ComboDisplay : MonoBehaviour
         float mult = DeliveryManager.Instance != null
             ? DeliveryManager.Instance.ComboMultiplier : 1f;
         multText.text = "x" + (mult % 1f == 0f ? ((int)mult).ToString() : mult.ToString("0.0"));
-        streakText.text = combo + " in a row";
+        streakText.text = combo >= 2 ? combo + " in a row" : "No combo yet";
+        // Dim the whole panel when there is no combo yet.
+        float a = combo >= 2 ? 1f : 0.45f;
+        panelRt.GetComponent<Image>().color = new Color(panelColor.r, panelColor.g, panelColor.b, panelColor.a * a);
+        multText.color = new Color(comboColor.r, comboColor.g, comboColor.b, a);
+        labelText.color = new Color(1f, 1f, 1f, a);
+        streakText.color = new Color(1f, 1f, 1f, a);
     }
 
     void BuildUI()
