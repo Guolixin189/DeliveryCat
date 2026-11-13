@@ -180,6 +180,13 @@ public class ComboDisplay : MonoBehaviour
 
     TMP_FontAsset FindFont(TMP_Text exclude)
     {
+        // Prefer the GameManager score text's font, the same source
+        // StarProgressHUD uses (it is known to render correctly).
+        // Grabbing any TMP text can pick a font whose atlas does not
+        // match, which renders as garbled glyphs.
+        GameManager gm = GameManager.Instance;
+        if (gm != null && gm.finalScoreText != null && gm.finalScoreText.font != null)
+            return gm.finalScoreText.font;
         foreach (TextMeshProUGUI t in FindObjectsByType<TextMeshProUGUI>(FindObjectsSortMode.None))
         {
             if (t != null && t != exclude && t.font != null)

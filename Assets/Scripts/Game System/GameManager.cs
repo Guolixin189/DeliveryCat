@@ -145,6 +145,20 @@ public class GameManager : MonoBehaviour
         else
             return 0;
     }
+    // Results title, by how the run went. A run with no pedestrian
+    // or trap hit at all outranks the star titles.
+    string ResultsTitle()
+    {
+        if (deliveredPackages <= 0)
+            return "继续努力";
+        DeliveryManager dm = DeliveryManager.Instance;
+        if (dm != null && !dm.EverHitObstacle)
+            return "完美送达";
+        if (starsEarned >= 3)
+            return "王牌快递员";
+        return "Good Cat";
+    }
+
     public void GameOver(string gameOverMsg, float fontSize, float panelWidth)
     {
         if (isGameOver)
@@ -154,7 +168,7 @@ public class GameManager : MonoBehaviour
         starsEarned = CalculateStars();
         SaveBestStars(SceneManager.GetActiveScene().name, starsEarned);
         
-        gameOverText.text = gameOverMsg;
+        gameOverText.text = ResultsTitle();
         gameOverText.fontSize = fontSize;
 
         for (int i = 0; i < stars.Length; i++)

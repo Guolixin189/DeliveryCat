@@ -183,12 +183,21 @@ namespace player
             rb.MovePosition(rb.position + dir * speed * Time.fixedDeltaTime);
         }
 
+        // A pedestrian hit or a trap hit breaks a perfect delivery.
+        // The boost pad is a bonus, not a hit, so it never calls this.
+        void MarkHit()
+        {
+            if (deliveryManager != null)
+                deliveryManager.MarkObstacleHit();
+        }
+
         // Called by NPCs on pedestrian hit: slow for slowDuration seconds; re-hitting while slowed refreshes the timer
         public void ApplySlow()
         {
             slowTimer = slowDuration;
             if (slowPopup != null)
                 slowPopup.Show(slowDuration);
+            MarkHit();
         }
 
         // Called by mud traps while the player stays inside; re-entering cancels lingering
@@ -196,6 +205,7 @@ namespace player
         {
             mudTimer = 0.2f;
             mudLingerTimer = 0f;
+            MarkHit();
         }
 
         // Called by mud traps when the player leaves: keeps the slow for a short while
@@ -214,17 +224,20 @@ namespace player
         {
             trapSlowFactor = factor;
             trapSlowTimer = 0.3f;
+            MarkHit();
         }
 
         // Puddle: steering wobbles while slippery; refreshed while inside
         public void ApplySlippery(float duration)
         {
             slipperyTimer = duration;
+            MarkHit();
         }
 
         public void ApplyStun(float duration)
         {
             stunTimer = Mathf.Max(stunTimer, duration);
+            MarkHit();
         }
 
         // Knockback slide: pushes the player along dir for a short time, locking input
@@ -236,6 +249,7 @@ namespace player
             knockbackSpeed = distance / duration;
             knockbackTimer = duration;
             stunTimer = Mathf.Max(stunTimer, duration);
+            MarkHit();
         }
 
         // UPS signature channel state (used by the progress UI)
