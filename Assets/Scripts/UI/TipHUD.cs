@@ -16,8 +16,9 @@ public class TipHUD : MonoBehaviour
     public Color dimCoinColor = new Color(0.5f, 0.5f, 0.5f, 0.35f);
     public Color dimLabelColor = new Color(0.6f, 0.6f, 0.6f, 0.4f);
     // Score panel sits at (-150, -70), 340x120; the company label hangs
-    // at its bottom edge, so the badge goes just below it.
-    public Vector2 anchoredPosition = new Vector2(-150f, -195f);
+    // at its bottom edge, so the badge goes just below it, with room
+    // to breathe.
+    public Vector2 anchoredPosition = new Vector2(-150f, -215f);
 
     Canvas canvas;
     GameObject root;
@@ -91,8 +92,9 @@ public class TipHUD : MonoBehaviour
     void BuildUI()
     {
         // Root holds the coin on the left and the label on the right,
-        // centred under the Score panel.
-        float labelWidth = 150f;
+        // centred under the Score panel. The label box is wide enough
+        // for "TIP ORDER" on one line, and wrapping is off.
+        float labelWidth = 200f;
         float gap = 8f;
         root = new GameObject("TipHUD");
         root.transform.SetParent(canvas.transform, false);
@@ -126,6 +128,7 @@ public class TipHUD : MonoBehaviour
         labelText.fontStyle = FontStyles.Bold;
         labelText.color = labelColor;
         labelText.alignment = TextAlignmentOptions.Left;
+        labelText.enableWordWrapping = false;
         labelText.raycastTarget = false;
         labelText.outlineWidth = 0.12f;
         labelText.outlineColor = Color.black;

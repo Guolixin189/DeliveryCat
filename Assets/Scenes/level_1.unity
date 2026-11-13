@@ -22589,7 +22589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TipHUD
   badgeSize: 56
-  anchoredPosition: {x: -150, y: -195}
+  anchoredPosition: {x: -150, y: -215}
 --- !u!1 &3930000000
 GameObject:
   m_ObjectHideFlags: 0
