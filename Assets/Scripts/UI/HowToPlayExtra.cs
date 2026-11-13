@@ -33,6 +33,10 @@ public class HowToPlayExtra : MonoBehaviour
     GameObject controlsPanel;
     GameObject mechanicsPanel;
     GameObject trapsPanel;
+    // The How To Play panel's own background sprite and color, read
+    // at runtime so the new panels match it exactly.
+    Sprite panelSprite;
+    Color panelBgColor;
 
     // The basic-controls content that lives on the How To Play panel
     // in the scene; moved into the controls panel at runtime.
@@ -68,6 +72,18 @@ public class HowToPlayExtra : MonoBehaviour
         {
             Debug.LogWarning("[HowToPlayExtra] Canvas or HowtoPlayPanel not found.");
             return;
+        }
+        // Match the How To Play panel's background exactly.
+        Image srcBg = howToPlayPanel.GetComponent<Image>();
+        if (srcBg != null)
+        {
+            panelSprite = srcBg.sprite;
+            panelBgColor = srcBg.color;
+        }
+        else
+        {
+            panelSprite = MakeWhiteSprite();
+            panelBgColor = panelColor;
         }
         try
         {
@@ -153,8 +169,8 @@ public class HowToPlayExtra : MonoBehaviour
         rt.anchoredPosition = Vector2.zero;
         rt.sizeDelta = new Vector2(1200f, 1000f);
         Image bg = panel.AddComponent<Image>();
-        bg.sprite = MakeWhiteSprite();
-        bg.color = panelColor;
+        bg.sprite = panelSprite != null ? panelSprite : MakeWhiteSprite();
+        bg.color = panelBgColor;
         bg.raycastTarget = true;
         return panel;
     }
