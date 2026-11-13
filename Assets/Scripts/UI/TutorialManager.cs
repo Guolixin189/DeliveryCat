@@ -1,15 +1,20 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.SceneManagement;
+using TMPro;
 using player;
 
-// Tutorial: spotlight + arrow highlights for each step. Instead of a
-// text bubble, the screen dims except a framed box around the thing
-// being explained, an arrow points at it, and the explanation sits
-// at the arrow's tail (shown by TutorialHighlight).
+// Tutorial: show the 4 prompts in order
 public class TutorialManager : MonoBehaviour
 {
-    [Header("Highlight")]
-    public TutorialHighlight highlight;
+    [Header("UI")]
+    public TextMeshProUGUI promptText;   // TMP text that shows the prompts in the scene
+    public GameObject promptBackground;  // Speech-bubble background for the prompts (nullable); shown/hidden together with the text
+
+    [Header("Bubble auto-fit")]
+    public float bgPadX = 50f;   // horizontal padding inside the bubble
+    public float bgPadY = 30f;   // vertical padding inside the bubble
+
 
     [Header("Flow parameters")]
     public float moveThreshold = 1.5f;   // step 2: how much accumulated movement counts as "moved"
@@ -38,17 +43,15 @@ public class TutorialManager : MonoBehaviour
     {
         if (cat == null)
             cat = FindFirstObjectByType<CatController>();
-        if (highlight == null)
-            highlight = GetComponent<TutorialHighlight>();
-        if (highlight == null)
-            Debug.LogWarning("[Tutorial] TutorialHighlight not assigned!");
+        if (promptText == null)
+            Debug.LogWarning("[Tutorial] promptText not assigned!");
     }
 
     void Start()
     {
         if (cat != null)
             lastPos = cat.transform.position;
-        ShowStep(stepPickup);
+        Show(stepPickup);
     }
 
     void Update()
@@ -104,86 +107,41 @@ public class TutorialManager : MonoBehaviour
         timer = 0f;
         if (next == Step.Done)
         {
-            if (highlight != null)
-                highlight.Hide();
+            SetVisible(false);
             if (tutorialCompletePanel != null)
                 tutorialCompletePanel.SetActive(true);
         }
         else
-            ShowStep(text);
+            Show(text);
     }
 
-    void ShowStep(string text)
+    Coroutine fitRoutine;
+
+    void Show(string text)
     {
-        if (highlight == null)
-            return;
-        switch (step)
-        {
-            case Step.Pickup:
-                // Frame the pickup station.
-                if (DeliveryManager.Instance != null && DeliveryManager.Instance.pickupZone != null)
-                    highlight.ShowWorld(DeliveryManager.Instance.pickupZone.transform, 80f, text);
-                else if (cat != null)
-                    highlight.ShowWorld(cat.transform, 70f, text);
-                break;
-            case Step.Move:
-                // Frame the player.
-                if (cat != null)
-                    highlight.ShowWorld(cat.transform, 70f, text);
-                break;
-            case Step.Minimap:
-                // Frame the minimap panel (bottom-left).
-                Minimap minimap = FindFirstObjectByType<Minimap>();
-                if (minimap != null && minimap.SmallPanel != null)
-                    highlight.ShowUI(minimap.SmallPanel, text);
-                else if (cat != null)
-                    highlight.ShowWorld(cat.transform, 70f, text);
-                break;
-            case Step.Avoid:
-                // Frame the nearest pedestrian.
-                Transform npc = NearestNPC();
-                if (npc != null)
-                    highlight.ShowWorld(npc, 70f, text);
-                else if (cat != null)
-                    highlight.ShowWorld(cat.transform, 70f, text);
-                break;
-            case Step.Deliver:
-                // Frame the target house.
-                if (DeliveryManager.Instance != null && DeliveryManager.Instance.TargetHouseTransform != null)
-                    highlight.ShowWorld(DeliveryManager.Instance.TargetHouseTransform, 90f, text);
-                else if (cat != null)
-                    highlight.ShowWorld(cat.transform, 70f, text);
-                break;
-        }
+        if (promptText == null) return;
+        SetVisible(true);
+        promptText.text = text;
+        if (fitRoutine != null) StopCoroutine(fitRoutine);
+        fitRoutine = StartCoroutine(FitBackgroundNextFrame());
     }
 
-    Transform NearestNPC()
+    // Wait one frame for TMP layout, then size the bubble to the actual rendered text
+    IEnumerator FitBackgroundNextFrame()
     {
-        if (cat == null)
-            return null;
-        Transform best = null;
-        float bestDist = float.MaxValue;
-        foreach (NPCMovement npc in FindObjectsByType<NPCMovement>(FindObjectsSortMode.None))
-        {
-            if (npc == null) continue;
-            float d = Vector3.Distance(cat.transform.position, npc.transform.position);
-            if (d < bestDist)
-            {
-                bestDist = d;
-                best = npc.transform;
-            }
-        }
-        foreach (CatNPCMovement npc in FindObjectsByType<CatNPCMovement>(FindObjectsSortMode.None))
-        {
-            if (npc == null) continue;
-            float d = Vector3.Distance(cat.transform.position, npc.transform.position);
-            if (d < bestDist)
-            {
-                bestDist = d;
-                best = npc.transform;
-            }
-        }
-        return best;
+        yield return null;
+        if (promptBackground == null || promptText == null) yield break;
+        promptText.ForceMeshUpdate();
+        Vector2 rendered = promptText.GetRenderedValues(false);
+        if (rendered.x <= 0f || rendered.y <= 0f) yield break;
+        RectTransform bgRt = promptBackground.GetComponent<RectTransform>();
+        RectTransform txtRt = promptText.rectTransform;
+        if (bgRt == null || txtRt == null) yield break;
+        bgRt.anchorMin = txtRt.anchorMin;
+        bgRt.anchorMax = txtRt.anchorMax;
+        bgRt.pivot = txtRt.pivot;
+        bgRt.anchoredPosition = txtRt.anchoredPosition;
+        bgRt.sizeDelta = new Vector2(rendered.x + bgPadX * 2f, rendered.y + bgPadY * 2f);
     }
 
     public void TutorialComplete_BackToMenu()
@@ -195,5 +153,13 @@ public class TutorialManager : MonoBehaviour
     {
         GameSettings.OpenCompanySelectOnMenu = true;
         SceneManager.LoadScene("Main Menu");
+    }
+
+    void SetVisible(bool v)
+    {
+        if (promptText != null)
+            promptText.gameObject.SetActive(v);
+        if (promptBackground != null)
+            promptBackground.SetActive(v);
     }
 }
