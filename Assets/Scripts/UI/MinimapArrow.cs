@@ -144,6 +144,18 @@ public class MinimapArrow : MonoBehaviour
         textLabel.raycastTarget = false;
         textLabel.outlineWidth = 0.15f;
         textLabel.outlineColor = Color.black;
+        // A runtime-created TMP text has no font; without one it throws
+        // in MaterialReference when it renders. Borrow one from an
+        // existing TMP text in the scene.
+        TMP_FontAsset font = FindFont();
+        if (font != null)
+            textLabel.font = font;
+    }
+
+    TMP_FontAsset FindFont()
+    {
+        TextMeshProUGUI any = FindFirstObjectByType<TextMeshProUGUI>();
+        return any != null ? any.font : null;
     }
 
     Sprite MakeWhiteSprite()
