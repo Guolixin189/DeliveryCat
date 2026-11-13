@@ -2,12 +2,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-// Extra How To Play pages: a Mechanics panel and a Traps panel.
-// Adds two buttons (MECHANICS, TRAPS) to the How To Play panel; each
-// opens its own full-size info panel with a Back button that returns
-// to How To Play. Builds all UI at runtime. Attach to the MainMenu
-// GameObject in the Main Menu scene (it is always active, unlike the
-// How To Play panel itself).
+// How To Play hub: the How To Play page shows three buttons, each
+// opening its own panel:
+//   1. BASIC CONTROLS - the original rules (goal, move, pick up /
+//      deliver, avoid NPCs) with the keycap images.
+//   2. GAME MECHANICS - companies, combo, tip orders, perfect
+//      delivery, stars.
+//   3. TRAPS - a short explanation of every trap.
+// The controls content is moved (reparented) from the How To Play
+// panel into its own panel at runtime, so the scene text and keycap
+// images stay exactly as the team made them. Builds all new UI at
+// runtime. Attach to the MainMenu GameObject in the Main Menu scene
+// (it is always active, unlike the How To Play panel itself).
 public class HowToPlayExtra : MonoBehaviour
 {
     [Header("Style")]
@@ -18,11 +24,18 @@ public class HowToPlayExtra : MonoBehaviour
     public int titleFontSize = 60;
     public int bodyFontSize = 34;
     public int buttonFontSize = 36;
+    public int hubButtonFontSize = 40;
 
     Canvas canvas;
     GameObject howToPlayPanel;
+    GameObject controlsPanel;
     GameObject mechanicsPanel;
     GameObject trapsPanel;
+
+    // The basic-controls content that lives on the How To Play panel
+    // in the scene; moved into the controls panel at runtime.
+    static readonly string[] controlsChildren =
+        { "Goal", "Move", "Action", "Warning", "WASDKeys", "SpacebarKey" };
 
     void Start()
     {
@@ -35,9 +48,10 @@ public class HowToPlayExtra : MonoBehaviour
         }
         try
         {
-            BuildButtons();
+            controlsPanel = BuildControlsPanel();
             mechanicsPanel = BuildInfoPanel("MechanicsPanel", "GAME MECHANICS", MechanicsText());
             trapsPanel = BuildInfoPanel("TrapsPanel", "TRAPS", TrapsText());
+            BuildHubButtons();
         }
         catch (System.Exception e)
         {
@@ -45,14 +59,45 @@ public class HowToPlayExtra : MonoBehaviour
         }
     }
 
-    void BuildButtons()
+    // The hub: three big buttons stacked in the middle of the
+    // How To Play page. The page keeps its title and Back button.
+    void BuildHubButtons()
     {
-        MakePanelButton(howToPlayPanel.transform, "MechanicsButton", "MECHANICS",
-            new Vector2(-280f, -341f), new Vector2(240f, 70f),
+        MakePanelButton(howToPlayPanel.transform, "ControlsButton", "BASIC CONTROLS",
+            new Vector2(0f, 150f), new Vector2(480f, 80f), hubButtonFontSize,
+            () => ShowPanel(controlsPanel));
+        MakePanelButton(howToPlayPanel.transform, "MechanicsButton", "GAME MECHANICS",
+            new Vector2(0f, 0f), new Vector2(480f, 80f), hubButtonFontSize,
             () => ShowPanel(mechanicsPanel));
         MakePanelButton(howToPlayPanel.transform, "TrapsButton", "TRAPS",
-            new Vector2(280f, -341f), new Vector2(240f, 70f),
+            new Vector2(0f, -150f), new Vector2(480f, 80f), hubButtonFontSize,
             () => ShowPanel(trapsPanel));
+    }
+
+    // The controls panel reuses the scene's own rules content: move
+    // the Goal / Move / Action / Warning texts and the keycap images
+    // from the How To Play panel into this panel. Both panels are the
+    // same size and centred, so the layout is unchanged.
+    GameObject BuildControlsPanel()
+    {
+        GameObject panel = NewPanel("ControlsPanel");
+        TMP_Text titleText = MakeText(panel.transform, "Title", "BASIC CONTROLS",
+            titleFontSize, titleColor, new Vector2(0f, 353f), new Vector2(1000f, 100f));
+        titleText.fontStyle = FontStyles.Bold;
+        titleText.alignment = TextAlignmentOptions.Center;
+        MakePanelButton(panel.transform, "BackButton", "BACK",
+            new Vector2(0f, -341f), new Vector2(260f, 70f), buttonFontSize,
+            () => ShowHowToPlay());
+        foreach (string name in controlsChildren)
+        {
+            Transform child = howToPlayPanel.transform.Find(name);
+            if (child != null)
+                child.SetParent(panel.transform, false);
+            else
+                Debug.LogWarning("[HowToPlayExtra] controls child not found: " + name);
+        }
+        panel.SetActive(false);
+        return panel;
     }
 
     void ShowPanel(GameObject panel)
@@ -65,6 +110,8 @@ public class HowToPlayExtra : MonoBehaviour
 
     void ShowHowToPlay()
     {
+        if (controlsPanel != null)
+            controlsPanel.SetActive(false);
         if (mechanicsPanel != null)
             mechanicsPanel.SetActive(false);
         if (trapsPanel != null)
@@ -73,7 +120,7 @@ public class HowToPlayExtra : MonoBehaviour
             howToPlayPanel.SetActive(true);
     }
 
-    GameObject BuildInfoPanel(string name, string title, string body)
+    GameObject NewPanel(string name)
     {
         GameObject panel = new GameObject(name);
         panel.transform.SetParent(canvas.transform, false);
@@ -86,7 +133,12 @@ public class HowToPlayExtra : MonoBehaviour
         bg.sprite = MakeWhiteSprite();
         bg.color = panelColor;
         bg.raycastTarget = true;
+        return panel;
+    }
 
+    GameObject BuildInfoPanel(string name, string title, string body)
+    {
+        GameObject panel = NewPanel(name);
         TMP_Text titleText = MakeText(panel.transform, "Title", title,
             titleFontSize, titleColor, new Vector2(0f, 353f), new Vector2(1000f, 100f));
         titleText.fontStyle = FontStyles.Bold;
@@ -98,7 +150,7 @@ public class HowToPlayExtra : MonoBehaviour
         bodyText.enableWordWrapping = true;
 
         MakePanelButton(panel.transform, "BackButton", "BACK",
-            new Vector2(0f, -341f), new Vector2(260f, 70f),
+            new Vector2(0f, -341f), new Vector2(260f, 70f), buttonFontSize,
             () => ShowHowToPlay());
 
         panel.SetActive(false);
@@ -106,7 +158,7 @@ public class HowToPlayExtra : MonoBehaviour
     }
 
     void MakePanelButton(Transform parent, string name, string label,
-        Vector2 pos, Vector2 size, System.Action onClick)
+        Vector2 pos, Vector2 size, int fontSize, System.Action onClick)
     {
         GameObject go = new GameObject(name);
         go.transform.SetParent(parent, false);
@@ -128,7 +180,7 @@ public class HowToPlayExtra : MonoBehaviour
         btn.colors = colors;
 
         TMP_Text text = MakeText(go.transform, "Text (TMP)", label,
-            buttonFontSize, titleColor, Vector2.zero, size);
+            fontSize, titleColor, Vector2.zero, size);
         text.fontStyle = FontStyles.Bold;
         text.alignment = TextAlignmentOptions.Center;
     }
