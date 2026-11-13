@@ -147,15 +147,17 @@ public class GameManager : MonoBehaviour
     }
     // Results title, by how the run went. A run with no pedestrian
     // or trap hit at all outranks the star titles.
+    // English only: the game font has no Chinese glyphs, so Chinese
+    // titles render as empty boxes.
     string ResultsTitle()
     {
         if (deliveredPackages <= 0)
-            return "继续努力";
+            return "Keep Trying";
         DeliveryManager dm = DeliveryManager.Instance;
         if (dm != null && !dm.EverHitObstacle)
-            return "完美送达";
+            return "Purr-fect Delivery";
         if (starsEarned >= 3)
-            return "王牌快递员";
+            return "Ace Courier";
         return "Good Cat";
     }
 
