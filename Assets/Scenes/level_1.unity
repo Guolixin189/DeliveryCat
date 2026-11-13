@@ -3894,13 +3894,16 @@ MonoBehaviour:
   bgPadX: 50
   bgPadY: 30
   moveThreshold: 1.5
+  minimapDuration: 5
   avoidDuration: 5
   deliverDuration: 15
   tutorialCompletePanel: {fileID: 0}
   stepPickup: Press SPACE to pick up/drop off the package!
   stepMove: Move with W A S D!
+  stepMinimap: 'Minimap: Orange = Pick Up Station       Blue = Target House'
   stepAvoid: Careful! Hitting pedestrians slows you down
-  stepDeliver: 'Deliver to the house with the bubble to earn points. Wrong house loses points.'
+  stepDeliver: Deliver to the house with the bubble to earn points. Wrong house loses
+    points.
 --- !u!4 &429900845
 Transform:
   m_ObjectHideFlags: 0
@@ -22543,6 +22546,35 @@ MonoBehaviour:
   particleSize: 28
   particleSpeed: 140
   particleLife: 0.8
+--- !u!114 &3100000051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517251824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91ec0c27c3cb48d0a7cab3c7293b7f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BackgroundMusic
+--- !u!114 &3100000070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500123032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b47d84cdf49432c9c90f0b9e38f50d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ComboDisplay
+  panelColor: {r: 0.12, g: 0.12, b: 0.12, a: 0.82}
+  comboColor: {r: 1, g: 0.8, b: 0.25, a: 1}
+  labelFontSize: 22
+  multFontSize: 52
+  streakFontSize: 24
 --- !u!1 &3930000000
 GameObject:
   m_ObjectHideFlags: 0
@@ -23192,32 +23224,3 @@ SceneRoots:
   - {fileID: 579155980}
   - {fileID: 1517706775}
   - {fileID: 429900845}
---- !u!114 &3100000051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 517251824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91ec0c27c3cb48d0a7cab3c7293b7f36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BackgroundMusic
---- !u!114 &3100000070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 500123032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b47d84cdf49432c9c90f0b9e38f50d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ComboDisplay
-  panelColor: {r: 0.12, g: 0.12, b: 0.12, a: 0.82}
-  comboColor: {r: 1, g: 0.8, b: 0.25, a: 1}
-  labelFontSize: 22
-  multFontSize: 52
-  streakFontSize: 24
