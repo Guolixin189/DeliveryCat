@@ -154,8 +154,15 @@ public class MinimapArrow : MonoBehaviour
 
     TMP_FontAsset FindFont()
     {
-        TextMeshProUGUI any = FindFirstObjectByType<TextMeshProUGUI>();
-        return any != null ? any.font : null;
+        // FindFirstObjectByType can return the label we just created
+        // (its font is still null), so scan for any *other* TMP text
+        // that already has a font.
+        foreach (TextMeshProUGUI t in FindObjectsByType<TextMeshProUGUI>(FindObjectsSortMode.None))
+        {
+            if (t != null && t != textLabel && t.font != null)
+                return t.font;
+        }
+        return null;
     }
 
     Sprite MakeWhiteSprite()
