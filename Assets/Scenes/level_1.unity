@@ -5200,6 +5200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 517251826}
   - component: {fileID: 517251825}
+  - component: {fileID: 3100000051}
   m_Layer: 0
   m_Name: MainBGM
   m_TagString: Untagged
@@ -23190,3 +23191,15 @@ SceneRoots:
   - {fileID: 579155980}
   - {fileID: 1517706775}
   - {fileID: 429900845}
+--- !u!114 &3100000051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517251824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91ec0c27c3cb48d0a7cab3c7293b7f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BackgroundMusic
