@@ -31,6 +31,9 @@ public class Minimap : MonoBehaviour
     bool uiBuilt;
 
     RectTransform smallPanel;
+    // The small minimap panel (bottom-left). Exposed so the tutorial
+    // arrow can position itself above it.
+    public RectTransform SmallPanel => smallPanel;
     RectTransform largeRoot;
     RectTransform largePanel;
     RectTransform content;
