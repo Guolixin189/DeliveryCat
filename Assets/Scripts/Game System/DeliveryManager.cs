@@ -61,6 +61,23 @@ public class DeliveryManager : MonoBehaviour
         return houseIndex == targetHouseIndex;
     }
 
+    // The house the player must deliver to right now (null before the
+    // first target is assigned). Used by the tutorial highlight.
+    public Transform TargetHouseTransform
+    {
+        get
+        {
+            if (dropOffZones == null)
+                return null;
+            for (int i = 0; i < dropOffZones.Length; i++)
+            {
+                if (dropOffZones[i] != null && dropOffZones[i].houseIndex == targetHouseIndex)
+                    return dropOffZones[i].transform;
+            }
+            return null;
+        }
+    }
+
     public float OrderStartTime => orderStartTime;
 
   

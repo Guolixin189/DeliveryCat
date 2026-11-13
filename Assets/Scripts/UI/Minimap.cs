@@ -31,6 +31,9 @@ public class Minimap : MonoBehaviour
     bool uiBuilt;
 
     RectTransform smallPanel;
+    // The small minimap panel (bottom-left). Exposed so the tutorial
+    // highlight can frame it.
+    public RectTransform SmallPanel => smallPanel;
     RectTransform largeRoot;
     RectTransform largePanel;
     RectTransform content;
