@@ -4808,6 +4808,7 @@ GameObject:
   - component: {fileID: 500123035}
   - component: {fileID: 3100000011}
   - component: {fileID: 3100000070}
+  - component: {fileID: 3100000071}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -22575,6 +22576,20 @@ MonoBehaviour:
   labelFontSize: 22
   multFontSize: 52
   streakFontSize: 24
+--- !u!114 &3100000071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500123032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a7e641c97734014acbd5f02b6c3dd35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TipHUD
+  badgeSize: 56
+  anchoredPosition: {x: -150, y: -195}
 --- !u!1 &3930000000
 GameObject:
   m_ObjectHideFlags: 0
