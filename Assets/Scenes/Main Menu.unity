@@ -1574,6 +1574,7 @@ GameObject:
   - component: {fileID: 432603594}
   - component: {fileID: 432603593}
   - component: {fileID: 3100000020}
+  - component: {fileID: 3100000060}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1596,6 +1597,25 @@ MonoBehaviour:
   howToPlayPanel: {fileID: 935056065}
   settingPanel: {fileID: 937785595}
   menuAudio: {fileID: 1919209923}
+--- !u!114 &3100000060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432603592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899497c6c1734657b64934363226f96f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HowToPlayExtra
+  panelColor: {r: 0.798, g: 0.953, b: 0.652, a: 1}
+  buttonColor: {r: 0.98, g: 0.93, b: 0.78, a: 1}
+  titleColor: {r: 0.02, g: 0.03, b: 0.02, a: 1}
+  bodyColor: {r: 0.1, g: 0.12, b: 0.08, a: 1}
+  titleFontSize: 60
+  bodyFontSize: 34
+  buttonFontSize: 36
 --- !u!114 &432603594
 MonoBehaviour:
   m_ObjectHideFlags: 0
