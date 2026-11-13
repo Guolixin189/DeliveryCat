@@ -17,6 +17,14 @@ public class WaterHazard : MonoBehaviour
     [Range(0f, 1f)]
     [SerializeField] private float fallEndScale = 0.75f;
 
+    [Header("Fall distance by facing direction (× the cat's height)")]
+    [Tooltip("Falling in while facing down (toward the camera).")]
+    [SerializeField] private float fallDistanceDown = 1f;
+    [Tooltip("Falling in while facing up (away from the camera).")]
+    [SerializeField] private float fallDistanceUp = 0.5f;
+    [Tooltip("Falling in while facing left or right.")]
+    [SerializeField] private float fallDistanceSide = 0.75f;
+
     [Tooltip("Seconds the cat stays hidden under the water before reappearing on the bank.")]
     [SerializeField] private float respawnDelay = 1f;
 
@@ -91,10 +99,10 @@ public class WaterHazard : MonoBehaviour
             rb.simulated = false;
         }
 
-        // Fall straight down by one player height,
+        // Fall straight down by a distance that depends on which way the cat is facing,
         // and shrink a little as if moving away from the camera.
         Vector3 start = t.position;
-        Vector3 end = start + Vector3.down * height;
+        Vector3 end = start + Vector3.down * height * GetFallDistanceMultiplier(cat);
         Vector3 startScale = t.localScale;
         Vector3 endScale = startScale * fallEndScale;
         for (float e = 0f; e < fallDuration; e += Time.deltaTime)
@@ -119,7 +127,7 @@ public class WaterHazard : MonoBehaviour
 
         t.localScale = startScale;
 
-        // Move to the nearest bank.
+        // Move cat to nearest bank
         if (TryFindNearestBank(fellAt, catSize, out Vector3 bankCentre))
         {
             t.position = bankCentre + pivotOffset;
@@ -130,7 +138,7 @@ public class WaterHazard : MonoBehaviour
             t.position = start;
         }
 
-        // Show the cat again, now that it's back on the bank.
+        // Make the cat visible again after the penalty
         for (int i = 0; i < renderers.Length; i++)
             renderers[i].enabled = wasEnabled[i];
 
@@ -143,8 +151,26 @@ public class WaterHazard : MonoBehaviour
         busy = false;
     }
 
-    // Breadth-first search outward from where the cat fell in. The first tile that has
-    // no water on it and isn't blocked by an obstacle is the closest bank.
+    // Works out which way the cat is facing from the Animator's last MoveX/MoveY
+    // and returns how far it should fall, as a multiple of its height.
+    private float GetFallDistanceMultiplier(player.CatController cat)
+    {
+        Animator anim = cat.GetComponent<Animator>();
+        if (anim == null) return fallDistanceDown;
+
+        float x = anim.GetFloat("MoveX");
+        float y = anim.GetFloat("MoveY");
+
+        // Never moved yet: fall back to the default.
+        if (Mathf.Abs(x) < 0.01f && Mathf.Abs(y) < 0.01f) return fallDistanceDown;
+
+        // When moving diagonally, the larger axis decides the facing.
+        if (Mathf.Abs(x) > Mathf.Abs(y))
+            return fallDistanceSide;
+        return y > 0f ? fallDistanceUp : fallDistanceDown;
+    }
+
+    // Breadth-first search outward from where the cat fell in. The first tile that's not on a water layer and isn't blocked by an obstacle is the closest bank.
     private bool TryFindNearestBank(Vector3Int start, Vector2 catSize, out Vector3 worldPos)
     {
         var visited = new HashSet<Vector3Int> { start };

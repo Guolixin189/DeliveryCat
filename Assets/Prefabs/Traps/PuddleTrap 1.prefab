@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4545228577257337660}
   - component: {fileID: 8667820065978864991}
+  - component: {fileID: 6877798173879950136}
   - component: {fileID: 2969544205052628977}
   - component: {fileID: 3771893757582366746}
   m_Layer: 0
@@ -94,6 +95,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!70 &6877798173879950136
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722859626067813678}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.042251106, y: -0.08241941}
+  m_Size: {x: 3.0871744, y: 1.30191}
+  m_Direction: 1
 --- !u!58 &2969544205052628977
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -143,3 +181,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuddleTrap
   slipperyDuration: 0.3
+  cozySFX: {fileID: 8300000, guid: c162dd74ff27643eca32d6877c73f5e1, type: 3}
+  audioSource: {fileID: 0}
