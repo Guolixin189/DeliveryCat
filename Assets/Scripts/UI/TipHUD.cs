@@ -3,16 +3,18 @@ using UnityEngine.UI;
 using TMPro;
 
 // Dollar-coin badge under the Score panel, with a "TIP ORDER" label
-// next to it. Visible while the current order is a tip order, so the
-// player knows this delivery pays extra if it is on time. Builds all
-// UI at runtime. Attach to the GameManager in each level. (Same
-// Start-with-retry pattern as StarProgressHUD.)
+// next to it. Always visible: bright gold while the current order is
+// a tip order, dimmed grey when it is not, so the player always knows
+// where to look. Builds all UI at runtime. Attach to the GameManager
+// in each level. (Same Start-with-retry pattern as StarProgressHUD.)
 public class TipHUD : MonoBehaviour
 {
     [Header("Style")]
     public float badgeSize = 56f;
     public int labelFontSize = 26;
     public Color labelColor = new Color(1f, 0.8f, 0.25f, 1f);
+    public Color dimCoinColor = new Color(0.5f, 0.5f, 0.5f, 0.35f);
+    public Color dimLabelColor = new Color(0.6f, 0.6f, 0.6f, 0.4f);
     // Score panel sits at (-150, -70), 340x120; the company label hangs
     // at its bottom edge, so the badge goes just below it.
     public Vector2 anchoredPosition = new Vector2(-150f, -195f);
@@ -41,10 +43,13 @@ public class TipHUD : MonoBehaviour
         }
         if (root == null)
             return;
+        // Always visible; bright for a tip order, dimmed otherwise.
         DeliveryManager dm = DeliveryManager.Instance;
-        bool show = dm != null && dm.IsTipOrder;
-        if (root.activeSelf != show)
-            root.SetActive(show);
+        bool isTip = dm != null && dm.IsTipOrder;
+        if (badgeImage != null)
+            badgeImage.color = isTip ? Color.white : dimCoinColor;
+        if (labelText != null)
+            labelText.color = isTip ? labelColor : dimLabelColor;
     }
 
     Canvas FindScreenCanvas()
@@ -127,7 +132,8 @@ public class TipHUD : MonoBehaviour
         TMP_FontAsset font = FindFont(labelText);
         if (font != null)
             labelText.font = font;
-        root.SetActive(false);
+        // Always visible from the start; Update dims it when the
+        // current order is not a tip order.
     }
 
     TMP_FontAsset FindFont(TMP_Text exclude)
