@@ -18,6 +18,7 @@ public class BestStarsDisplay : MonoBehaviour
     public float gapFromButton = 16f;
 
     Sprite whiteSprite;
+    System.Collections.Generic.List<GameObject> starObjects = new System.Collections.Generic.List<GameObject>();
 
     void Start()
     {
@@ -28,6 +29,25 @@ public class BestStarsDisplay : MonoBehaviour
             return;
 
         whiteSprite = MakeWhiteSprite();
+        ShowBestStars("TutorialButton", "level_1");
+        ShowBestStars("OfficialButton", "level_2");
+    }
+
+    // Called by the Reset Best Stars button in the Settings panel.
+    public void ResetBestStars()
+    {
+        GameManager.ResetBestStars();
+        Refresh();
+    }
+
+    public void Refresh()
+    {
+        foreach (GameObject star in starObjects)
+        {
+            if (star != null)
+                Destroy(star);
+        }
+        starObjects.Clear();
         ShowBestStars("TutorialButton", "level_1");
         ShowBestStars("OfficialButton", "level_2");
     }
@@ -52,6 +72,7 @@ public class BestStarsDisplay : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             RectTransform star = MakeRT("BestStar_" + sceneName + "_" + (i + 1), buttonRt);
+            starObjects.Add(star.gameObject);
             star.anchorMin = star.anchorMax = new Vector2(0.5f, 0.5f);
             star.pivot = new Vector2(0.5f, 0.5f);
             float x = rowCenterX + (i - 1) * (starSize + starSpacing);

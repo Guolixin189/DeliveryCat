@@ -127,6 +127,13 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    public static void ResetBestStars()
+    {
+        PlayerPrefs.DeleteKey(BestStarsKey("level_1"));
+        PlayerPrefs.DeleteKey(BestStarsKey("level_2"));
+        PlayerPrefs.Save();
+    }
+
     public int CalculateTutorialStars()
     {
         if (deliveredPackages >= 3)
