@@ -3902,8 +3902,7 @@ MonoBehaviour:
   stepMove: Move with W A S D!
   stepMinimap: 'Minimap: Orange = Pick Up Station       Blue = Target House'
   stepAvoid: Careful! Hitting pedestrians slows you down
-  stepDeliver: Deliver to the house with the bubble to earn points. Wrong house loses
-    points.
+  stepDeliver: Deliver to target house earns points. Wrong house loses points.
 --- !u!4 &429900845
 Transform:
   m_ObjectHideFlags: 0
@@ -21803,6 +21802,10 @@ MonoBehaviour:
   - {fileID: 2100000062}
   - {fileID: 2100000082}
   company: 0
+  tipChance: 0.3
+  tipAmount: 50
+  tipTimeLimit: 20
+  perfectBonus: 50
 --- !u!82 &2100000103
 AudioSource:
   m_ObjectHideFlags: 0
@@ -22589,7 +22592,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TipHUD
   badgeSize: 56
-  anchoredPosition: {x: -150, y: -215}
+  labelFontSize: 26
+  labelColor: {r: 1, g: 0.8, b: 0.25, a: 1}
+  dimCoinColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.35}
+  dimLabelColor: {r: 0.6, g: 0.6, b: 0.6, a: 0.4}
+  anchoredPosition: {x: -150, y: -195}
 --- !u!1 &3930000000
 GameObject:
   m_ObjectHideFlags: 0
