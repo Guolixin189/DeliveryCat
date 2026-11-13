@@ -40,7 +40,14 @@ public class HowToPlayExtra : MonoBehaviour
     void Start()
     {
         canvas = FindScreenCanvas();
-        howToPlayPanel = GameObject.Find("HowtoPlayPanel");
+        // GameObject.Find cannot find inactive objects, and the How To
+        // Play panel starts hidden. Use the reference MainMenu already
+        // has wired up (this script sits on the same Canvas object).
+        MainMenu mainMenu = GetComponent<MainMenu>();
+        if (mainMenu != null)
+            howToPlayPanel = mainMenu.howToPlayPanel;
+        if (howToPlayPanel == null)
+            howToPlayPanel = GameObject.Find("HowtoPlayPanel");
         if (canvas == null || howToPlayPanel == null)
         {
             Debug.LogWarning("[HowToPlayExtra] Canvas or HowtoPlayPanel not found.");
