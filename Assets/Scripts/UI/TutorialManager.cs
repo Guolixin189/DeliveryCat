@@ -10,7 +10,6 @@ public class TutorialManager : MonoBehaviour
     [Header("UI")]
     public TextMeshProUGUI promptText;   // TMP text that shows the prompts in the scene
     public GameObject promptBackground;  // Speech-bubble background for the prompts (nullable); shown/hidden together with the text
-    public MinimapArrow minimapArrow;    // Arrow + note above the minimap, used only for the Minimap step
 
     [Header("Bubble auto-fit")]
     public float bgPadX = 50f;   // horizontal padding inside the bubble
@@ -46,8 +45,6 @@ public class TutorialManager : MonoBehaviour
             cat = FindFirstObjectByType<CatController>();
         if (promptText == null)
             Debug.LogWarning("[Tutorial] promptText not assigned!");
-        if (minimapArrow == null)
-            minimapArrow = GetComponent<MinimapArrow>();
     }
 
     void Start()
@@ -111,8 +108,6 @@ public class TutorialManager : MonoBehaviour
         if (next == Step.Done)
         {
             SetVisible(false);
-            if (minimapArrow != null)
-                minimapArrow.Hide();
             if (tutorialCompletePanel != null)
                 tutorialCompletePanel.SetActive(true);
         }
@@ -124,24 +119,6 @@ public class TutorialManager : MonoBehaviour
 
     void Show(string text)
     {
-        // Minimap step: hide the top bubble and point an arrow at the
-        // minimap instead, so the player's eye is drawn to it.
-        if (step == Step.Minimap)
-        {
-            SetVisible(false);
-            if (minimapArrow != null)
-                minimapArrow.Show(text);
-            else if (promptText != null)
-            {
-                SetVisible(true);
-                promptText.text = text;
-                if (fitRoutine != null) StopCoroutine(fitRoutine);
-                fitRoutine = StartCoroutine(FitBackgroundNextFrame());
-            }
-            return;
-        }
-        if (minimapArrow != null)
-            minimapArrow.Hide();
         if (promptText == null) return;
         SetVisible(true);
         promptText.text = text;
