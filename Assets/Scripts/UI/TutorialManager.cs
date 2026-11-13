@@ -21,6 +21,7 @@ public class TutorialManager : MonoBehaviour
     public float minimapDuration = 5f;    // step 3: how many seconds to show
     public float avoidDuration = 5f;      // step 4: how many seconds to show
     public float deliverDuration = 15f;   // step 5: max seconds to show (disappears early once delivered)
+    public float tipDuration = 5f;        // step 6: how many seconds to show
 
     [Header("Completion panel (shown after tutorial, nullable)")]
     public GameObject tutorialCompletePanel;
@@ -31,8 +32,9 @@ public class TutorialManager : MonoBehaviour
     public string stepMinimap = "Check the minimap (bottom-left): orange dot = package to pick up, blue dot = the house to deliver to.";
     public string stepAvoid = "Careful! Hitting obstacles slows you down — avoid pedestrians!";
     public string stepDeliver = "Deliver to the house with the bubble to earn points. Wrong house loses points.";
+    public string stepTip = "Tip order: deliver on time for +50!";
 
-    private enum Step { Pickup, Move, Minimap, Avoid, Deliver, Done }
+    private enum Step { Pickup, Move, Minimap, Avoid, Deliver, Tip, Done }
     private Step step = Step.Pickup;
     private CatController cat;
     private Vector3 lastPos;
@@ -93,6 +95,12 @@ public class TutorialManager : MonoBehaviour
             case Step.Deliver:
                 timer += Time.deltaTime;
                 if (!cat.hasPackage || timer >= deliverDuration)
+                    GoTo(Step.Tip, stepTip);
+                break;
+
+            case Step.Tip:
+                timer += Time.deltaTime;
+                if (timer >= tipDuration)
                     GoTo(Step.Done, null);
                 break;
         }
