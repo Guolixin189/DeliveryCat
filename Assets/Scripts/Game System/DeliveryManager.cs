@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class DeliveryManager : MonoBehaviour
@@ -15,6 +16,7 @@ public class DeliveryManager : MonoBehaviour
 
     // Combo: consecutive correct deliveries. A wrong delivery resets it.
     public int Combo { get; private set; }
+    public int BestCombo { get; private set; }
 
     // Score multiplier from the combo: 1x for the first correct
     // delivery, 1.5x for the second in a row, 2x from the third on.
@@ -164,6 +166,7 @@ public class DeliveryManager : MonoBehaviour
             else
                 points = CompanyRules.CorrectPoints(company);
             Combo++;
+            BestCombo = Mathf.Max(BestCombo, Combo);
             points = Mathf.RoundToInt(points * ComboMultiplier);
             // Tip order: on time means delivered within the tip limit.
             // Late means the tip is gone, only the base points remain.

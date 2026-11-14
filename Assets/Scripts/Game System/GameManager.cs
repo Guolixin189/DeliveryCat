@@ -10,12 +10,19 @@ public class GameManager : MonoBehaviour
     public int score = 0;
     public int deliveredPackages = 0;
     public int starsEarned = 0;
+    public int bestScore = 0;
+    public int mostDeliveries = 0;
+    public int bestCombo = 0;
     public GameObject gameOverPanel;
     public bool isGameOver = false;
     public static GameManager Instance;
     public TMP_Text finalScoreText;
     public TMP_Text gameOverText;
     public TMP_Text deliveredPackagesText;
+    [Header("Personal Best UI")]
+    public TMP_Text bestScoreText;
+    public TMP_Text mostDeliveriesText;
+    public TMP_Text bestComboText;
     public GameObject completePanel;
     [Header("Score Sound Effects")]
     public AudioSource scoreAudioSource;
@@ -169,6 +176,8 @@ public class GameManager : MonoBehaviour
         isGameOver = true;
         starsEarned = CalculateStars();
         SaveBestStars(SceneManager.GetActiveScene().name, starsEarned);
+        SavePersonalBest();
+        UpdatePersonalBestDisplay();
         
         gameOverText.text = ResultsTitle();
         gameOverText.fontSize = fontSize;
@@ -232,4 +241,43 @@ public class GameManager : MonoBehaviour
 
     SceneManager.LoadScene("Main Menu");
     }
+
+    public void SavePersonalBest()
+    {
+    if (SceneManager.GetActiveScene().name != "level_2")
+        return;
+
+    bestScore = Mathf.Max(
+        score,
+        PlayerPrefs.GetInt("BestScore_level_2", 0)
+    );
+
+    mostDeliveries = Mathf.Max(
+        deliveredPackages,
+        PlayerPrefs.GetInt("MostDeliveries_level_2", 0)
+    );
+
+    bestCombo = Mathf.Max(
+        DeliveryManager.Instance != null
+            ? DeliveryManager.Instance.BestCombo : 0,
+        PlayerPrefs.GetInt("BestCombo_level_2", 0)
+    );
+
+    PlayerPrefs.SetInt("BestScore_level_2", bestScore);
+    PlayerPrefs.SetInt("MostDeliveries_level_2", mostDeliveries);
+    PlayerPrefs.SetInt("BestCombo_level_2", bestCombo);
+    PlayerPrefs.Save();
+}
+
+    public void UpdatePersonalBestDisplay()
+{
+    if (bestScoreText != null)
+        bestScoreText.text = "Best Score:\n" + PlayerPrefs.GetInt("BestScore_level_2", 0);
+
+    if (mostDeliveriesText != null)
+        mostDeliveriesText.text = "Deliveries:\n" + PlayerPrefs.GetInt("MostDeliveries_level_2", 0);
+
+    if (bestComboText != null)
+        bestComboText.text = "Best Combo:\n" + PlayerPrefs.GetInt("BestCombo_level_2", 0);
+}
 }

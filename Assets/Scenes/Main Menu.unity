@@ -1597,25 +1597,6 @@ MonoBehaviour:
   howToPlayPanel: {fileID: 935056065}
   settingPanel: {fileID: 937785595}
   menuAudio: {fileID: 1919209923}
---- !u!114 &3100000060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 432603592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 899497c6c1734657b64934363226f96f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HowToPlayExtra
-  panelColor: {r: 0.798, g: 0.953, b: 0.652, a: 1}
-  buttonColor: {r: 0.98, g: 0.93, b: 0.78, a: 1}
-  titleColor: {r: 0.02, g: 0.03, b: 0.02, a: 1}
-  bodyColor: {r: 0.1, g: 0.12, b: 0.08, a: 1}
-  titleFontSize: 60
-  bodyFontSize: 34
-  buttonFontSize: 36
 --- !u!114 &432603594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2713,7 +2694,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &935056066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4425,6 +4406,7 @@ GameObject:
   - component: {fileID: 1703410123}
   - component: {fileID: 1703410122}
   - component: {fileID: 1703410121}
+  - component: {fileID: 1703410124}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4506,6 +4488,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1703410124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703410120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
 --- !u!1 &1715083192
 GameObject:
   m_ObjectHideFlags: 0
@@ -5822,6 +5848,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ec0c27c3cb48d0a7cab3c7293b7f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BackgroundMusic
+--- !u!114 &3100000060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432603592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899497c6c1734657b64934363226f96f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HowToPlayExtra
+  panelColor: {r: 0.798, g: 0.953, b: 0.652, a: 1}
+  buttonColor: {r: 0.98, g: 0.93, b: 0.78, a: 1}
+  titleColor: {r: 0.02, g: 0.03, b: 0.02, a: 1}
+  bodyColor: {r: 0.1, g: 0.12, b: 0.08, a: 1}
+  titleFontSize: 60
+  bodyFontSize: 34
+  buttonFontSize: 36
+  hubButtonFontSize: 40
 --- !u!1 &3900000000
 GameObject:
   m_ObjectHideFlags: 0
