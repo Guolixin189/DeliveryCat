@@ -5870,6 +5870,7 @@ MonoBehaviour:
   hubButtonFontSize: 40
   buttonAudioSource: {fileID: 1919209923}
   buttonClickSFX: {fileID: 8300000, guid: e1b4ba8f9b19041ecbd36ec65eb78ce8, type: 3}
+  quicksandFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
 --- !u!1 &3900000000
 GameObject:
   m_ObjectHideFlags: 0

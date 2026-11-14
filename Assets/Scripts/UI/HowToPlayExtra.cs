@@ -31,6 +31,9 @@ public class HowToPlayExtra : MonoBehaviour
     public AudioSource buttonAudioSource;
     public AudioClip buttonClickSFX;
 
+    [Header("Tutorial Font")]
+    public TMP_FontAsset quicksandFont;
+
     Canvas canvas;
     GameObject howToPlayPanel;
     GameObject controlsPanel;
@@ -96,18 +99,22 @@ public class HowToPlayExtra : MonoBehaviour
 
     // The hub: three big buttons stacked in the middle of the
     // How To Play page. The page keeps its title and Back button.
+
     void BuildHubButtons()
-    {
-        MakePanelButton(howToPlayPanel.transform, "ControlsButton", "BASIC CONTROLS",
-            new Vector2(0f, 150f), new Vector2(480f, 80f), hubButtonFontSize,
-            () => ShowPanel(controlsPanel));
-        MakePanelButton(howToPlayPanel.transform, "MechanicsButton", "GAME MECHANICS",
-            new Vector2(0f, 0f), new Vector2(480f, 80f), hubButtonFontSize,
-            () => ShowPanel(mechanicsPanel));
-        MakePanelButton(howToPlayPanel.transform, "TrapsButton", "TRAPS",
-            new Vector2(0f, -150f), new Vector2(480f, 80f), hubButtonFontSize,
-            () => ShowPanel(trapsPanel));
-    }
+{
+    MakePanelButton(howToPlayPanel.transform, "ControlsButton", "BASIC CONTROLS",
+        new Vector2(0f, 150f), new Vector2(600f, 105f), hubButtonFontSize,
+        () => ShowPanel(controlsPanel));
+
+    MakePanelButton(howToPlayPanel.transform, "MechanicsButton", "GAME MECHANICS",
+        new Vector2(0f, 0f), new Vector2(600f, 105f), hubButtonFontSize,
+        () => ShowPanel(mechanicsPanel));
+
+    MakePanelButton(howToPlayPanel.transform, "TrapsButton", "TRAPS",
+        new Vector2(0f, -150f), new Vector2(600f, 105f), hubButtonFontSize,
+        () => ShowPanel(trapsPanel));
+}
+
 
     // The controls panel reuses the scene's own rules content: move
     // the Goal / Move / Action / Warning texts and the keycap images
@@ -366,7 +373,7 @@ public class HowToPlayExtra : MonoBehaviour
         t.alignment = TextAlignmentOptions.Center;
         t.enableWordWrapping = true;
         t.raycastTarget = false;
-        TMP_FontAsset font = FindFont(t);
+        TMP_FontAsset font = quicksandFont != null ? quicksandFont : FindFont(t);
         if (font != null)
             t.font = font;
         return t;
