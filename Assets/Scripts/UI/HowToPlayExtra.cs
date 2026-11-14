@@ -27,6 +27,9 @@ public class HowToPlayExtra : MonoBehaviour
     public int bodyFontSize = 34;
     public int buttonFontSize = 36;
     public int hubButtonFontSize = 40;
+    [Header("Button Sound Effects")]
+    public AudioSource buttonAudioSource;
+    public AudioClip buttonClickSFX;
 
     Canvas canvas;
     GameObject howToPlayPanel;
@@ -325,7 +328,15 @@ public class HowToPlayExtra : MonoBehaviour
         img.color = buttonColor;
         img.raycastTarget = true;
         Button btn = go.AddComponent<Button>();
-        btn.onClick.AddListener(() => onClick());
+        btn.onClick.AddListener(() =>
+    {
+        if (buttonAudioSource != null && buttonClickSFX != null)
+        {
+        buttonAudioSource.PlayOneShot(buttonClickSFX);
+        }
+
+        onClick();
+    });
         ColorBlock colors = btn.colors;
         colors.normalColor = Color.white;
         colors.highlightedColor = new Color(0.9f, 0.9f, 0.9f, 1f);
