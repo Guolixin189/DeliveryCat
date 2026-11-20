@@ -63527,13 +63527,13 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571031309}
+  m_GameObject: {fileID: 6394927797007602772}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f888da9325b446e296f977980f9f9ccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SupplyStation
---- !u!1 &9520076391040655467
+--- !u!1 &707355396692643833
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63557,7 +63557,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9520076391040655467}
+  m_GameObject: {fileID: 707355396692643833}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -20, y: -12, z: 0}
@@ -63572,7 +63572,7 @@ CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9520076391040655467}
+  m_GameObject: {fileID: 707355396692643833}
   m_Enabled: 1
   serializedVersion: 2
   m_Density: 1
@@ -63608,13 +63608,13 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571031309}
+  m_GameObject: {fileID: 707355396692643833}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f888da9325b446e296f977980f9f9ccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SupplyStation
---- !u!1 &9250698898867225351
+--- !u!1 &423883179598844269
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63638,7 +63638,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9250698898867225351}
+  m_GameObject: {fileID: 423883179598844269}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 17, y: 3, z: 0}
@@ -63653,7 +63653,7 @@ CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9250698898867225351}
+  m_GameObject: {fileID: 423883179598844269}
   m_Enabled: 1
   serializedVersion: 2
   m_Density: 1
@@ -63689,7 +63689,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571031309}
+  m_GameObject: {fileID: 423883179598844269}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f888da9325b446e296f977980f9f9ccb, type: 3}
