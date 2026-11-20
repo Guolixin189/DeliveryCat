@@ -13,6 +13,10 @@ namespace player
         public float speedMultiplier = 1f;
         public bool hasShield = false;
         private float shieldGraceTimer = 0f;
+        // Golden shield glow shown around the cat while hasShield is
+        // true; it vanishes the moment the shield is spent.
+        private SpriteRenderer shieldGlow;
+        private float shieldPulseTime;
         [Header("Slow down on pedestrian hit")]
         public float slowFactor = 0.4f;     // speed multiplier while slowed
         public float slowDuration = 2f;     // slow duration in seconds
@@ -63,6 +67,57 @@ namespace player
             collisionAudioSource = GetComponent<AudioSource>();
             if (slowPopup == null)
                 slowPopup = FindFirstObjectByType<SlowPopup>();
+
+            BuildShieldGlow();
+        }
+
+        void BuildShieldGlow()
+        {
+            GameObject go = new GameObject("ShieldGlow");
+            go.transform.SetParent(transform, false);
+            go.transform.localPosition = Vector3.zero;
+            shieldGlow = go.AddComponent<SpriteRenderer>();
+            shieldGlow.sprite = CreateShieldSprite();
+            // Render just above the cat sprite.
+            SpriteRenderer catSprite = GetComponent<SpriteRenderer>();
+            shieldGlow.sortingOrder = catSprite != null ? catSprite.sortingOrder + 1 : 5;
+            go.SetActive(false);
+        }
+
+        // Golden bubble: a faint gold fill with a bright rim, drawn at
+        // runtime so no new texture asset (and no hand-written .meta)
+        // is needed.
+        static Sprite CreateShieldSprite()
+        {
+            const int size = 128;
+            Texture2D tex = new Texture2D(size, size, TextureFormat.RGBA32, false);
+            tex.filterMode = FilterMode.Bilinear;
+            Color gold = new Color(1f, 0.85f, 0.3f, 1f);
+            float half = size / 2f;
+            for (int y = 0; y < size; y++)
+            {
+                for (int x = 0; x < size; x++)
+                {
+                    float dx = (x + 0.5f - half) / half;
+                    float dy = (y + 0.5f - half) / half;
+                    float d = Mathf.Sqrt(dx * dx + dy * dy);
+                    if (d >= 1f)
+                    {
+                        tex.SetPixel(x, y, new Color(0f, 0f, 0f, 0f));
+                        continue;
+                    }
+                    // Faint fill inside, bright rim near the edge,
+                    // soft fade at the very rim.
+                    float fill = 0.14f;
+                    float rim = Mathf.Clamp01((d - 0.72f) / 0.2f) * 0.75f;
+                    float edgeFade = 1f - Mathf.Clamp01((d - 0.94f) / 0.06f);
+                    float a = (fill + rim) * edgeFade;
+                    tex.SetPixel(x, y, new Color(gold.r, gold.g, gold.b, a));
+                }
+            }
+            tex.Apply();
+            return Sprite.Create(tex, new Rect(0, 0, size, size),
+                new Vector2(0.5f, 0.5f), 64f);
         }
 
         void Update()
@@ -85,6 +140,21 @@ namespace player
                 knockbackTimer -= Time.deltaTime;
             if (shieldGraceTimer > 0f)
                 shieldGraceTimer -= Time.deltaTime;
+
+            // Shield glow follows hasShield: it appears when the
+            // shield is bought and vanishes the moment it is spent.
+            if (shieldGlow != null)
+            {
+                bool show = hasShield;
+                if (shieldGlow.gameObject.activeSelf != show)
+                    shieldGlow.gameObject.SetActive(show);
+                if (show)
+                {
+                    shieldPulseTime += Time.deltaTime;
+                    float pulse = 1f + Mathf.Sin(shieldPulseTime * 3f) * 0.04f;
+                    shieldGlow.transform.localScale = new Vector3(pulse, pulse, 1f);
+                }
+            }
 
             if (channeling)
             {
