@@ -66,11 +66,29 @@ public class SupplyStation : MonoBehaviour
 
     void BuildCross()
     {
-        GameObject go = new GameObject("SupplyCross");
-        go.transform.SetParent(transform, false);
-        go.transform.localPosition = new Vector3(crossOffsetX, crossHeight, 0f);
-        crossRenderer = go.AddComponent<SpriteRenderer>();
-        crossRenderer.sprite = CreateRedCrossSprite();
+        // Prefer the SupplyCross child placed in the scene (it shows
+        // in the Hierarchy and can be dragged in the editor). Fall
+        // back to creating one at runtime if the scene has none.
+        Transform child = transform.Find("SupplyCross");
+        GameObject go;
+        if (child != null)
+        {
+            go = child.gameObject;
+            crossRenderer = go.GetComponent<SpriteRenderer>();
+            if (crossRenderer == null)
+                crossRenderer = go.AddComponent<SpriteRenderer>();
+        }
+        else
+        {
+            go = new GameObject("SupplyCross");
+            go.transform.SetParent(transform, false);
+            go.transform.localPosition = new Vector3(crossOffsetX, crossHeight, 0f);
+            crossRenderer = go.AddComponent<SpriteRenderer>();
+        }
+        // The scene child already has the supply_cross sprite; only
+        // generate one at runtime when it is missing.
+        if (crossRenderer.sprite == null)
+            crossRenderer.sprite = CreateRedCrossSprite();
         crossRenderer.sortingOrder = 10;
         crossBasePos = go.transform.position;
     }
