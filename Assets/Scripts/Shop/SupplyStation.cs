@@ -13,9 +13,11 @@ public class SupplyStation : MonoBehaviour
     // The stall is solid; the player stands in front of it (below),
     // so the trigger zone is offset down from the stall centre.
     public Vector2 triggerOffset = new Vector2(0f, -2.5f);
-    // The cross floats right in the middle of the stall (the stall is
-    // about 4 units tall, centred on this object).
+    // The cross floats in the stall, shifted a little to the right
+    // of the stall centre (the stall is about 4 units tall, centred
+    // on this object).
     public float crossHeight = 0.5f;
+    public float crossOffsetX = 0.8f;    // how far right of centre
     public float crossBob = 0.25f;       // bob amplitude
     public float crossBobSpeed = 2f;
 
@@ -66,7 +68,7 @@ public class SupplyStation : MonoBehaviour
     {
         GameObject go = new GameObject("SupplyCross");
         go.transform.SetParent(transform, false);
-        go.transform.localPosition = new Vector3(0f, crossHeight, 0f);
+        go.transform.localPosition = new Vector3(crossOffsetX, crossHeight, 0f);
         crossRenderer = go.AddComponent<SpriteRenderer>();
         crossRenderer.sprite = CreateRedCrossSprite();
         crossRenderer.sortingOrder = 10;
