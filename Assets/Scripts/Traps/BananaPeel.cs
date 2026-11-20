@@ -20,6 +20,9 @@ public class BananaPeel : MonoBehaviour
     public AudioClip slipSFX;
     public float spawnVolume = 0.7f;
     public float slipVolume = 0.5f;
+    [Header("Distance hearing")]
+    public float hearMinDistance = 3f;
+    public float hearMaxDistance = 18f;
     private AudioSource audioSource;
 
     private float spawnTime;
@@ -41,6 +44,14 @@ public class BananaPeel : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
             audioSource = gameObject.AddComponent<AudioSource>();
+        // 3D sound: the drop is only heard when the player is close.
+        // Full volume within hearMinDistance, fading to silent at
+        // hearMaxDistance. The slip is always at the player's feet,
+        // so it is unaffected in practice.
+        audioSource.spatialBlend = 1f;
+        audioSource.minDistance = hearMinDistance;
+        audioSource.maxDistance = hearMaxDistance;
+        audioSource.rolloffMode = AudioRolloffMode.Linear;
         if (spawnSFX == null)
             spawnSFX = Resources.Load<AudioClip>("SFX/banana_spawn");
         if (slipSFX == null)
