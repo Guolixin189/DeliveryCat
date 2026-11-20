@@ -40,6 +40,13 @@ public class DeliveryManager : MonoBehaviour
     public int perfectBonus = 50;       // extra points for a delivery with no hits
     public int PerfectDeliveries { get; private set; }
 
+    [Header("Money and shop")]
+    public int moneyPerDelivery = 10;   // coins earned per correct delivery
+    public int Money { get; private set; }
+    // Score multiplier from the shop upgrade (1 = no bonus). The shop
+    // multiplies this by 1.1 per purchase, so it stacks.
+    public float scoreMultiplier = 1f;
+
     // True if the player hit a pedestrian or a trap at any point in
     // this level (used for the "Perfect Delivery" results title).
     public bool EverHitObstacle { get; private set; }
@@ -150,6 +157,16 @@ public class DeliveryManager : MonoBehaviour
         return houseIndex == targetHouseIndex;
     }
 
+    // Spend coins in the shop. Returns false when the player cannot
+    // afford it (no money is taken in that case).
+    public bool SpendMoney(int amount)
+    {
+        if (amount <= 0 || Money < amount)
+            return false;
+        Money -= amount;
+        return true;
+    }
+
     public float OrderStartTime => orderStartTime;
 
   
@@ -180,6 +197,10 @@ public class DeliveryManager : MonoBehaviour
                 PerfectDeliveries++;
             }
             points += tip + perfect;
+            // Shop upgrade: earn more points per delivery.
+            points = Mathf.RoundToInt(points * scoreMultiplier);
+            // Earn money on every correct delivery; the shop spends it.
+            Money += moneyPerDelivery;
             if (gameManager != null)
                 gameManager.PackageDelivered();
         }

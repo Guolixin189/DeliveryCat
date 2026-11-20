@@ -5,7 +5,14 @@ namespace player
 {
     public class CatController : MonoBehaviour
     {
-        public float moveSpeed = 3f; 
+        public float moveSpeed = 3f;
+        // Shop upgrades. speedMultiplier stacks (x1.1 per purchase).
+        // hasShield blocks one hit; the brief grace window after it is
+        // spent also blocks the second half of a two-part hit
+        // (banana peel knockback + stun).
+        public float speedMultiplier = 1f;
+        public bool hasShield = false;
+        private float shieldGraceTimer = 0f;
         [Header("Slow down on pedestrian hit")]
         public float slowFactor = 0.4f;     // speed multiplier while slowed
         public float slowDuration = 2f;     // slow duration in seconds
@@ -76,6 +83,8 @@ namespace player
                 stunTimer -= Time.deltaTime;
             if (knockbackTimer > 0f)
                 knockbackTimer -= Time.deltaTime;
+            if (shieldGraceTimer > 0f)
+                shieldGraceTimer -= Time.deltaTime;
 
             if (channeling)
             {
@@ -125,7 +134,9 @@ namespace player
                 animator.SetFloat("MoveY", movement.y);
             }
 
-            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            // While the shop is open the game is paused and Space
+            // belongs to the shop, not to pickup/dropoff.
+            if (Keyboard.current.spaceKey.wasPressedThisFrame && !ShopUI.IsOpen)
             {
                 // state 1
                 if (canPickUp && !hasPackage)
@@ -171,7 +182,7 @@ namespace player
                 float sin = Mathf.Sin(wobble);
                 dir = new Vector2(dir.x * cos - dir.y * sin, dir.x * sin + dir.y * cos);
             }
-            float speed = moveSpeed;
+            float speed = moveSpeed * speedMultiplier;
             if (slowTimer > 0f)
                 speed *= slowFactor;
             if (mudTimer > 0f || mudLingerTimer > 0f)
@@ -191,9 +202,28 @@ namespace player
                 deliveryManager.MarkObstacleHit();
         }
 
+        // Shield: blocks one hit entirely (no slow, no stun, no
+        // perfect-delivery break). Returns true when the hit was
+        // blocked. After the shield is spent, a short grace window
+        // blocks the rest of a two-part hit (knockback + stun).
+        bool TryBlockHit()
+        {
+            if (shieldGraceTimer > 0f)
+                return true;
+            if (hasShield)
+            {
+                hasShield = false;
+                shieldGraceTimer = 0.5f;
+                return true;
+            }
+            return false;
+        }
+
         // Called by NPCs on pedestrian hit: slow for slowDuration seconds; re-hitting while slowed refreshes the timer
         public void ApplySlow()
         {
+            if (TryBlockHit())
+                return;
             slowTimer = slowDuration;
             if (slowPopup != null)
                 slowPopup.Show(slowDuration);
@@ -203,6 +233,8 @@ namespace player
         // Called by mud traps while the player stays inside; re-entering cancels lingering
         public void ApplyMud()
         {
+            if (TryBlockHit())
+                return;
             mudTimer = 0.2f;
             mudLingerTimer = 0f;
             MarkHit();
@@ -222,6 +254,8 @@ namespace player
         // Generic trap slow (sprinkler jet); refreshed while the player stays in the jet
         public void ApplyTrapSlow(float factor)
         {
+            if (TryBlockHit())
+                return;
             trapSlowFactor = factor;
             trapSlowTimer = 0.3f;
             MarkHit();
@@ -230,12 +264,16 @@ namespace player
         // Puddle: steering wobbles while slippery; refreshed while inside
         public void ApplySlippery(float duration)
         {
+            if (TryBlockHit())
+                return;
             slipperyTimer = duration;
             MarkHit();
         }
 
         public void ApplyStun(float duration)
         {
+            if (TryBlockHit())
+                return;
             stunTimer = Mathf.Max(stunTimer, duration);
             MarkHit();
         }
@@ -243,6 +281,8 @@ namespace player
         // Knockback slide: pushes the player along dir for a short time, locking input
         public void ApplyKnockback(Vector2 dir, float distance, float duration = 0.25f)
         {
+            if (TryBlockHit())
+                return;
             if (dir.sqrMagnitude < 0.001f)
                 return;
             knockbackDir = dir.normalized;
