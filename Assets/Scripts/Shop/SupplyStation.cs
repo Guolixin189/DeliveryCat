@@ -17,7 +17,7 @@ public class SupplyStation : MonoBehaviour
     // of the stall centre (the stall is about 4 units tall, centred
     // on this object).
     public float crossHeight = 0.5f;
-    public float crossOffsetX = 0.8f;    // how far right of centre
+    public float crossOffsetX = 1.5f;    // how far right of centre
     public float crossBob = 0.25f;       // bob amplitude
     public float crossBobSpeed = 2f;
 
