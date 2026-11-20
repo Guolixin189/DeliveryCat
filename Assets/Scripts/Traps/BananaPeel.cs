@@ -15,6 +15,11 @@ public class BananaPeel : MonoBehaviour
     public float bounceTime = 0.25f;
     public float bounceHeight = 0.3f;
 
+    [Header("Sound effects")]
+    public AudioClip spawnSFX;
+    public AudioClip slipSFX;
+    private AudioSource audioSource;
+
     private float spawnTime;
     private bool armed;
     private bool used;
@@ -29,6 +34,17 @@ public class BananaPeel : MonoBehaviour
         // Start above the spot, small, so the drop is visible.
         transform.position = basePosition + Vector3.up * dropHeight;
         transform.localScale = baseScale * 0.5f;
+        // Sound: use the assigned clips, or the generated ones in
+        // Resources/SFX if the prefab has none wired up.
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
+        if (spawnSFX == null)
+            spawnSFX = Resources.Load<AudioClip>("SFX/banana_spawn");
+        if (slipSFX == null)
+            slipSFX = Resources.Load<AudioClip>("SFX/banana_slip");
+        if (audioSource != null && spawnSFX != null)
+            audioSource.PlayOneShot(spawnSFX);
     }
 
     void Update()
@@ -75,6 +91,8 @@ public class BananaPeel : MonoBehaviour
         if (cat == null)
             return;
         used = true;
+        if (audioSource != null && slipSFX != null)
+            audioSource.PlayOneShot(slipSFX);
         Vector2 dir = (Vector2)cat.transform.position - (Vector2)transform.position;
         if (dir.sqrMagnitude < 0.0001f)
             dir = Vector2.up;
