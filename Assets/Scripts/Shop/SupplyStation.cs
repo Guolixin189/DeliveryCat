@@ -13,7 +13,9 @@ public class SupplyStation : MonoBehaviour
     // The stall is solid; the player stands in front of it (below),
     // so the trigger zone is offset down from the stall centre.
     public Vector2 triggerOffset = new Vector2(0f, -2.5f);
-    public float crossHeight = 2.8f;     // red cross floats this high above the stall
+    // The cross floats right in the middle of the stall (the stall is
+    // about 4 units tall, centred on this object).
+    public float crossHeight = 0.5f;
     public float crossBob = 0.25f;       // bob amplitude
     public float crossBobSpeed = 2f;
 
@@ -75,7 +77,9 @@ public class SupplyStation : MonoBehaviour
     {
         GameObject go = new GameObject("ShopPrompt");
         go.transform.SetParent(transform, false);
-        go.transform.localPosition = new Vector3(0f, crossHeight - 1.1f, 0f);
+        // The prompt sits just in front of the stall, near the player,
+        // so it does not cover the cross in the middle of the stall.
+        go.transform.localPosition = new Vector3(0f, -2.2f, 0f);
         promptText = go.AddComponent<TextMeshPro>();
         promptText.text = "Press SPACE";
         promptText.fontSize = 1f;
