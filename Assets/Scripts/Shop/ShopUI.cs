@@ -121,6 +121,11 @@ public class ShopUI : MonoBehaviour
             if (priceTexts[i] != null)
                 priceTexts[i].color = affordable ? Color.white : new Color(1f, 0.4f, 0.4f, 1f);
         }
+        // Show how many double-score deliveries are left.
+        if (boughtTexts[1] != null && dm != null)
+            boughtTexts[1].text = dm.doubleScoreDeliveriesLeft > 0
+                ? "x2 left: " + dm.doubleScoreDeliveriesLeft
+                : "";
     }
 
     void BuySpeed()
@@ -144,7 +149,7 @@ public class ShopUI : MonoBehaviour
             return;
         if (!dm.SpendMoney(scorePrice))
             return;
-        dm.scoreMultiplier *= 1.1f;
+        dm.GrantDoubleScore(2);
         scoreBought++;
         RefreshMoney();
         RefreshButtons();
@@ -237,8 +242,8 @@ public class ShopUI : MonoBehaviour
         moneyRt.sizeDelta = new Vector2(panelSize.x - 40f, 40f);
 
         // Three upgrade rows.
-        string[] names = { "SPEED +10%", "SCORE +10%", "SHIELD" };
-        string[] descs = { "Move 10% faster", "Earn 10% more points", "Block one hit" };
+        string[] names = { "SPEED +10%", "DOUBLE SCORE", "SHIELD" };
+        string[] descs = { "Move 10% faster", "Double points on next 2 deliveries", "Block one hit" };
         int[] prices = { speedPrice, scorePrice, shieldPrice };
         System.Action[] buys = { BuySpeed, BuyScore, BuyShield };
         float rowTop = -140f;

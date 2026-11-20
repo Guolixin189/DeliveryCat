@@ -44,9 +44,10 @@ public class DeliveryManager : MonoBehaviour
     public int moneyPerDelivery = 15;   // coins earned per correct normal delivery
     public int tipOrderMoney = 30;      // coins earned per correct tip-order delivery
     public int Money { get; private set; }
-    // Score multiplier from the shop upgrade (1 = no bonus). The shop
-    // multiplies this by 1.1 per purchase, so it stacks.
-    public float scoreMultiplier = 1f;
+    // Double-score deliveries left from the shop upgrade. Each
+    // purchase adds 2; a correct delivery with any left earns
+    // double points and uses one up.
+    public int doubleScoreDeliveriesLeft = 0;
 
     // True if the player hit a pedestrian or a trap at any point in
     // this level (used for the "Perfect Delivery" results title).
@@ -168,6 +169,13 @@ public class DeliveryManager : MonoBehaviour
         return true;
     }
 
+    // Shop upgrade: the next `count` correct deliveries earn double
+    // points. Buying again adds more on top of what is left.
+    public void GrantDoubleScore(int count)
+    {
+        doubleScoreDeliveriesLeft += count;
+    }
+
     public float OrderStartTime => orderStartTime;
 
   
@@ -198,8 +206,12 @@ public class DeliveryManager : MonoBehaviour
                 PerfectDeliveries++;
             }
             points += tip + perfect;
-            // Shop upgrade: earn more points per delivery.
-            points = Mathf.RoundToInt(points * scoreMultiplier);
+            // Shop upgrade: double points on the next few deliveries.
+            if (doubleScoreDeliveriesLeft > 0)
+            {
+                points *= 2;
+                doubleScoreDeliveriesLeft--;
+            }
             // Earn money on every correct delivery; tip orders pay
             // more than normal ones. The shop spends it.
             Money += IsTipOrder ? tipOrderMoney : moneyPerDelivery;
