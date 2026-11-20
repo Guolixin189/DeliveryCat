@@ -12,9 +12,9 @@ public class ShopUI : MonoBehaviour
     public static bool IsOpen { get; private set; }
 
     [Header("Prices (coins)")]
-    public int speedPrice = 30;
-    public int scorePrice = 30;
-    public int shieldPrice = 20;
+    public int speedPrice = 10;
+    public int scorePrice = 15;
+    public int shieldPrice = 15;
 
     [Header("Style")]
     public Vector2 panelSize = new Vector2(640f, 520f);
