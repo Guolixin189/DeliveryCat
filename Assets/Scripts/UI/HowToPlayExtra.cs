@@ -428,6 +428,13 @@ public class HowToPlayExtra : MonoBehaviour
             "<b><size=42>PERFECT DELIVERY</size></b>\n" +
             "No pedestrian or trap hit in one order for +50.\n" +
             "\n\n" +
+            "<b><size=42>SHOP</size></b>\n" +
+            "Deliver packages to earn coins: 15 per order, 30 for a tip order.\n" +
+            "Walk to a supply station (red cross) and press SPACE to open the shop.\n" +
+            "SPEED +10% (10 coins): move 10% faster. Stacks.\n" +
+            "DOUBLE SCORE (15 coins): double points on your next 2 deliveries.\n" +
+            "SHIELD (15 coins): blocks one hit from a pedestrian or trap.\n" +
+            "\n\n" +
             "<b><size=42>STARS</size></b>\n" +
             "1 star at 1 delivery, 2 stars at 3, 3 stars at 5.";
     }
