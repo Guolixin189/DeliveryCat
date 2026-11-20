@@ -18,6 +18,8 @@ public class BananaPeel : MonoBehaviour
     [Header("Sound effects")]
     public AudioClip spawnSFX;
     public AudioClip slipSFX;
+    public float spawnVolume = 0.7f;
+    public float slipVolume = 0.5f;
     private AudioSource audioSource;
 
     private float spawnTime;
@@ -44,7 +46,7 @@ public class BananaPeel : MonoBehaviour
         if (slipSFX == null)
             slipSFX = Resources.Load<AudioClip>("SFX/banana_slip");
         if (audioSource != null && spawnSFX != null)
-            audioSource.PlayOneShot(spawnSFX);
+            audioSource.PlayOneShot(spawnSFX, spawnVolume);
     }
 
     void Update()
@@ -92,7 +94,7 @@ public class BananaPeel : MonoBehaviour
             return;
         used = true;
         if (audioSource != null && slipSFX != null)
-            audioSource.PlayOneShot(slipSFX);
+            audioSource.PlayOneShot(slipSFX, slipVolume);
         Vector2 dir = (Vector2)cat.transform.position - (Vector2)transform.position;
         if (dir.sqrMagnitude < 0.0001f)
             dir = Vector2.up;
