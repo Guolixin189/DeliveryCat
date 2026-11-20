@@ -41,7 +41,8 @@ public class DeliveryManager : MonoBehaviour
     public int PerfectDeliveries { get; private set; }
 
     [Header("Money and shop")]
-    public int moneyPerDelivery = 10;   // coins earned per correct delivery
+    public int moneyPerDelivery = 15;   // coins earned per correct normal delivery
+    public int tipOrderMoney = 30;      // coins earned per correct tip-order delivery
     public int Money { get; private set; }
     // Score multiplier from the shop upgrade (1 = no bonus). The shop
     // multiplies this by 1.1 per purchase, so it stacks.
@@ -199,8 +200,9 @@ public class DeliveryManager : MonoBehaviour
             points += tip + perfect;
             // Shop upgrade: earn more points per delivery.
             points = Mathf.RoundToInt(points * scoreMultiplier);
-            // Earn money on every correct delivery; the shop spends it.
-            Money += moneyPerDelivery;
+            // Earn money on every correct delivery; tip orders pay
+            // more than normal ones. The shop spends it.
+            Money += IsTipOrder ? tipOrderMoney : moneyPerDelivery;
             if (gameManager != null)
                 gameManager.PackageDelivered();
         }
