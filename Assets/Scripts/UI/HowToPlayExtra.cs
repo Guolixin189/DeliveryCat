@@ -128,7 +128,7 @@ public class HowToPlayExtra : MonoBehaviour
         titleText.fontStyle = FontStyles.Bold;
         titleText.alignment = TextAlignmentOptions.Center;
         MakePanelButton(panel.transform, "BackButton", "BACK",
-            new Vector2(0f, -341f), new Vector2(260f, 70f), buttonFontSize,
+            new Vector2(0f, -420f), new Vector2(260f, 70f), buttonFontSize,
             () => ShowHowToPlay());
         foreach (string name in controlsChildren)
         {
@@ -409,35 +409,40 @@ public class HowToPlayExtra : MonoBehaviour
     }
 
     string MechanicsText()
-    {
-        return
-            "<b><size=42>COMPANIES</size></b>\n" +
-            "(official level)\n" +
-            "UPS: Hold SPACE at the right door for 3s to sign. +200. Wrong house -100.\n" +
-            "USPS: Drop off at the target house, it delivers by itself. Wrong house -100.\n" +
-            "FedEx: 15s per order. +200 on time, +100 late, -100 wrong.\n" +
-            "Freelancer: Classic. +100 right, -100 wrong.\n" +
-            "\n\n" +
-            "<b><size=42>COMBO</size></b>\n" +
-            "Deliver correctly in a row to multiply points.\n" +
-            "x1.5 at 2 in a row, x2 at 3 or more.\n" +
-            "\n\n" +
-            "<b><size=42>TIP ORDER</size></b>\n" +
-            "A gold coin marks a tip order. Deliver within 20s for +50.\n" +
-            "\n\n" +
-            "<b><size=42>PERFECT DELIVERY</size></b>\n" +
-            "No pedestrian or trap hit in one order for +50.\n" +
-            "\n\n" +
-            "<b><size=42>SHOP</size></b>\n" +
-            "Deliver packages to earn coins: 15 per order, 30 for a tip order.\n" +
-            "Walk to a supply station (red cross) and press SPACE to open the shop.\n" +
-            "SPEED +10% (10 coins): move 10% faster. Stacks.\n" +
-            "DOUBLE SCORE (15 coins): double points on your next 2 deliveries.\n" +
-            "SHIELD (15 coins): blocks one hit from a pedestrian or trap.\n" +
-            "\n\n" +
-            "<b><size=42>STARS</size></b>\n" +
-            "1 star at 1 delivery, 2 stars at 3, 3 stars at 5.";
-    }
+{
+    return
+        "<b><size=42>DELIVERY REWARDS</size></b>\n" +
+        "<b>Coins</b>  15 per regular delivery or 30 per tip order.\n" +
+        "<b>Stars</b>  Earn 1 star at 1 delivery, 2 at 3, and 3 at 5.\n\n\n" +
+
+        "<b><size=42>SHOP</size></b>\n" +
+        "Press <b>SPACE</b> near a supply station (red cross) to open the shop.\n" +
+        "<b>SPEED +10%</b> (10 coins)\n" +
+        "Move 10% faster. Buy it again to stack the boost.\n" +
+        "<b>DOUBLE SCORE</b> (15 coins)\n" +
+        "Earn double points on your next 2 deliveries.\n" +
+        "<b>SHIELD</b> (15 coins)\n" +
+        "Blocks one hit from a pedestrian or trap.\n\n\n" +
+
+        "<b><size=42>SCORE BONUSES</size></b>\n" +
+        "<b>Combo</b>  Deliver to the correct houses in a row. " +
+        "Earn x1.5 points at 2 in a row and x2 at 3 or more.\n" +
+        "<b>Tip Order</b>  Look for a gold coin. Deliver within 20 seconds " +
+        "to earn 50 bonus points.\n" +
+        "<b>Perfect Delivery</b>  Complete an order without hitting " +
+        "a pedestrian or trap to earn 50 bonus points.\n\n\n" +
+
+        "<b><size=42>COMPANIES</size></b>\n" +
+        "These rules apply in the official level.\n" +
+        "<b>UPS</b>  Hold SPACE at the correct door for 3 seconds " +
+        "to sign and earn 200 points.\n" +
+        "<b>USPS</b>  Drop off the package at the target house " +
+        "to complete the delivery automatically.\n" +
+        "<b>FedEx</b>  You have 15 seconds per order. " +
+        "Earn 200 points on time or 100 points if late.\n" +
+        "<b>Freelancer</b>  Earn 100 points for delivering to the correct house.\n" +
+        "<b>Wrong house</b>  Lose 100 points.";
+}
 
     string TrapsText()
     {
