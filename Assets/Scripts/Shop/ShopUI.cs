@@ -30,6 +30,11 @@ public class ShopUI : MonoBehaviour
     bool uiBuilt;
     int speedBought;
     int scoreBought;
+    
+    [Header("Shop Sound Effects")]
+    public AudioSource shopAudioSource;
+    public AudioClip purchaseSFX;
+    public AudioClip closeSFX;
 
     public static void OpenShop()
     {
@@ -129,48 +134,63 @@ public class ShopUI : MonoBehaviour
     }
 
     void BuySpeed()
-    {
-        DeliveryManager dm = DeliveryManager.Instance;
-        player.CatController cat = FindFirstObjectByType<player.CatController>();
-        if (dm == null || cat == null)
-            return;
-        if (!dm.SpendMoney(speedPrice))
-            return;
-        cat.speedMultiplier *= 1.1f;
-        speedBought++;
-        RefreshMoney();
-        RefreshButtons();
-    }
+{
+    DeliveryManager dm = DeliveryManager.Instance;
+    player.CatController cat = FindFirstObjectByType<player.CatController>();
 
-    void BuyScore()
-    {
-        DeliveryManager dm = DeliveryManager.Instance;
-        if (dm == null)
-            return;
-        if (!dm.SpendMoney(scorePrice))
-            return;
-        dm.GrantDoubleScore(2);
-        scoreBought++;
-        RefreshMoney();
-        RefreshButtons();
-    }
+    if (dm == null || cat == null)
+        return;
+    if (!dm.SpendMoney(speedPrice))
+        return;
 
-    void BuyShield()
-    {
-        DeliveryManager dm = DeliveryManager.Instance;
-        player.CatController cat = FindFirstObjectByType<player.CatController>();
-        if (dm == null || cat == null)
-            return;
-        if (cat.hasShield)
-            return; // already holding one; spend it first
-        if (!dm.SpendMoney(shieldPrice))
-            return;
-        cat.hasShield = true;
-        RefreshMoney();
-        RefreshButtons();
-    }
+    cat.speedMultiplier *= 1.1f;
+    speedBought++;
+    PlayShopSound(purchaseSFX);
+    RefreshMoney();
+    RefreshButtons();
+}
 
-    Canvas FindScreenCanvas()
+void BuyScore()
+{
+    DeliveryManager dm = DeliveryManager.Instance;
+
+    if (dm == null)
+        return;
+    if (!dm.SpendMoney(scorePrice))
+        return;
+
+    dm.GrantDoubleScore(2);
+    scoreBought++;
+    PlayShopSound(purchaseSFX);
+    RefreshMoney();
+    RefreshButtons();
+}
+
+void BuyShield()
+{
+    DeliveryManager dm = DeliveryManager.Instance;
+    player.CatController cat = FindFirstObjectByType<player.CatController>();
+
+    if (dm == null || cat == null)
+        return;
+    if (cat.hasShield)
+        return;
+    if (!dm.SpendMoney(shieldPrice))
+        return;
+
+    cat.hasShield = true;
+    PlayShopSound(purchaseSFX);
+    RefreshMoney();
+    RefreshButtons();
+}
+
+void PlayShopSound(AudioClip clip)
+{
+    if (shopAudioSource != null && clip != null)
+        shopAudioSource.PlayOneShot(clip);
+}
+
+Canvas FindScreenCanvas()
     {
         Canvas[] canvases = FindObjectsByType<Canvas>(FindObjectsSortMode.None);
         foreach (Canvas c in canvases)
@@ -326,7 +346,11 @@ public class ShopUI : MonoBehaviour
         Image closeImg = closeGo.AddComponent<Image>();
         closeImg.color = new Color(0.85f, 0.85f, 0.8f, 1f);
         Button closeBtn = closeGo.AddComponent<Button>();
-        closeBtn.onClick.AddListener(Close);
+        closeBtn.onClick.AddListener(() =>
+        {
+            PlayShopSound(closeSFX);
+            Close();
+        });
         TMP_Text closeText = MakeText(closeGo, "Text", "CLOSE", 26, FontStyles.Bold,
             new Color(0.25f, 0.2f, 0.15f, 1f), TextAlignmentOptions.Center, font);
         RectTransform closeTextRt = closeText.GetComponent<RectTransform>();

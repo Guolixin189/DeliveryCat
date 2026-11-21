@@ -61669,6 +61669,9 @@ MonoBehaviour:
   scorePrice: 15
   shieldPrice: 15
   panelSize: {x: 640, y: 520}
+  shopAudioSource: {fileID: 825492509}
+  purchaseSFX: {fileID: 8300000, guid: 928a41124bb494e42ac7909bcefd6805, type: 3}
+  closeSFX: {fileID: 8300000, guid: e1b4ba8f9b19041ecbd36ec65eb78ce8, type: 3}
 --- !u!114 &3100000073
 MonoBehaviour:
   m_ObjectHideFlags: 0
