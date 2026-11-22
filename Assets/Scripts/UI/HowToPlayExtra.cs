@@ -58,10 +58,10 @@ public class HowToPlayExtra : MonoBehaviour
         new TrapRow { sprite = "Traps/puddle", name = "PUDDLE", text = "Slippery! Your steering wobbles." },
         new TrapRow { sprite = "Traps/mud", name = "MUD", text = "Slows you down." },
         new TrapRow { sprite = "Traps/banana_peel", name = "BANANA PEEL", text = "Knocks you back and stuns you for 1s." },
-        new TrapRow { sprite = "Traps/car_door", name = "CAR DOOR", text = "Swings open and knocks you back." },
-        new TrapRow { sprite = "Traps/sprinkler", name = "SPRINKLER", text = "A rotating jet of water slows you down." },
+        // new TrapRow { sprite = "Traps/car_door", name = "CAR DOOR", text = "Swings open and knocks you back." },
+        // new TrapRow { sprite = "Traps/sprinkler", name = "SPRINKLER", text = "A rotating jet of water slows you down." },
         new TrapRow { sprite = "Traps/barrier_arm", name = "BARRIER GATE", text = "Blocks the road when the light is red." },
-        new TrapRow { sprite = "Traps/box_pile", name = "BOX PILE", text = "Pushes you around." },
+        // new TrapRow { sprite = "Traps/box_pile", name = "BOX PILE", text = "Pushes you around." },
         new TrapRow { sprite = "Traps/boost_pad", name = "BOOST PAD", text = "Speeds you up! This one helps you." },
     };
 

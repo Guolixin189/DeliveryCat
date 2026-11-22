@@ -6211,6 +6211,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1278272009}
     m_Modifications:
+    - target: {fileID: 8061371254265362872, guid: cf61a025642b86d45ae2f84d8999a17f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b16c3e880d67c2d47936dcb170c6c156, type: 2}
+    - target: {fileID: -176208534509864984, guid: cf61a025642b86d45ae2f84d8999a17f, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 327554593630503682, guid: cf61a025642b86d45ae2f84d8999a17f, type: 3}
       propertyPath: m_Name
       value: Villager_female
@@ -16586,6 +16594,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1278272009}
     m_Modifications:
+    - target: {fileID: -176208534509864984, guid: cf61a025642b86d45ae2f84d8999a17f, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 327554593630503682, guid: cf61a025642b86d45ae2f84d8999a17f, type: 3}
       propertyPath: m_Name
       value: Villager_male (2)
@@ -23587,6 +23599,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1278272009}
     m_Modifications:
+    - target: {fileID: -176208534509864984, guid: cf61a025642b86d45ae2f84d8999a17f, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 327554593630503682, guid: cf61a025642b86d45ae2f84d8999a17f, type: 3}
       propertyPath: m_Name
       value: Villager_male
